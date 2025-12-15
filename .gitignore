@@ -214,3 +214,7 @@ output/
 
 # Combined PDF in root (generated)
 all_courses_combined.pdf
+
+# Google API credentials (NEVER commit these!)
+credentials.json
+token.pickle

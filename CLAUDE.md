@@ -181,8 +181,100 @@ B. False (correct)
 
 ---
 
+## Slide Presentation Guidelines
+
+### CRITICAL: Content Must Be Separate From Code
+
+**NEVER hardcode slide content in Python scripts.** All lesson-specific content must be in configuration files.
+
+### Workflow
+
+1. **Content lives in YAML**: Each lesson has `slides.yaml` defining all slide content
+2. **Script is generic**: `create_slides_from_yaml.py` reads YAML and generates slides
+3. **Run with**: `python create_slides_from_yaml.py lessons/XX-lesson-name/slides.yaml`
+
+### File Structure for Each Lesson
+```
+lessons/XX-lesson-name/
+├── slides.yaml       # Slide content configuration (REQUIRED)
+├── slides.md         # Human-readable content planning (optional)
+├── assets/           # Images referenced in slides.yaml
+│   └── *.jpg
+├── reading.md
+├── worksheet.md
+├── quiz.md
+└── lesson-plan.md
+```
+
+### YAML Configuration Structure
+```yaml
+title: "Presentation Title"
+subtitle: "Subtitle"
+
+theme:  # Vary colors between lessons!
+  primary: {r: 0.1, g: 0.2, b: 0.4}
+  secondary: {r: 0.2, g: 0.6, b: 0.6}
+  accent1: {r: 0.95, g: 0.75, b: 0.2}
+  accent2: {r: 0.95, g: 0.4, b: 0.35}
+  background: {r: 1.0, g: 0.98, b: 0.94}
+  text: {r: 0.2, g: 0.2, b: 0.25}
+
+images:
+  subject_photo: "assets/photo.jpg"
+
+slides:
+  - type: title
+  - type: big_idea
+    main_text: "Key message"
+  - type: image_bio
+    title: "Person Name"
+    image: subject_photo
+  # ... etc
+```
+
+### Supported Slide Types
+- `title` - Title slide (uses presentation title/subtitle)
+- `big_idea` - Full-bleed background with main message
+- `image_bio` - Image with biographical text
+- `quote` - Large quote with attribution
+- `table` - Styled data table
+- `comparison` - Two-column IS/IS NOT style
+- `two_column` - Two columns of bullets
+- `bullets` - Bullet points with accent markers
+- `numbered` - Numbered list items
+- `closing` - Final quote slide with CTA
+
+### Visual Design Principles
+- **Vary the theme/color palette for each lesson** - Don't reuse colors
+- **Minimal text per slide** - Short phrases, not paragraphs
+- **Tables are effective** - Use for comparisons, IS/IS NOT content
+- **Eye-catching but not distracting** - Professional, engaging
+
+### Color Palette Ideas (rotate between lessons)
+- Deep blue + gold + coral (warm, classic)
+- Teal + cream + charcoal (modern, calm)
+- Purple + orange + white (energetic)
+- Forest green + tan + burgundy (earthy)
+- Navy + mint + peach (fresh)
+
+### Google API Setup
+
+**Required APIs** (enable in Google Cloud Console):
+- Google Slides API
+- Google Drive API
+
+**Authentication**:
+1. Create OAuth Desktop App credentials at https://console.cloud.google.com/
+2. Download and rename to `credentials.json`
+3. Place in project root (it's gitignored)
+4. First run opens browser for authorization
+5. Token saved to `token.pickle` for subsequent runs
+
+---
+
 ## Resources
 
 - [Automagical Forms](https://automagicalapps.com/forms) - Quiz creation tool
 - [Automagical Forms FAQ](https://automagicalapps.com/forms-faq) - Format help
+- [Google Cloud Console](https://console.cloud.google.com/) - For Slides API credentials
 - Course materials in `output/` folder
