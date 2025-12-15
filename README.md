@@ -1,10 +1,16 @@
-# Grow Texas Teachers - Course Materials Scraper
+# Grow Texas Teachers - Educator Preparation Materials
 
-A Python tool to download and convert PowerPoint presentations from the Grow Texas Teachers website into Markdown and PDF formats.
+Resources and lesson materials for the Grow Your Own educator preparation program.
 
 ## Overview
 
-This tool scrapes course materials from:
+This repository contains:
+1. **Lesson materials** for future educators (9th-12th grade students)
+2. **Course content scraper** to download official curriculum resources
+
+### Course Resources
+
+Official curriculum materials scraped from:
 - **Instructional Practices**: https://www.growtexasteachers.org/practices
 - **Practicum**: https://www.growtexasteachers.org/practicum
 
@@ -75,7 +81,38 @@ output/
 all_courses_combined.pdf         # Master PDF in project root
 ```
 
-## Features
+## Lessons
+
+Custom lesson materials are in the `lessons/` folder:
+
+```
+lessons/
+├── templates/              # Lesson templates
+│   ├── slides-template.md
+│   ├── reading-template.md
+│   ├── worksheet-template.md
+│   ├── quiz-template.md
+│   └── lesson-plan-template.md
+└── XX-lesson-name/         # Individual lessons
+    ├── slides.md           # Presentation slides
+    ├── reading.md          # Read-aloud text (3-5 paragraphs)
+    ├── worksheet.md        # Group discussion prompts
+    ├── quiz.md             # Quiz for Automagical Forms
+    └── lesson-plan.md      # Formal lesson plan
+```
+
+### Lesson Format
+
+Each lesson is designed for 30-40 minutes and includes:
+- **Slides**: "How to teach X" presentation for instructor
+- **Reading**: Text for instructor to read aloud
+- **Worksheet**: Discussion prompts (no blanks - verbal discussion, paper summaries)
+- **Quiz**: Google Classroom quiz via [Automagical Forms](https://automagicalapps.com/forms)
+- **Lesson Plan**: Documentation for administration
+
+See [CLAUDE.md](CLAUDE.md) for detailed lesson creation guidelines.
+
+## Scraper Features
 
 - Downloads PowerPoint files with polite server delays
 - Extracts all text content including tables and speaker notes
