@@ -149,6 +149,38 @@ B. False (correct)
 - **Examples**: Include concrete classroom scenarios
 - **Accessibility**: Clear language, defined terms
 
+---
+
+## Teaching Principles (Critical)
+
+**These principles guide all lesson content. Follow them carefully.**
+
+### First Principles Approach
+- **Teach from first principles** - Build concepts from the ground up
+- **Avoid jargon** - Use plain language; when technical terms are necessary, explain them
+- **Spell out acronyms** on first use (e.g., "English Language Learners (ELL)")
+- **Don't assume prior knowledge** - Each lesson stands alone
+
+### Clarity and Differentiation
+- **Differentiate concepts from similar ones** - Explicitly compare and contrast related ideas
+- **Clarify opposites** - Help students understand what something is by explaining what it is NOT
+- **Don't bury the lede** - Lead with the most important point, then elaborate
+- **Front-load key takeaways** - Students should grasp the core idea even if they zone out partway through
+
+### Deep Learning Goals
+- **Prioritize connections** - The most important outcome is "light bulb moments" where students connect ideas
+- **Encourage combining concepts** - Help students see how ideas relate and build on each other
+- **Support riffing and exploration** - Create space for students to extend ideas in their own directions
+- **Develop informed taste** - Help students form preferences about HOW they will teach, not just WHAT to teach
+- **Build intuition** - Move beyond rules to gut feelings about good teaching practice
+
+### Practical Application
+- **Make it actionable** - Every concept should connect to something they can DO in a classroom
+- **Use concrete scenarios** - Abstract principles need grounding in specific examples
+- **Honor their future students** - Always connect back to the children they will eventually teach
+
+---
+
 ## Resources
 
 - [Automagical Forms](https://automagicalapps.com/forms) - Quiz creation tool

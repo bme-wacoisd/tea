@@ -20,14 +20,14 @@ By the end of this lesson, students will be able to:
 
 ## Standards Alignment
 
-**Texas TEKS - Education and Training Career Cluster:**
+**Texas TEKS (Texas Essential Knowledge and Skills) - Education and Training Career Cluster:**
 - 130.122(c)(3)(A): Analyze the role of the educator in promoting student success
 - 130.122(c)(5)(B): Identify methods for enhancing student learning
 - 130.122(c)(6)(A): Discuss strategies for meeting diverse student needs
 
 **Connection to Educator Preparation:**
 - This lesson prepares future educators to teach sensitive historical content appropriately across grade levels
-- Develops skills in differentiation and inclusive classroom discussion
+- Develops skills in differentiation (adjusting instruction for different learners) and inclusive classroom discussion
 
 ---
 
@@ -38,7 +38,7 @@ By the end of this lesson, students will be able to:
 - [ ] Group discussion worksheet (worksheet.md) - students access on their devices
 - [ ] Paper and pencils for group note-taking
 - [ ] Google Classroom quiz (created from quiz.md via Automagical Forms)
-- [ ] Optional: Photo of James Baldwin for display
+- [ ] Photo of James Baldwin (assets/james-baldwin.jpg) - included in slides
 
 ---
 
