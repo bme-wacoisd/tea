@@ -289,25 +289,32 @@ def md_to_pptx(md_path: Path, pptx_path: Path, assets_path: Path = None):
                     else:
                         p = tf.add_paragraph()
 
-                    text = clean_markdown(line)
-
-                    # Handle bullet points
+                    # Handle bullet points - strip prefix first, then clean markdown
                     if line.startswith('- ') or line.startswith('* '):
-                        p.text = "• " + text[2:]
+                        text = clean_markdown(line[2:])
+                        p.text = "• " + text
                         p.level = 0
                     elif line.startswith('  - ') or line.startswith('  * '):
-                        p.text = "  ◦ " + text[4:]
+                        text = clean_markdown(line[4:])
+                        p.text = "  ◦ " + text
                         p.level = 1
-                    elif re.match(r'^\d+\.\s', line):
-                        p.text = text
+                    elif re.match(r'^(\d+)\.\s+(.+)$', line):
+                        match = re.match(r'^(\d+)\.\s+(.+)$', line)
+                        num, content = match.groups()
+                        p.text = f"{num}. {clean_markdown(content)}"
                         p.level = 0
                     elif line.startswith('> '):
-                        p.text = '"' + text[2:] + '"'
+                        text = clean_markdown(line[2:])
+                        # Don't add extra quotes if text already has them
+                        if text.startswith('"') or text.startswith('"'):
+                            p.text = text
+                        else:
+                            p.text = '"' + text + '"'
                         p.font.italic = True
                     elif line.startswith('❌') or line.startswith('✅'):
-                        p.text = text
+                        p.text = clean_markdown(line)
                     else:
-                        p.text = text
+                        p.text = clean_markdown(line)
 
                     p.font.size = Pt(18)
                     p.font.color.rgb = RGBColor(45, 55, 72)
@@ -330,9 +337,6 @@ def clean_markdown(text: str) -> str:
     text = re.sub(r'\*(.+?)\*', r'\1', text)
     # Remove links
     text = re.sub(r'\[(.+?)\]\(.+?\)', r'\1', text)
-    # Clean up bullet markers if at start
-    if text.startswith('- '):
-        text = text[2:]
     return text.strip()
 
 
