@@ -11,7 +11,6 @@ __pycache__/
 build/
 develop-eggs/
 dist/
-downloads/
 eggs/
 .eggs/
 lib/
@@ -205,3 +204,13 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ===========================================
+# Project-specific ignores
+# ===========================================
+
+# Generated output files (can be regenerated with scrape_and_convert.py)
+output/
+
+# Combined PDF in root (generated)
+all_courses_combined.pdf
