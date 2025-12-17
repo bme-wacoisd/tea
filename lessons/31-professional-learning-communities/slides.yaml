@@ -1,0 +1,99 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Learning Together - Professional Learning Communities
+
+title: "Learning Together"
+subtitle: "Professional Learning Communities"
+
+# Collaborative/growth palette - greens and warm neutrals
+theme:
+  primary: {r: 0.25, g: 0.4, b: 0.35}       # forest green
+  secondary: {r: 0.65, g: 0.5, b: 0.3}      # warm tan
+  accent1: {r: 0.4, g: 0.55, b: 0.5}        # sage
+  accent2: {r: 0.55, g: 0.35, b: 0.35}      # muted red
+  background: {r: 0.98, g: 0.97, b: 0.95}   # warm cream
+  text: {r: 0.18, g: 0.2, b: 0.2}           # dark gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE CORE INSIGHT"
+    main_text: "Teachers who collaborate improve rapidly."
+    supporting_text: "And so do their students."
+
+  - type: comparison
+    title: "Staff Meeting vs. PLC"
+    accent_left: accent2
+    accent_right: primary
+    left_header: "STAFF MEETING"
+    right_header: "PLC"
+    left_items:
+      - "Information delivery"
+      - "One-way communication"
+      - "What did I cover?"
+    right_items:
+      - "Collaborative inquiry"
+      - "Discussion and dialogue"
+      - "What did they learn?"
+
+  - type: numbered
+    title: "The Four PLC Questions"
+    accent: secondary
+    items:
+      - "What do we want students to learn?"
+      - "How will we know if they've learned it?"
+      - "What will we do if they haven't learned it?"
+      - "What will we do if they already know it?"
+
+  - type: bullets
+    title: "Question 1: What Should Students Learn?"
+    accent: primary
+    items:
+      - "Clarity on essential standards"
+      - "Agreement on what matters most"
+      - "Common understanding of expectations"
+
+  - type: bullets
+    title: "Questions 2-4: How, What If Not, What If Already"
+    accent: secondary
+    items:
+      - "Common assessments — How will we know?"
+      - "Interventions — What if they haven't learned?"
+      - "Extensions — What if they already know?"
+
+  - type: bullets
+    title: "PLC Practices"
+    accent: accent1
+    items:
+      - "Looking at student work — What patterns do we see?"
+      - "Common assessments — How do results compare?"
+      - "Instructional rounds — What can we learn?"
+      - "Collaborative planning — How should we teach this?"
+
+  - type: bullets
+    title: "Why PLCs Fail"
+    accent: accent2
+    items:
+      - "Contrived collegiality without genuine trust"
+      - "Meeting about nothing—no learning focus"
+      - "Data without action—looking but not changing"
+      - "Blame-storming—explaining why students can't learn"
+
+  - type: comparison
+    title: "The Shift in Thinking"
+    accent_left: accent2
+    accent_right: primary
+    left_header: "OLD THINKING"
+    right_header: "PLC THINKING"
+    left_items:
+      - "My students"
+      - "I taught it"
+      - "Close my door"
+    right_items:
+      - "Our students"
+      - "Did they learn it?"
+      - "Open my practice"
+
+  - type: closing
+    main_text: "The most promising strategy for improvement is learning together."
+    subtext: "You'll be a better teacher with colleagues than alone."

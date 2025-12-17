@@ -1,0 +1,100 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Building a Team That Works - Five Dysfunctions
+
+title: "Building a Team That Works"
+subtitle: "The Five Dysfunctions of a Team"
+
+# Trust/collaboration palette - warm, cohesive
+theme:
+  primary: {r: 0.3, g: 0.35, b: 0.5}        # slate blue
+  secondary: {r: 0.6, g: 0.45, b: 0.25}     # warm gold
+  accent1: {r: 0.45, g: 0.5, b: 0.55}       # steel
+  accent2: {r: 0.6, g: 0.35, b: 0.35}       # muted red
+  background: {r: 0.98, g: 0.97, b: 0.95}   # warm cream
+  text: {r: 0.18, g: 0.2, b: 0.22}          # dark gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE PROBLEM"
+    main_text: "Putting people in a room doesn't make them a team."
+    supporting_text: "Many 'teams' are just individuals who happen to meet together."
+
+  - type: numbered
+    title: "The Five Dysfunctions (Bottom to Top)"
+    accent: primary
+    items:
+      - "TRUST — The foundation"
+      - "CONFLICT — Healthy debate"
+      - "COMMITMENT — Clear decisions"
+      - "ACCOUNTABILITY — Holding each other responsible"
+      - "RESULTS — Team success over individual ego"
+
+  - type: bullets
+    title: "Dysfunction 1: Absence of Trust"
+    accent: secondary
+    items:
+      - "Team members don't feel safe being vulnerable"
+      - "Won't admit mistakes or ask for help"
+      - "Hide weaknesses from each other"
+      - "Trust looks like: 'I don't understand—can you help?'"
+
+  - type: bullets
+    title: "Dysfunction 2: Fear of Conflict"
+    accent: accent1
+    items:
+      - "Without trust, teams avoid healthy debate"
+      - "Artificial harmony covers real disagreements"
+      - "Resentment builds underground"
+      - "Healthy conflict: passionate debate about ideas, not attacks"
+
+  - type: bullets
+    title: "Dysfunction 3: Lack of Commitment"
+    accent: primary
+    items:
+      - "Without conflict, there's no real buy-in"
+      - "Vague decisions, unclear direction"
+      - "Silent disagreement instead of voiced concerns"
+      - "Commitment: 'We decided this—I'm supporting it'"
+
+  - type: bullets
+    title: "Dysfunction 4: Avoidance of Accountability"
+    accent: secondary
+    items:
+      - "Without commitment, no one holds others responsible"
+      - "Low standards tolerated, mediocrity accepted"
+      - "Accountability: 'We agreed—why isn't it happening?'"
+      - "Spoken directly AND kindly"
+
+  - type: bullets
+    title: "Dysfunction 5: Inattention to Results"
+    accent: accent2
+    items:
+      - "Without accountability, ego wins over team goals"
+      - "Personal status over team success"
+      - "Results focus: 'Did OUR students learn?'"
+      - "Not 'Did MY students learn?'"
+
+  - type: comparison
+    title: "Dysfunctional vs. Healthy Teams"
+    accent_left: accent2
+    accent_right: primary
+    left_header: "DYSFUNCTIONAL"
+    right_header: "HEALTHY"
+    left_items:
+      - "Meetings feel like a waste"
+      - "Agree in meetings, complain in halls"
+      - "No one addresses poor performance"
+    right_items:
+      - "Meetings are focused"
+      - "Disagreement is open and resolved"
+      - "People hold each other accountable"
+
+  - type: quote
+    quote: "Being vulnerable about what you don't know builds trust faster than pretending you have it figured out."
+    attribution: "For new teachers"
+
+  - type: closing
+    main_text: "Trust is the foundation. Everything else builds on it."
+    subtext: "Be willing to be vulnerable—it builds trust faster than pretending."
