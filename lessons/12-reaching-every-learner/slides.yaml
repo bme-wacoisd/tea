@@ -1,0 +1,137 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Reaching Every Learner (Differentiation - Carol Tomlinson)
+
+title: "Reaching Every Learner"
+subtitle: "Same Destination, Different Paths"
+
+# Inclusive, diverse color palette - teals and warm accents
+theme:
+  primary: {r: 0.15, g: 0.4, b: 0.45}     # deep teal
+  secondary: {r: 0.95, g: 0.6, b: 0.25}   # warm orange
+  accent1: {r: 0.4, g: 0.7, b: 0.7}       # light teal
+  accent2: {r: 0.7, g: 0.25, b: 0.25}     # muted red (negative)
+  background: {r: 0.98, g: 0.98, b: 0.96} # warm white
+  text: {r: 0.15, g: 0.2, b: 0.22}        # dark teal-gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE PROBLEM"
+    main_text: "One classroom. 25 different students."
+    supporting_text: "Some read at 3rd grade level.\nSome read at 10th grade level.\n\"Just teach to the middle?\""
+
+  - type: quote
+    quote: "Differentiation is teaching with\nan eye on the student,\nnot just on the standard."
+    attribution: "Carol Tomlinson"
+
+  - type: bullets
+    title: "Carol Tomlinson's Solution"
+    accent: primary
+    items:
+      - "Don't lower expectations"
+      - "Don't teach 25 different lessons"
+      - "Adjust the PATH to the same destination"
+      - "All students reach high standards"
+      - "Different routes to get there"
+
+  - type: big_idea
+    label: "THE METAPHOR"
+    main_text: "Same mountaintop. Different trails."
+    supporting_text: "Some take the steep path.\nSome take the switchbacks.\nEveryone reaches the summit."
+
+  - type: table
+    title: "The Four Things You Can Change"
+    accent: secondary
+    headers: ["Element", "What It Means", "Example"]
+    rows:
+      - ["CONTENT", "What students learn", "Same topic, different complexity"]
+      - ["PROCESS", "How they learn it", "Different activities for same skill"]
+      - ["PRODUCT", "How they show learning", "Essay, video, presentation—choice"]
+      - ["ENVIRONMENT", "Where/with whom", "Flexible grouping and seating"]
+
+  - type: bullets
+    title: "Differentiating Content"
+    accent: primary
+    items:
+      - "Same concept, different complexity"
+      - "All study American Revolution"
+      - "Struggling readers: graphic novels, annotated sources"
+      - "Advanced readers: original documents, competing interpretations"
+      - "Same destination, different texts"
+
+  - type: bullets
+    title: "Differentiating Process"
+    accent: secondary
+    items:
+      - "Different activities to practice the same skill"
+      - "Learning fractions:"
+      - "Some use manipulatives (hands-on)"
+      - "Some use drawings (visual)"
+      - "Some jump to computation (abstract)"
+      - "All learn fractions"
+
+  - type: bullets
+    title: "Differentiating Product"
+    accent: primary
+    items:
+      - "Choice in demonstrating mastery"
+      - "Show understanding of character development:"
+      - "Write an essay"
+      - "Create a comic strip"
+      - "Perform a dramatic monologue"
+      - "Record a video analysis"
+
+  - type: comparison
+    title: "What Differentiation IS vs. IS NOT"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "✓ IS"
+    right_header: "✗ IS NOT"
+    left_items:
+      - "Same high expectations for all"
+      - "Different paths to same goals"
+      - "Flexible, responsive grouping"
+      - "Based on readiness, interest, profile"
+    right_items:
+      - "Lower expectations for some"
+      - "More work or less work"
+      - "Permanent ability tracking"
+      - "Chaos with no shared goals"
+
+  - type: bullets
+    title: "What Students Bring"
+    accent: secondary
+    items:
+      - "READINESS: Where are they in their learning?"
+      - "INTEREST: What topics engage them?"
+      - "LEARNING PROFILE: How do they learn best?"
+      - "Teachers respond to all three"
+
+  - type: table
+    title: "Tiered Assignment Example"
+    accent: secondary
+    headers: ["Tier", "Task"]
+    rows:
+      - ["Tier 1", "Compare characters using this graphic organizer"]
+      - ["Tier 2", "Compare characters, choosing your organization method"]
+      - ["Tier 3", "Compare characters across texts, analyzing themes"]
+
+  - type: big_idea
+    label: "AI AND DIFFERENTIATION"
+    main_text: "AI can differentiate content and process."
+    supporting_text: "But only teachers can know the student,\nbuild belonging, and hold high expectations."
+
+  - type: bullets
+    title: "Practical Strategies"
+    accent: primary
+    items:
+      - "Pre-assess to understand where students are"
+      - "Build choice into assignments"
+      - "Create tiered versions of tasks"
+      - "Use flexible grouping (not permanent)"
+      - "Vary complexity, not quantity"
+
+  - type: closing
+    main_text: "Every student can reach the summit."
+    subtext: "Your job: ensure the right path exists for each one."

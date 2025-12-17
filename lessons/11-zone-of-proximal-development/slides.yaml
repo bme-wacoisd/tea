@@ -1,0 +1,134 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: The Zone - Teaching in the Sweet Spot (Vygotsky/ZPD)
+
+title: "Teaching in the Zone"
+subtitle: "Finding the Sweet Spot for Learning"
+
+# Progressive, dynamic color palette - purples and greens
+theme:
+  primary: {r: 0.35, g: 0.2, b: 0.5}      # deep purple
+  secondary: {r: 0.3, g: 0.6, b: 0.4}    # growth green
+  accent1: {r: 0.6, g: 0.5, b: 0.75}     # light purple
+  accent2: {r: 0.7, g: 0.25, b: 0.25}    # muted red (negative)
+  background: {r: 0.98, g: 0.97, b: 1.0} # very light lavender
+  text: {r: 0.2, g: 0.15, b: 0.25}       # dark purple-gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THINK ABOUT VIDEO GAMES"
+    main_text: "Level 1 is never impossible."
+    supporting_text: "But it's not trivially easy either.\nEach level builds on the last.\nThis is great learning design."
+
+  - type: bullets
+    title: "Every Learner Has Three Zones"
+    accent: primary
+    items:
+      - "COMFORT ZONE: What I can do alone (too easy)"
+      - "THE ZONE: What I can do with help (just right)"
+      - "FRUSTRATION ZONE: What's beyond my reach (too hard)"
+      - "The best learning happens in THE ZONE"
+
+  - type: quote
+    quote: "What a child can do with assistance today,\nshe will be able to do by herself tomorrow."
+    attribution: "Lev Vygotsky"
+
+  - type: bullets
+    title: "Lev Vygotsky (1896–1934)"
+    accent: secondary
+    items:
+      - "Soviet psychologist"
+      - "Discovered: learning is fundamentally social"
+      - "We don't just develop, then learn"
+      - "We learn, and therefore develop"
+      - "Called this the \"Zone of Proximal Development\""
+
+  - type: table
+    title: "The Three Zones"
+    accent: secondary
+    headers: ["Zone", "What It Feels Like", "What Happens"]
+    rows:
+      - ["Comfort (Too Easy)", "\"I already know this\"", "Boredom, no growth"]
+      - ["THE ZONE (Just Right)", "\"Challenging but doable\"", "Engagement, growth"]
+      - ["Frustration (Too Hard)", "\"I can't do this\"", "Shutting down, giving up"]
+
+  - type: big_idea
+    label: "THE KEY INSIGHT"
+    main_text: "Find where help makes the difference."
+    supporting_text: "The zone is the gap between\nwhat you can do alone and what you can do with support."
+
+  - type: bullets
+    title: "What Is Scaffolding?"
+    accent: primary
+    items:
+      - "Temporary support that enables success"
+      - "Like training wheels on a bike"
+      - "The goal: remove the scaffold"
+      - "As learners improve, support fades"
+      - "Independence is always the destination"
+
+  - type: comparison
+    title: "Scaffolding Done Right vs. Wrong"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "✓ EFFECTIVE"
+    right_header: "✗ INEFFECTIVE"
+    left_items:
+      - "Temporary support"
+      - "Gradually removed (fading)"
+      - "Student does the thinking"
+      - "Builds toward independence"
+    right_items:
+      - "Permanent crutch"
+      - "Never removed"
+      - "Teacher does the work"
+      - "Creates dependency"
+
+  - type: bullets
+    title: "I Do, We Do, You Do"
+    accent: secondary
+    items:
+      - "I DO: Teacher models (full support)"
+      - "WE DO: Guided practice together (shared support)"
+      - "YOU DO: Independent practice (support removed)"
+      - "This IS scaffolding made explicit"
+
+  - type: bullets
+    title: "Who Can Be the \"More Knowledgeable Other\"?"
+    accent: primary
+    items:
+      - "The teacher"
+      - "A classmate who understands"
+      - "A tutor or mentor"
+      - "A well-designed resource"
+      - "An AI tutor (with limitations)"
+      - "Anyone who knows more about THIS task"
+
+  - type: table
+    title: "Finding the Zone in Practice"
+    accent: secondary
+    headers: ["If You See...", "The Student Is...", "What To Do"]
+    rows:
+      - ["Boredom, rushing through", "Below their zone", "Increase challenge"]
+      - ["Engaged struggle with progress", "IN the zone", "Keep going!"]
+      - ["Frustration, shutdown", "Above their zone", "Add scaffolding"]
+
+  - type: big_idea
+    label: "PRODUCTIVE STRUGGLE"
+    main_text: "The right amount of difficulty promotes growth."
+    supporting_text: "Not comfortable. Not crushing.\nChallenging with support available."
+
+  - type: bullets
+    title: "How to Find Each Student's Zone"
+    accent: secondary
+    items:
+      - "Pre-assess before teaching"
+      - "Watch for signs of boredom or frustration"
+      - "Ask: \"What's confusing? What's too easy?\""
+      - "Differentiate scaffolds by readiness"
+      - "Check in frequently during work"
+
+  - type: closing
+    main_text: "Aim for the zone."
+    subtext: "Not too easy. Not too hard. Just right challenge with support."
