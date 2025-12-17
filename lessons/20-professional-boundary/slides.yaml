@@ -1,0 +1,110 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: The Professional Boundary
+
+title: "The Professional Boundary"
+subtitle: "Ethics in Teaching"
+
+# Professional/serious palette - navy and silver
+theme:
+  primary: {r: 0.15, g: 0.2, b: 0.35}       # deep navy
+  secondary: {r: 0.5, g: 0.5, b: 0.55}      # silver gray
+  accent1: {r: 0.25, g: 0.45, b: 0.55}      # steel blue
+  accent2: {r: 0.6, g: 0.2, b: 0.2}         # muted red (warning)
+  background: {r: 0.97, g: 0.97, b: 0.98}   # cool off-white
+  text: {r: 0.15, g: 0.15, b: 0.18}         # dark gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE RESPONSIBILITY"
+    main_text: "Teachers hold enormous power over children's lives."
+    supporting_text: "With that power comes responsibility—\nand difficult dilemmas without easy answers."
+
+  - type: bullets
+    title: "Texas Educators' Code of Ethics"
+    accent: primary
+    items:
+      - "Standard 1: Professional ethical conduct"
+      - "Standard 2: Ethical conduct toward colleagues"
+      - "Standard 3: Ethical conduct toward students"
+      - "Violations can cost you your teaching certificate"
+
+  - type: table
+    title: "The Three Standards"
+    accent: primary
+    headers: ["Standard", "Core Requirements"]
+    rows:
+      - ["Toward Profession", "Be worthy of trust, honest, comply with law"]
+      - ["Toward Colleagues", "Respect confidentiality, don't make false statements"]
+      - ["Toward Students", "Protect from harm, don't exploit position, maintain confidentiality"]
+
+  - type: comparison
+    title: "Clear Lines vs. Gray Areas"
+    accent_left: accent2
+    accent_right: secondary
+    left_header: "CLEARLY UNETHICAL"
+    right_header: "REQUIRES JUDGMENT"
+    left_items:
+      - "Romantic conduct with students"
+      - "Providing alcohol or drugs"
+      - "Falsifying grades or records"
+      - "Physical punishment"
+    right_items:
+      - "How much personal info to share"
+      - "Social media friend requests"
+      - "Giving students your phone number"
+      - "Attending student events outside school"
+
+  - type: big_idea
+    label: "DILEMMA: THE SECRET"
+    main_text: "A student confides they're being bullied but begs you not to tell."
+    supporting_text: "You want to honor trust.\nBut the student is in danger.\n\nPrinciple: Safety trumps confidentiality."
+
+  - type: big_idea
+    label: "DILEMMA: THE FAVOR"
+    main_text: "Your principal asks you to change a grade for a star athlete."
+    supporting_text: "You could lose favor by refusing.\n\nPrinciple: Academic integrity cannot be compromised.\nDocument your refusal and the request."
+
+  - type: bullets
+    title: "The Slippery Slope"
+    accent: accent2
+    items:
+      - "Most violations don't start with dramatic bad decisions"
+      - "They start with small boundary crossings"
+      - "A personal text here, a private joke there"
+      - "Until the line is far behind you"
+      - "'But I was just trying to help' is a common excuse"
+
+  - type: quote
+    quote: "Would I be comfortable if this appeared in tomorrow's newspaper?"
+    attribution: "The Newspaper Test"
+
+  - type: bullets
+    title: "When In Doubt"
+    accent: primary
+    items:
+      - "Ask a mentor or administrator"
+      - "Document concerning situations"
+      - "Prioritize student safety over other concerns"
+      - "Remember: caring about students is good"
+      - "Becoming personally entangled is not"
+
+  - type: big_idea
+    label: "THE COST OF SILENCE"
+    main_text: "Some violations occur because colleagues stay silent."
+    supporting_text: "The professional community has responsibility\nto address misconduct, even when uncomfortable."
+
+  - type: bullets
+    title: "Key Principles"
+    accent: primary
+    items:
+      - "Know the Code of Ethics before you teach"
+      - "Maintain clear professional boundaries"
+      - "Student safety always comes first"
+      - "When something feels off, it probably is"
+      - "Document, consult, and protect yourself"
+
+  - type: closing
+    main_text: "Ethics aren't about restricting your teaching."
+    subtext: "They're about protecting students—and you."

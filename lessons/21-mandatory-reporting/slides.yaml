@@ -1,0 +1,119 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: When You Must Speak Up (Mandatory Reporting)
+
+title: "When You Must Speak Up"
+subtitle: "Mandatory Reporting"
+
+# Serious/protective palette - deep blues and warm safety colors
+theme:
+  primary: {r: 0.15, g: 0.25, b: 0.4}       # deep navy
+  secondary: {r: 0.75, g: 0.45, b: 0.15}    # warm amber
+  accent1: {r: 0.25, g: 0.45, b: 0.55}      # steel blue
+  accent2: {r: 0.6, g: 0.15, b: 0.15}       # deep red (serious)
+  background: {r: 0.97, g: 0.97, b: 0.97}   # neutral off-white
+  text: {r: 0.15, g: 0.15, b: 0.18}         # dark gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE LAW"
+    main_text: "If you suspect child abuse or neglect, you must report it within 48 hours."
+    supporting_text: "Not 'wait until you're sure.'\nNot 'tell the principal and let them decide.'\nYOU report."
+
+  - type: bullets
+    title: "Why This Law Exists"
+    accent: primary
+    items:
+      - "Children depend on trusted adults to protect them"
+      - "Teachers see children daily and notice changes"
+      - "Children may disclose to teachers they trust"
+      - "You may be the one adult who notices"
+      - "Failing to report is a criminal offense"
+
+  - type: table
+    title: "Types of Maltreatment"
+    accent: secondary
+    headers: ["Type", "Warning Signs"]
+    rows:
+      - ["Physical Abuse", "Unexplained injuries, injuries in various stages of healing"]
+      - ["Emotional Abuse", "Constant criticism, extreme behavior, developmental delays"]
+      - ["Sexual Abuse", "Age-inappropriate knowledge, fear of specific people"]
+      - ["Neglect", "Persistent hunger, poor hygiene, untreated medical needs"]
+
+  - type: bullets
+    title: "Behavioral Warning Signs"
+    accent: primary
+    items:
+      - "Sudden change in behavior or school performance"
+      - "Doesn't want to go home"
+      - "Fear of certain adults"
+      - "Overly watchful, as if preparing for something bad"
+      - "Regression to younger behaviors"
+
+  - type: numbered
+    title: "How to Report in Texas"
+    accent: secondary
+    items:
+      - "DON'T INVESTIGATE — That's not your job"
+      - "REPORT IMMEDIATELY — Within 48 hours"
+      - "CALL 1-800-252-5400 — Texas Abuse Hotline"
+      - "OR REPORT ONLINE — txabusehotline.org"
+      - "PROVIDE INFORMATION — Child's name, your observations"
+
+  - type: comparison
+    title: "What To Do vs. What NOT To Do"
+    accent_left: accent1
+    accent_right: accent2
+    left_header: "DO"
+    right_header: "DON'T"
+    left_items:
+      - "Listen calmly if child discloses"
+      - "Believe the child"
+      - "Report your suspicions"
+      - "Reassure: 'Not your fault'"
+    right_items:
+      - "Confront the suspected abuser"
+      - "Tell parents you're reporting"
+      - "Interrogate the child"
+      - "Promise to keep secrets"
+
+  - type: big_idea
+    label: "IF A CHILD DISCLOSES"
+    main_text: "Stay calm. Listen. Believe."
+    supporting_text: "Children rarely lie about abuse.\n'This is not your fault. You did the right thing telling me.'"
+
+  - type: bullets
+    title: "Common Hesitations"
+    accent: accent2
+    items:
+      - "'But the parent seemed nice' — Abusers don't look like monsters"
+      - "'I don't want to ruin the family' — Reporting gets help, not punishment"
+      - "'I'm not sure' — You don't need proof, just reasonable suspicion"
+      - "'Someone else probably reported' — Never assume this"
+
+  - type: quote
+    quote: "You might be the one adult a child trusts enough to reach out to. Your report could save a life."
+    attribution: ""
+
+  - type: bullets
+    title: "Your Protection"
+    accent: primary
+    items:
+      - "Texas law provides immunity for good-faith reports"
+      - "You cannot be sued for reporting"
+      - "You ARE protected when you speak up"
+      - "You are NOT protected if you fail to report"
+
+  - type: bullets
+    title: "Remember"
+    accent: secondary
+    items:
+      - "48 hours from suspicion — not from certainty"
+      - "YOU must report — not just tell administration"
+      - "Document observations factually"
+      - "Save the hotline number: 1-800-252-5400"
+
+  - type: closing
+    main_text: "Your job is to notice and report. Not to investigate or prove."
+    subtext: "Let the professionals do their job. Do yours."

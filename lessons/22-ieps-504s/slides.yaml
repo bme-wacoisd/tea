@@ -1,0 +1,119 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Meeting Students Where They Are - IEPs and 504s
+
+title: "Meeting Students Where They Are"
+subtitle: "IEPs and 504 Plans"
+
+# Inclusive/supportive palette - calm greens and warm neutrals
+theme:
+  primary: {r: 0.2, g: 0.4, b: 0.35}       # deep teal-green
+  secondary: {r: 0.55, g: 0.35, b: 0.2}    # warm brown
+  accent1: {r: 0.35, g: 0.55, b: 0.5}      # soft teal
+  accent2: {r: 0.75, g: 0.55, b: 0.25}     # golden amber
+  background: {r: 0.98, g: 0.97, b: 0.94}  # warm off-white
+  text: {r: 0.15, g: 0.18, b: 0.18}        # dark charcoal
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE FOUNDATION"
+    main_text: "Every child deserves access to education."
+    supporting_text: "For some students, that requires specific supports.\nThese aren't favors—they're rights."
+
+  - type: table
+    title: "Two Key Laws"
+    accent: primary
+    headers: ["Law", "Creates", "Who Qualifies"]
+    rows:
+      - ["IDEA", "IEP (Individualized Education Program)", "13 specific disability categories"]
+      - ["Section 504", "504 Plan", "Any disability affecting major life activity"]
+
+  - type: comparison
+    title: "IEP vs. 504 Plan"
+    accent_left: primary
+    accent_right: secondary
+    left_header: "IEP"
+    right_header: "504 Plan"
+    left_items:
+      - "Specialized instruction"
+      - "Comprehensive document"
+      - "Annual meeting required"
+      - "Changes WHAT or HOW taught"
+    right_items:
+      - "Accommodations for access"
+      - "Simpler document"
+      - "Periodic review"
+      - "Same curriculum, different access"
+
+  - type: two_column
+    title: "Key Vocabulary"
+    accent: accent1
+    left_title: "Accommodation"
+    right_title: "Modification"
+    left_items:
+      - "Changes HOW student accesses learning"
+      - "Same expectations"
+      - "Example: Extra time on 20 vocabulary words"
+    right_items:
+      - "Changes WHAT student learns"
+      - "Different expectations"
+      - "Example: Only 10 vocabulary words required"
+
+  - type: table
+    title: "Common Accommodations"
+    accent: secondary
+    headers: ["Category", "Examples"]
+    rows:
+      - ["Presentation", "Extended time, larger print, text read aloud"]
+      - ["Response", "Verbal instead of written, use of calculator"]
+      - ["Setting", "Preferential seating, separate testing room"]
+      - ["Scheduling", "Breaks during tests, multiple sessions"]
+
+  - type: bullets
+    title: "What's in an IEP?"
+    accent: primary
+    items:
+      - "Present Levels — Where is the student now?"
+      - "Annual Goals — What will they work toward?"
+      - "Services — What support will be provided?"
+      - "Accommodations/Modifications — What changes to instruction?"
+      - "Placement — Where will services be delivered?"
+
+  - type: numbered
+    title: "Your Responsibilities"
+    accent: secondary
+    items:
+      - "Read every IEP and 504 for your students"
+      - "Implement accommodations consistently—every day"
+      - "Document that you provided accommodations"
+      - "Communicate concerns to the special ed team"
+      - "Protect student confidentiality"
+
+  - type: comparison
+    title: "When Students Ask 'That's Not Fair!'"
+    accent_left: accent1
+    accent_right: accent2
+    left_header: "YOU CAN SAY"
+    right_header: "YOU CANNOT SAY"
+    left_items:
+      - "'Fair means everyone gets what they need'"
+      - "'We all have different needs'"
+      - "'This classroom respects everyone'"
+    right_items:
+      - "Anything about the student's disability"
+      - "Why specific students get accommodations"
+      - "Details from IEPs or 504 Plans"
+
+  - type: quote
+    quote: "Some students wear glasses to see. Some students get extra time to show what they know. We all have different needs."
+    attribution: ""
+
+  - type: big_idea
+    label: "THE PRINCIPLE"
+    main_text: "Fair doesn't mean everyone gets the same thing."
+    supporting_text: "Fair means everyone gets what they need."
+
+  - type: closing
+    main_text: "Before each school year: Read every IEP and 504 for your students."
+    subtext: "Every day: Implement what those documents require."
