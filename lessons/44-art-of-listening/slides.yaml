@@ -1,0 +1,97 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: The Art of Listening
+
+title: "The Art of Listening"
+subtitle: "Active Listening for Teachers"
+
+# Warm, connective palette - trusting blues and warm tones
+theme:
+  primary: {r: 0.25, g: 0.4, b: 0.5}         # calm blue
+  secondary: {r: 0.5, g: 0.4, b: 0.3}        # warm brown
+  accent1: {r: 0.35, g: 0.5, b: 0.45}        # sage
+  accent2: {r: 0.55, g: 0.35, b: 0.35}       # dusty rose
+  background: {r: 0.98, g: 0.97, b: 0.95}    # warm cream
+  text: {r: 0.18, g: 0.2, b: 0.22}           # charcoal
+
+slides:
+  - type: title
+
+  - type: bullets
+    title: "The Problem"
+    accent: accent2
+    items:
+      - "Most people listen to respond, not to understand"
+      - "While someone speaks, they're preparing their reply"
+      - "Formulating their defense"
+      - "Planning their next point"
+      - "This isn't listening—it's waiting for your turn"
+
+  - type: comparison
+    title: "Passive vs. Active Listening"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "PASSIVE"
+    right_header: "ACTIVE"
+    left_items:
+      - "Hearing words"
+      - "Minimal engagement"
+      - "Waiting to talk"
+    right_items:
+      - "Full concentration"
+      - "Understanding deeply"
+      - "Responding thoughtfully"
+
+  - type: bullets
+    title: "Physical Signals"
+    accent: primary
+    items:
+      - "Face the speaker"
+      - "Maintain appropriate eye contact"
+      - "Adopt open posture"
+      - "Nod to show engagement"
+      - "Put away distractions (phone, papers)"
+
+  - type: bullets
+    title: "Verbal Signals"
+    accent: secondary
+    items:
+      - "Brief encouragers: 'I see,' 'Tell me more'"
+      - "Paraphrasing: 'So you're saying...'"
+      - "Clarifying: 'Help me understand...'"
+      - "No interrupting"
+
+  - type: bullets
+    title: "Mental Engagement (The Hard Part)"
+    accent: accent1
+    items:
+      - "Suspend judgment"
+      - "Quiet your internal response-planning"
+      - "Focus on understanding, not fixing"
+      - "Attend to emotion as well as content"
+
+  - type: quote
+    quote: "I hear how frustrated you are. Tell me more about what happened from your perspective."
+    attribution: "Listen fully before moving to solutions"
+
+  - type: table
+    title: "Active Listening Techniques"
+    accent: primary
+    headers: ["Technique", "Example"]
+    rows:
+      - ["Paraphrasing", "'So what you're saying is...'"]
+      - ["Reflecting Feelings", "'It sounds like you're frustrated'"]
+      - ["Clarifying", "'Can you say more about...?'"]
+      - ["Summarizing", "'So the main concerns are...'"]
+
+  - type: bullets
+    title: "Common Listening Barriers"
+    accent: accent2
+    items:
+      - "MULTITASKING: Can't fully listen while doing something else"
+      - "PREPARING RESPONSE: Mental rehearsal blocks reception"
+      - "JUDGING: Dismissing because you disagree"
+      - "SOLVING TOO SOON: Jumping to solutions"
+
+  - type: closing
+    main_text: "Listen to understand, not to respond."
+    subtext: "People need to feel heard before they can hear solutions."

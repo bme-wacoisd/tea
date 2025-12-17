@@ -1,0 +1,103 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Leading Discussions That Make Students Think
+
+title: "Leading Discussions That Make Students Think"
+subtitle: "Socratic Seminars and Facilitation"
+
+# Thoughtful dialogue palette - warm browns and blues
+theme:
+  primary: {r: 0.25, g: 0.35, b: 0.45}       # slate blue
+  secondary: {r: 0.5, g: 0.4, b: 0.3}        # warm brown
+  accent1: {r: 0.4, g: 0.5, b: 0.45}         # sage
+  accent2: {r: 0.55, g: 0.35, b: 0.35}       # dusty rose
+  background: {r: 0.97, g: 0.96, b: 0.94}    # warm cream
+  text: {r: 0.18, g: 0.2, b: 0.2}            # charcoal
+
+slides:
+  - type: title
+
+  - type: comparison
+    title: "The Shift"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "TRADITIONAL"
+    right_header: "SOCRATIC"
+    left_items:
+      - "Teachers talk"
+      - "Students listen"
+      - "Teacher directs"
+    right_items:
+      - "Students talk"
+      - "Teachers listen"
+      - "Teacher facilitates"
+
+  - type: bullets
+    title: "What Is a Socratic Seminar?"
+    accent: primary
+    items:
+      - "Named for Socrates—taught by asking, not telling"
+      - "Students read shared text beforehand"
+      - "Sit in circle, facing each other"
+      - "Respond to each other, not the teacher"
+      - "Build ideas through dialogue"
+
+  - type: table
+    title: "Seminar Structure"
+    accent: secondary
+    headers: ["Phase", "What Happens"]
+    rows:
+      - ["Before", "Students read/analyze text, prepare thoughts"]
+      - ["During", "Circle seating, opening question, student dialogue"]
+      - ["After", "Debrief process, reflect, connect to learning"]
+
+  - type: bullets
+    title: "What Teachers DO"
+    accent: accent1
+    items:
+      - "Pose provocative opening questions"
+      - "Allow silence—students are thinking"
+      - "Redirect to text: 'Where do you see evidence?'"
+      - "Invite quiet voices: 'Who hasn't spoken?'"
+      - "Ask follow-up: 'Why do you think that?'"
+
+  - type: bullets
+    title: "What Teachers DON'T Do"
+    accent: accent2
+    items:
+      - "Give your opinion"
+      - "Answer questions directly"
+      - "Rescue silences too quickly"
+      - "Let one student dominate"
+      - "Summarize conclusions"
+
+  - type: table
+    title: "Types of Questions"
+    accent: primary
+    headers: ["Type", "Purpose", "Example"]
+    rows:
+      - ["Opening", "Big, open-ended", "'Was the choice justified?'"]
+      - ["Follow-Up", "Push deeper", "'What makes you say that?'"]
+      - ["Closing", "Synthesize", "'How has your thinking changed?'"]
+
+  - type: bullets
+    title: "The Fishbowl Format"
+    accent: secondary
+    items:
+      - "INNER CIRCLE: Active discussants"
+      - "OUTER CIRCLE: Observers, note-takers"
+      - "Switch halfway through"
+      - "Works well for larger classes"
+
+  - type: bullets
+    title: "Student Skills to Teach First"
+    accent: accent1
+    items:
+      - "Speaking to each other, not the teacher"
+      - "Building on ideas: 'I agree, and also...'"
+      - "Respectfully disagreeing: 'I see it differently...'"
+      - "Using evidence from the text"
+      - "Making space for others"
+
+  - type: closing
+    main_text: "Facilitation means restraint. Let students discover."
+    subtext: "Discussion skills must be explicitly taught first."

@@ -1,0 +1,103 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Engagement - Keeping Students in the Learning Zone
+
+title: "Engagement"
+subtitle: "Keeping Students in the Learning Zone"
+
+# Energized learning palette - vibrant but professional
+theme:
+  primary: {r: 0.2, g: 0.4, b: 0.5}          # deep teal
+  secondary: {r: 0.55, g: 0.4, b: 0.25}      # warm gold
+  accent1: {r: 0.3, g: 0.5, b: 0.4}          # sage green
+  accent2: {r: 0.55, g: 0.3, b: 0.35}        # muted coral
+  background: {r: 0.98, g: 0.97, b: 0.96}    # warm white
+  text: {r: 0.15, g: 0.18, b: 0.2}           # dark charcoal
+
+slides:
+  - type: title
+
+  - type: bullets
+    title: "The Question"
+    accent: accent2
+    items:
+      - "A student sits quietly, pencil in hand, eyes on the board"
+      - "Are they engaged?"
+      - "Maybe. Or maybe daydreaming, anxious, checked out."
+      - "Compliance and engagement look different inside"
+
+  - type: comparison
+    title: "Compliance vs. Engagement"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "COMPLIANCE"
+    right_header: "ENGAGEMENT"
+    left_items:
+      - "Following directions"
+      - "Present in body"
+      - "Going through motions"
+    right_items:
+      - "Actively invested"
+      - "Present in mind"
+      - "Genuinely learning"
+
+  - type: table
+    title: "Three Types of Engagement"
+    accent: primary
+    headers: ["Type", "Focus", "Observable?"]
+    rows:
+      - ["Behavioral", "What students DO", "Yes"]
+      - ["Cognitive", "How students THINK", "Hard to see"]
+      - ["Emotional", "How students FEEL", "Sometimes"]
+
+  - type: bullets
+    title: "Signs of Engagement"
+    accent: accent1
+    items:
+      - "Asking questions without prompting"
+      - "Discussing beyond requirements"
+      - "Persisting through difficulty"
+      - "Making connections to their lives"
+      - "Wanting to know more"
+
+  - type: bullets
+    title: "Signs of Compliance (Not Engagement)"
+    accent: accent2
+    items:
+      - "Doing minimum required"
+      - "Waiting for the bell"
+      - "Surface-level answers"
+      - "Quick to give up when challenged"
+      - "No questions"
+
+  - type: table
+    title: "What Increases Engagement"
+    accent: secondary
+    headers: ["Factor", "How It Works"]
+    rows:
+      - ["Relevance", "Students see why it matters"]
+      - ["Appropriate Challenge", "Not too easy, not too hard"]
+      - ["Autonomy", "Some control over learning"]
+      - ["Relationships", "Feeling known and valued"]
+      - ["Active Processing", "Doing, not just receiving"]
+
+  - type: bullets
+    title: "The Challenge Zone"
+    accent: primary
+    items:
+      - "TOO EASY → Boredom → Disengagement"
+      - "JUST RIGHT → Flow → Deep Learning"
+      - "TOO HARD → Frustration → Giving Up"
+      - "Differentiate to keep students in the zone"
+
+  - type: bullets
+    title: "Technology and Engagement"
+    accent: secondary
+    items:
+      - "Technology can increase OR decrease engagement"
+      - "INCREASES: Interactive, collaborative, creative"
+      - "DECREASES: Passive consumption, distraction"
+      - "Ask: Does this increase cognitive engagement?"
+
+  - type: closing
+    main_text: "Compliance isn't engagement. Aim for minds, not just bodies."
+    subtext: "Create conditions for genuine investment: relevance, challenge, autonomy, relationships."

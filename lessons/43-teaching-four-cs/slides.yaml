@@ -1,0 +1,101 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Teaching the 4 Cs - Skills for an Uncertain Future
+
+title: "Teaching the 4 Cs"
+subtitle: "Skills for an Uncertain Future"
+
+# Forward-looking palette - modern blues and energetic accents
+theme:
+  primary: {r: 0.2, g: 0.35, b: 0.5}         # modern blue
+  secondary: {r: 0.5, g: 0.45, b: 0.25}      # gold
+  accent1: {r: 0.3, g: 0.5, b: 0.45}         # teal
+  accent2: {r: 0.55, g: 0.35, b: 0.4}        # coral
+  background: {r: 0.98, g: 0.98, b: 0.97}    # clean white
+  text: {r: 0.15, g: 0.18, b: 0.22}          # dark blue-gray
+
+slides:
+  - type: title
+
+  - type: bullets
+    title: "The Challenge"
+    accent: accent2
+    items:
+      - "What jobs will exist when students are mid-career?"
+      - "We don't know"
+      - "Technologies will emerge we can't imagine"
+      - "Adaptable thinkers will thrive regardless of change"
+
+  - type: table
+    title: "The 4 Cs Framework"
+    accent: primary
+    headers: ["Skill", "What It Means"]
+    rows:
+      - ["Critical Thinking", "Analyzing, evaluating, reasoning"]
+      - ["Collaboration", "Working effectively with diverse teams"]
+      - ["Communication", "Articulating clearly, adapting to audience"]
+      - ["Creativity", "Generating novel ideas, seeing possibilities"]
+
+  - type: bullets
+    title: "Why Content Knowledge Isn't Enough"
+    accent: secondary
+    items:
+      - "Facts can be looked up instantly"
+      - "Procedures can be automated"
+      - "What CAN'T be replaced:"
+      - "  → Asking the right questions"
+      - "  → Judging what's true"
+      - "  → Working with others"
+
+  - type: bullets
+    title: "Critical Thinking"
+    accent: primary
+    items:
+      - "Not 'thinking hard'—thinking systematically"
+      - "Analyze arguments: claim, evidence, reasoning"
+      - "Evaluate sources: who wrote this? why?"
+      - "Question assumptions—including your own"
+      - "Ask: 'What would make me change my mind?'"
+
+  - type: bullets
+    title: "Collaboration"
+    accent: accent1
+    items:
+      - "Not 'working in groups'—achieving together"
+      - "Contribute fairly, don't dominate or hide"
+      - "Resolve disagreements productively"
+      - "Be accountable to teammates"
+      - "Reflect on process, not just product"
+
+  - type: bullets
+    title: "Communication"
+    accent: secondary
+    items:
+      - "Not 'talking and writing'—connecting"
+      - "Adapt message to audience"
+      - "Listen actively"
+      - "Use multiple formats"
+      - "Check: Did my audience understand?"
+
+  - type: bullets
+    title: "Creativity"
+    accent: accent2
+    items:
+      - "Not 'being artistic'—approaching with originality"
+      - "Generate multiple solutions, not just one"
+      - "Take productive risks"
+      - "Learn from failure"
+      - "Ask 'what if' and 'what else'"
+
+  - type: table
+    title: "Integration, Not Addition"
+    accent: primary
+    headers: ["Subject", "Embedding Example"]
+    rows:
+      - ["Math", "'Solve this three different ways'"]
+      - ["Science", "'Communicate to a different audience'"]
+      - ["History", "'Evaluate these conflicting accounts'"]
+      - ["English", "'Collaborate on peer feedback'"]
+
+  - type: closing
+    main_text: "The 4 Cs aren't separate subjects—they're how you teach everything."
+    subtext: "Skills for uncertain futures require intentional teaching."
