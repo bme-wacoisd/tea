@@ -1,0 +1,95 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: The Power of Reinforcement
+
+title: "The Power of Reinforcement"
+subtitle: "How Consequences Shape Behavior"
+
+# Psychology/science palette - clean greens and neutrals
+theme:
+  primary: {r: 0.2, g: 0.4, b: 0.35}         # deep green
+  secondary: {r: 0.5, g: 0.4, b: 0.25}       # warm ochre
+  accent1: {r: 0.25, g: 0.5, b: 0.5}         # teal
+  accent2: {r: 0.55, g: 0.3, b: 0.3}         # muted red
+  background: {r: 0.97, g: 0.98, b: 0.96}    # cool white
+  text: {r: 0.18, g: 0.2, b: 0.2}            # dark gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    main_text: "Behavior that gets reinforced gets repeated."
+    subtext: "B.F. Skinner's insight that applies to every classroom"
+
+  - type: bullets
+    title: "Key Definitions"
+    accent: primary
+    items:
+      - "REINFORCEMENT: Consequence that increases behavior"
+      - "PUNISHMENT: Consequence that decreases behavior"
+      - "POSITIVE: Adding something"
+      - "NEGATIVE: Removing something"
+      - "Note: Positive ≠ good, Negative ≠ bad"
+
+  - type: table
+    title: "The Four Quadrants"
+    accent: secondary
+    headers: ["", "Add Something", "Remove Something"]
+    rows:
+      - ["INCREASES behavior", "Positive Reinforcement (praise)", "Negative Reinforcement (remove demand)"]
+      - ["DECREASES behavior", "Positive Punishment (consequence)", "Negative Punishment (lose privilege)"]
+
+  - type: bullets
+    title: "Accidental Reinforcement"
+    accent: accent2
+    items:
+      - "Student calls out → Teacher responds (attention)"
+      - "Student whines → Teacher gives in (gets what they want)"
+      - "Student jokes → Class laughs (peer attention)"
+      - "Ask: What is this student GETTING from this behavior?"
+
+  - type: bullets
+    title: "The Problem with Punishment-Heavy Systems"
+    accent: accent2
+    items:
+      - "Doesn't teach what TO do"
+      - "Can damage relationships"
+      - "May create anxiety or avoidance"
+      - "Requires escalation over time"
+      - "Only works when the punisher is present"
+
+  - type: comparison
+    title: "General vs. Specific Praise"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "GENERAL"
+    right_header: "SPECIFIC"
+    left_items:
+      - "Good job!"
+      - "Nice work"
+      - "Way to go"
+    right_items:
+      - "I noticed you helped Maria"
+      - "You stayed focused the whole period"
+      - "That question showed deep thinking"
+
+  - type: table
+    title: "The Fair Pair"
+    accent: primary
+    headers: ["DON'T...", "DO..."]
+    rows:
+      - ["Call out", "Raise your hand"]
+      - ["Run", "Walk"]
+      - ["Interrupt", "Wait for a pause"]
+
+  - type: bullets
+    title: "Schedules of Reinforcement"
+    accent: secondary
+    items:
+      - "NEW behavior: Reinforce every time (continuous)"
+      - "ESTABLISHED behavior: Reinforce sometimes (intermittent)"
+      - "MOST PERSISTENT: Unpredictable (variable)"
+      - "Slot machines use variable reinforcement"
+
+  - type: closing
+    main_text: "Students do what works. Make appropriate behavior work better."
+    subtext: "This week, catch students being good."

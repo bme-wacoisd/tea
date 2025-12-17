@@ -1,0 +1,104 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Keeping Records That Protect You and Your Students
+
+title: "Keeping Records That Protect You and Your Students"
+subtitle: "Documentation for Teachers"
+
+# Professional/official palette - deep blues and neutrals
+theme:
+  primary: {r: 0.2, g: 0.25, b: 0.4}        # navy blue
+  secondary: {r: 0.45, g: 0.35, b: 0.25}    # warm brown
+  accent1: {r: 0.3, g: 0.45, b: 0.4}        # forest green
+  accent2: {r: 0.55, g: 0.25, b: 0.25}      # deep red
+  background: {r: 0.96, g: 0.96, b: 0.94}   # warm gray
+  text: {r: 0.15, g: 0.15, b: 0.18}         # near black
+
+slides:
+  - type: title
+
+  - type: bullets
+    title: "Why Documentation Matters"
+    accent: accent2
+    items:
+      - "A parent claims their child never received help"
+      - "An administrator questions a grade"
+      - "A colleague disputes your collaboration"
+      - "Without records, it's your word against theirs"
+      - "Documentation is protection, not bureaucracy"
+
+  - type: table
+    title: "Types of Records Teachers Keep"
+    accent: primary
+    headers: ["Type", "Examples"]
+    rows:
+      - ["Academic", "Grades, assessments, work samples, interventions"]
+      - ["Behavioral", "Attendance, incidents, responses"]
+      - ["Communication", "Parent contacts, emails, conferences"]
+      - ["Compliance", "IEP implementation, 504 accommodations"]
+
+  - type: bullets
+    title: "Best Practice: Be Timely"
+    accent: secondary
+    items:
+      - "Record information the same day"
+      - "Details fade quickly"
+      - "Late documentation raises questions"
+      - "'I think it was last Tuesday...' isn't credible"
+
+  - type: comparison
+    title: "Best Practice: Be Factual"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "INTERPRETATION"
+    right_header: "FACT"
+    left_items:
+      - "Had an attitude"
+      - "Acted out"
+      - "Was disrespectful"
+    right_items:
+      - "Threw pencil across room"
+      - "Left class without permission"
+      - "Said 'This is stupid'"
+
+  - type: comparison
+    title: "Best Practice: Be Specific"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "VAGUE"
+    right_header: "SPECIFIC"
+    left_items:
+      - "Tried to contact parent"
+      - "Student struggled"
+      - "Behavior improved"
+    right_items:
+      - "10/15 at 2:30pm, left voicemail"
+      - "Failed 3 of 5 quizzes in unit"
+      - "Zero referrals since 10/1"
+
+  - type: bullets
+    title: "Best Practice: Be Professional"
+    accent: primary
+    items:
+      - "Assume anyone could read what you write"
+      - "Parents, administrators, lawyers"
+      - "No sarcasm or venting"
+      - "No judgmental language"
+      - "Stick to facts"
+
+  - type: bullets
+    title: "What is FERPA?"
+    accent: accent1
+    items:
+      - "Family Educational Rights and Privacy Act"
+      - "Protects student records from unauthorized disclosure"
+      - "Grades are private"
+      - "Special education status is private"
+      - "Disciplinary records are private"
+
+  - type: quote
+    quote: "Does this person have a legitimate educational need to know?"
+    attribution: "The question to ask before sharing student information"
+
+  - type: closing
+    main_text: "If you think 'I should probably write this down,' you should."
+    subtext: "Documentation protects students, you, and your school."

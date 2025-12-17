@@ -1,0 +1,94 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Creating Assessments That Measure What Matters
+
+title: "Creating Assessments That Measure What Matters"
+subtitle: "Rubrics and Checklists for Clear Expectations"
+
+# Professional assessment palette - structured blues and greens
+theme:
+  primary: {r: 0.15, g: 0.35, b: 0.45}       # deep teal
+  secondary: {r: 0.55, g: 0.4, b: 0.2}       # warm bronze
+  accent1: {r: 0.25, g: 0.5, b: 0.45}        # sage green
+  accent2: {r: 0.5, g: 0.25, b: 0.3}         # burgundy
+  background: {r: 0.98, g: 0.97, b: 0.95}    # warm white
+  text: {r: 0.18, g: 0.2, b: 0.22}           # charcoal
+
+slides:
+  - type: title
+
+  - type: bullets
+    title: "The Grading Problem"
+    accent: accent2
+    items:
+      - "Monday: Essay gets a B+"
+      - "Friday: Similar essay gets a B-"
+      - "Student asks: 'What do you WANT from me?'"
+      - "Teacher struggles to explain the difference"
+      - "Inconsistency frustrates everyone"
+
+  - type: table
+    title: "Two Assessment Tools"
+    accent: primary
+    headers: ["Tool", "Format", "Best For"]
+    rows:
+      - ["Checklist", "Yes/No list", "Required elements"]
+      - ["Rubric", "Grid with levels", "Quality of work"]
+
+  - type: bullets
+    title: "Anatomy of a Rubric"
+    accent: secondary
+    items:
+      - "CRITERIA: The dimensions being assessed (what matters)"
+      - "PERFORMANCE LEVELS: Descriptions of quality (how good)"
+      - "DESCRIPTIONS: What each level actually looks like"
+
+  - type: numbered
+    title: "Building a Rubric: Four Steps"
+    accent: accent1
+    items:
+      - "Identify Criteria - 3-5 things that matter most"
+      - "Define Levels - Usually 3-5 (4/3/2/1 or Exceeds/Meets/Approaching)"
+      - "Write Descriptions - Specific behaviors, not vague labels"
+      - "Test and Refine - Grade sample work, revise where unclear"
+
+  - type: comparison
+    title: "Bad vs. Good Descriptions"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "BAD (VAGUE)"
+    right_header: "GOOD (SPECIFIC)"
+    left_items:
+      - "4 = Excellent"
+      - "3 = Good"
+      - "2 = Fair"
+      - "1 = Poor"
+    right_items:
+      - "Evidence is relevant, sufficient, explained"
+      - "Evidence relevant, sufficient, not fully explained"
+      - "Evidence present but insufficient"
+      - "Little or no evidence used"
+
+  - type: table
+    title: "The Single-Point Rubric"
+    accent: secondary
+    headers: ["Concerns", "Proficient", "Strengths"]
+    rows:
+      - ["Notes below standard", "Describes meeting standard", "Notes exceeding standard"]
+
+  - type: bullets
+    title: "Share BEFORE the Assignment"
+    accent: primary
+    items:
+      - "Rubrics aren't just grading tools—they're learning tools"
+      - "Share before students begin working"
+      - "Review what each criterion means"
+      - "Show examples at different levels"
+      - "Have students self-assess before submitting"
+
+  - type: quote
+    quote: "Uses information from at least 3 sources and explains how they connect."
+    attribution: "Student-friendly version of 'Demonstrates sophisticated synthesis of multiple primary sources'"
+
+  - type: closing
+    main_text: "When students know the target, they hit it more often."
+    subtext: "Good rubrics answer 'What do you want?' before students have to ask."
