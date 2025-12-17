@@ -1,0 +1,118 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Learning by Doing (John Dewey)
+
+title: "Learning by Doing"
+subtitle: "Why Experience Beats Explanation"
+
+# Progressive/active palette - warm oranges and earth tones
+theme:
+  primary: {r: 0.45, g: 0.25, b: 0.1}       # deep brown
+  secondary: {r: 0.85, g: 0.45, b: 0.15}    # warm orange
+  accent1: {r: 0.4, g: 0.55, b: 0.35}       # olive green
+  accent2: {r: 0.6, g: 0.2, b: 0.2}         # muted red
+  background: {r: 0.98, g: 0.96, b: 0.92}   # warm cream
+  text: {r: 0.2, g: 0.15, b: 0.1}           # dark brown
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE INSIGHT"
+    main_text: "Children aren't empty vessels to be filled with knowledge."
+    supporting_text: "They're active learners who construct understanding\nthrough experience."
+
+  - type: bullets
+    title: "John Dewey (1859–1952)"
+    accent: primary
+    items:
+      - "American philosopher and educator"
+      - "Opened experimental Lab School in 1896"
+      - "Found: students who cooked learned more fractions than worksheet students"
+      - "Students who built bridges learned more physics than textbook students"
+
+  - type: quote
+    quote: "Education is not preparation for life; education is life itself."
+    attribution: "John Dewey"
+
+  - type: comparison
+    title: "Traditional vs. Progressive Education"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "TRADITIONAL"
+    right_header: "PROGRESSIVE"
+    left_items:
+      - "Teachers talk, students listen"
+      - "Rigid, predetermined curriculum"
+      - "Memorization and recitation"
+      - "Knowledge separated from life"
+    right_items:
+      - "Learning through hands-on activities"
+      - "Connects to student interests"
+      - "Problem-solving and inquiry"
+      - "School reflects real world"
+
+  - type: numbered
+    title: "The Experience-Reflection Cycle"
+    accent: secondary
+    items:
+      - "CONCRETE EXPERIENCE — Do something"
+      - "REFLECTION — Think about what happened"
+      - "ABSTRACTION — Connect to broader principles"
+      - "APPLICATION — Try again with new understanding"
+
+  - type: big_idea
+    label: "KEY INSIGHT"
+    main_text: "We don't learn from experience alone."
+    supporting_text: "We learn from REFLECTING on experience.\nBoth the doing AND the thinking matter."
+
+  - type: comparison
+    title: "Same Content, Different Approach"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "TELL FIRST"
+    right_header: "DO FIRST"
+    left_items:
+      - "'One-half means one out of two'"
+      - "'Write this in your notes'"
+      - "Practice problems after lecture"
+    right_items:
+      - "'Share these brownies among 8 people'"
+      - "'Figure out how to cut them fairly'"
+      - "Concept emerges from the problem"
+
+  - type: bullets
+    title: "The Lab School Experiments"
+    accent: primary
+    items:
+      - "6-year-olds built a playhouse"
+      - "They learned measurement, carpentry, cooperation"
+      - "They didn't learn THESE THINGS to build the house"
+      - "They learned them BECAUSE they were building"
+
+  - type: bullets
+    title: "'Messing About' First"
+    accent: secondary
+    items:
+      - "Let students play with magnets before teaching magnetism"
+      - "Let students explore water before the water cycle"
+      - "Exploration before explanation"
+      - "Curiosity before curriculum"
+
+  - type: big_idea
+    label: "THE QUESTION"
+    main_text: "Despite 100+ years of evidence, most classrooms still use lectures."
+    supporting_text: "It's efficient for teachers. It's familiar.\nBut is it effective for learning?"
+
+  - type: bullets
+    title: "Practical Steps"
+    accent: primary
+    items:
+      - "Start with problems, not solutions"
+      - "Let students explore before formal instruction"
+      - "Build reflection into every activity"
+      - "Connect lessons to real-world contexts"
+      - "Create opportunities for choice and agency"
+
+  - type: closing
+    main_text: "The best lessons don't begin with explanations."
+    subtext: "They begin with experiences worth explaining."

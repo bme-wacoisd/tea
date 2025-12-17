@@ -1,0 +1,121 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Following the Child (Maria Montessori)
+
+title: "Following the Child"
+subtitle: "Child-Centered Education"
+
+# Natural/organic palette - soft greens and earth tones
+theme:
+  primary: {r: 0.25, g: 0.4, b: 0.35}       # deep teal-green
+  secondary: {r: 0.7, g: 0.55, b: 0.35}     # warm tan
+  accent1: {r: 0.5, g: 0.65, b: 0.45}       # soft green
+  accent2: {r: 0.55, g: 0.3, b: 0.3}        # muted rose
+  background: {r: 0.97, g: 0.96, b: 0.94}   # warm off-white
+  text: {r: 0.2, g: 0.2, b: 0.18}           # dark gray-brown
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE DISCOVERY"
+    main_text: "Children labeled 'unteachable' thrived when given freedom within structure."
+    supporting_text: "They chose challenging work.\nThey preferred order to chaos.\nThey repeated activities until mastered."
+
+  - type: bullets
+    title: "Maria Montessori (1870–1952)"
+    accent: primary
+    items:
+      - "First female physician in Italy"
+      - "Asked to work with 'unteachable' children in Rome, 1907"
+      - "Observed children instead of imposing lessons"
+      - "Developed method through scientific observation"
+
+  - type: quote
+    quote: "The greatest sign of success for a teacher is to be able to say, 'The children are now working as if I did not exist.'"
+    attribution: "Maria Montessori"
+
+  - type: bullets
+    title: "The Prepared Environment"
+    accent: secondary
+    items:
+      - "Child-sized furniture — children can move and reach"
+      - "Materials on open shelves — children choose their work"
+      - "Mixed-age groups — younger learn from older"
+      - "Long work periods — no bells interrupting concentration"
+      - "Beautiful, orderly spaces — respect for environment"
+
+  - type: table
+    title: "Sensitive Periods"
+    accent: primary
+    headers: ["Period", "Age Range", "What Children Are Drawn To"]
+    rows:
+      - ["Order", "1-3 years", "Routine, predictability, things in their place"]
+      - ["Language", "Birth-6 years", "Absorbing vocabulary effortlessly"]
+      - ["Movement", "Birth-4 years", "Driven to move and refine motor skills"]
+      - ["Small Objects", "1-4 years", "Fascination with tiny things"]
+
+  - type: comparison
+    title: "The Teacher's Role"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "TRADITIONAL TEACHER"
+    right_header: "MONTESSORI GUIDE"
+    left_items:
+      - "Center of attention"
+      - "Delivers content"
+      - "Decides what's next"
+      - "Corrects errors"
+    right_items:
+      - "Observer of children"
+      - "Prepares environment"
+      - "Follows child's interest"
+      - "Materials self-correct"
+
+  - type: quote
+    quote: "Never help a child with a task at which he feels he can succeed."
+    attribution: "Maria Montessori"
+
+  - type: bullets
+    title: "Self-Correcting Materials"
+    accent: primary
+    items:
+      - "Puzzle pieces only fit one way"
+      - "Counting materials show when something's wrong"
+      - "Children don't need teacher to say 'right' or 'wrong'"
+      - "Builds independence and internal motivation"
+
+  - type: big_idea
+    label: "THE 'EXPLOSION INTO WRITING'"
+    main_text: "Children using tactile letter materials suddenly, spontaneously began writing."
+    supporting_text: "Not because they were taught.\nBecause they were ready."
+
+  - type: comparison
+    title: "Teacher-Centered vs. Child-Centered"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "TEACHER-CENTERED"
+    right_header: "CHILD-CENTERED"
+    left_items:
+      - "Teacher plans lesson on fractions"
+      - "Teacher demonstrates"
+      - "Students practice at desks"
+      - "Teacher grades papers"
+    right_items:
+      - "Fraction materials are available"
+      - "Child chooses to explore them"
+      - "Child discovers relationships"
+      - "Teacher observes, introduces next challenge"
+
+  - type: bullets
+    title: "Practical Applications"
+    accent: secondary
+    items:
+      - "Observe students before planning lessons"
+      - "Create organized, accessible environments"
+      - "Build in opportunities for choice"
+      - "Design materials that give feedback"
+      - "Respect concentration — don't interrupt"
+
+  - type: closing
+    main_text: "'Following the child' isn't letting them do whatever they want."
+    subtext: "It's watching what they're ready for and meeting them there."
