@@ -102,10 +102,27 @@ def get_credentials():
     return creds
 
 
+# The exact 8 course names we manage - no other courses should be processed
+EXPECTED_COURSES = {
+    "1 Instructional Practices & Practicum",
+    "2 Communications and Technology",
+    "3 Instructional Practices & Practicum",
+    "4 Communications and Technology",
+    "5 Instructional Practices & Practicum",
+    "6 Communications and Technology",
+    "7 Instructional Practices & Practicum",
+    "8 Communications and Technology",
+}
+
+
 def get_active_courses(service):
-    """Get all active courses where user is a teacher."""
+    """Get all active courses where user is a teacher.
+
+    Only includes our exact 8 numbered courses. Errors if any are missing.
+    Ignores any other courses (like Lovelace co-teaching courses).
+    """
     print("\nFetching active courses...")
-    courses = []
+    all_courses = []
     page_token = None
 
     while True:
@@ -118,15 +135,37 @@ def get_active_courses(service):
         if not response:
             break
 
-        courses.extend(response.get('courses', []))
+        all_courses.extend(response.get('courses', []))
         page_token = response.get('nextPageToken')
         if not page_token:
             break
 
+    # Filter to only our exact expected courses
+    courses = [c for c in all_courses if c['name'] in EXPECTED_COURSES]
+    ignored = [c for c in all_courses if c['name'] not in EXPECTED_COURSES]
+
+    # Check that we found all expected courses
+    found_names = {c['name'] for c in courses}
+    missing = EXPECTED_COURSES - found_names
+
+    print(f"  Found {len(all_courses)} active courses total")
+
+    if ignored:
+        print(f"  Ignoring {len(ignored)} unexpected courses:")
+        for course in ignored:
+            print(f"    - {course['name']} (skipped)")
+
+    if missing:
+        print(f"\n  ERROR: Missing {len(missing)} expected courses:")
+        for name in sorted(missing):
+            print(f"    - {name}")
+        print("\n  Cannot proceed - expected courses not found.")
+        sys.exit(1)
+
     # Sort by course name for consistent ordering
     courses.sort(key=lambda c: c['name'])
 
-    print(f"  Found {len(courses)} active courses")
+    print(f"  Processing {len(courses)} courses:")
     for course in courses:
         print(f"    - {course['name']}")
 

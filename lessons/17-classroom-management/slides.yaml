@@ -1,0 +1,109 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Preventing Problems Before They Start (Harry Wong)
+
+title: "Preventing Problems Before They Start"
+subtitle: "Proactive Classroom Management"
+
+# Order/structure palette - warm greens and navy
+theme:
+  primary: {r: 0.15, g: 0.25, b: 0.35}      # deep navy
+  secondary: {r: 0.3, g: 0.5, b: 0.35}      # forest green
+  accent1: {r: 0.85, g: 0.7, b: 0.3}        # warm gold
+  accent2: {r: 0.65, g: 0.2, b: 0.2}        # muted red
+  background: {r: 0.97, g: 0.97, b: 0.95}   # warm off-white
+  text: {r: 0.15, g: 0.15, b: 0.15}         # dark gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE MYTH"
+    main_text: "Classroom management is not about discipline."
+    supporting_text: "It's about organization and teaching students\nexactly how things work."
+
+  - type: quote
+    quote: "The number one problem in the classroom is not discipline; it is the lack of procedures and routines."
+    attribution: "Harry Wong"
+
+  - type: bullets
+    title: "Harry & Rosemary Wong"
+    accent: primary
+    items:
+      - "Authors of 'The First Days of School'"
+      - "One of the most influential classroom management books"
+      - "Key insight: Teach procedures like academic content"
+      - "The problem isn't 'bad kids'—it's unclear expectations"
+
+  - type: comparison
+    title: "Two Kinds of Teachers"
+    accent_left: accent2
+    accent_right: secondary
+    left_header: "REACTIVE"
+    right_header: "PROACTIVE"
+    left_items:
+      - "Wait for misbehavior"
+      - "Respond with consequences"
+      - "Interrupt instruction constantly"
+      - "Always 'putting out fires'"
+    right_items:
+      - "Teach expectations explicitly"
+      - "Practice until automatic"
+      - "Address problems before they occur"
+      - "Instruction flows smoothly"
+
+  - type: big_idea
+    label: "KEY DISTINCTION"
+    main_text: "Procedure: a method for doing something.\nRoutine: a procedure that's become automatic."
+    supporting_text: "Your job: turn procedures into routines."
+
+  - type: bullets
+    title: "The First Days Matter"
+    accent: primary
+    items:
+      - "Effective teachers: 2-3 weeks teaching procedures"
+      - "Ineffective teachers: jump straight into content"
+      - "Procedures taught well = smooth year"
+      - "Procedures skipped = year of fighting fires"
+
+  - type: table
+    title: "Essential Procedures Every Teacher Needs"
+    accent: secondary
+    headers: ["Category", "Questions to Answer"]
+    rows:
+      - ["Entering/Exiting", "What do students do when they arrive? How do they line up?"]
+      - ["Materials", "How do they get supplies? Where do they turn in work?"]
+      - ["During Instruction", "How do they ask questions? What about bathroom?"]
+      - ["Transitions", "How do they move between activities? What if done early?"]
+
+  - type: numbered
+    title: "Teaching a Procedure"
+    accent: accent1
+    items:
+      - "EXPLAIN the procedure — Tell them what to do"
+      - "MODEL the procedure — Show them what it looks like"
+      - "PRACTICE the procedure — Students do it"
+      - "REINFORCE the procedure — Acknowledge when done right"
+      - "RETEACH when necessary — Return when it breaks down"
+
+  - type: big_idea
+    label: "THE CASE STUDY"
+    main_text: "A teacher doesn't teach procedures. Students enter noisily. Transitions take 10 minutes."
+    supporting_text: "The teacher is exhausted by October.\nThe problem isn't 'bad kids.'"
+
+  - type: quote
+    quote: "You can teach anything. But you must teach a procedure before you can expect students to follow it."
+    attribution: "Harry Wong"
+
+  - type: bullets
+    title: "Practical Steps"
+    accent: primary
+    items:
+      - "Plan procedures BEFORE the first day"
+      - "Teach procedures like academic content"
+      - "Practice until routines are automatic"
+      - "Reinforce correct procedures positively"
+      - "Reteach when procedures break down"
+
+  - type: closing
+    main_text: "Students can't follow procedures they were never taught."
+    subtext: "Teach, model, practice, reinforce."
