@@ -1,0 +1,114 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Designing for All Learners from the Start (UDL)
+
+title: "Designing for All Learners"
+subtitle: "Universal Design for Learning"
+
+# Accessibility-focused palette - inclusive blues and greens
+theme:
+  primary: {r: 0.2, g: 0.35, b: 0.5}       # deep blue
+  secondary: {r: 0.25, g: 0.5, b: 0.45}    # teal
+  accent1: {r: 0.95, g: 0.6, b: 0.2}       # warm orange
+  accent2: {r: 0.55, g: 0.25, b: 0.5}      # purple
+  background: {r: 0.98, g: 0.98, b: 0.97}  # near white
+  text: {r: 0.15, g: 0.15, b: 0.18}        # dark gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE PROBLEM"
+    main_text: "Teachers design for 'average' students, then scramble to accommodate everyone else."
+    supporting_text: "What if you designed for everyone from the start?"
+
+  - type: bullets
+    title: "CAST and Universal Design"
+    accent: primary
+    items:
+      - "Center for Applied Special Technology (1990s)"
+      - "Borrowed concept from architecture"
+      - "Curb cuts help wheelchair users—and everyone"
+      - "Design that helps struggling learners helps ALL learners"
+
+  - type: quote
+    quote: "When curricula are designed for the 'average,' they fail to provide all individuals with fair and equal opportunities."
+    attribution: "Anne Meyer & David Rose, CAST founders"
+
+  - type: big_idea
+    label: "THE CURB CUT EFFECT"
+    main_text: "Accommodations designed for some often help everyone."
+    supporting_text: "Captions help deaf students—and everyone in a noisy room.\nClear objectives help confused students—and all students."
+
+  - type: table
+    title: "The Three UDL Principles"
+    accent: secondary
+    headers: ["Principle", "The Question", "Design For"]
+    rows:
+      - ["ENGAGEMENT", "WHY should students care?", "Motivation, interest, relevance"]
+      - ["REPRESENTATION", "WHAT information is presented?", "Multiple formats, examples, modalities"]
+      - ["ACTION & EXPRESSION", "HOW do students show learning?", "Flexible ways to demonstrate"]
+
+  - type: bullets
+    title: "Multiple Means of ENGAGEMENT"
+    accent: accent1
+    items:
+      - "Offer choices and autonomy"
+      - "Connect to student interests"
+      - "Minimize threats and distractions"
+      - "Foster collaboration and community"
+      - "Some students: competition. Others: cooperation. Design for both."
+
+  - type: bullets
+    title: "Multiple Means of REPRESENTATION"
+    accent: primary
+    items:
+      - "Don't just lecture—also provide text, diagrams, videos"
+      - "Offer alternatives to visual information (audio)"
+      - "Offer alternatives to auditory information (captions)"
+      - "Highlight patterns and big ideas"
+      - "Provide multiple examples AND non-examples"
+
+  - type: bullets
+    title: "Multiple Means of ACTION & EXPRESSION"
+    accent: secondary
+    items:
+      - "Allow varied ways to respond"
+      - "Provide options for physical action"
+      - "Support planning and strategy development"
+      - "Show understanding through writing, drawing, speaking, building"
+
+  - type: comparison
+    title: "What UDL IS and IS NOT"
+    accent_left: accent2
+    accent_right: primary
+    left_header: "UDL IS NOT"
+    right_header: "UDL IS"
+    left_items:
+      - "Just technology"
+      - "Lowering standards"
+      - "Three different lessons"
+      - "Reactive accommodation"
+    right_items:
+      - "Proactive design"
+      - "Same goals, flexible paths"
+      - "One lesson with built-in flexibility"
+      - "Planning for variability"
+
+  - type: big_idea
+    label: "THE MYTH OF AVERAGE"
+    main_text: "When the Air Force designed cockpits for the 'average' pilot, they fit NO ONE."
+    supporting_text: "The solution: adjustable seats.\nEducation needs adjustable curricula."
+
+  - type: bullets
+    title: "Practical Steps"
+    accent: primary
+    items:
+      - "Build choice into every lesson"
+      - "Provide information in multiple formats"
+      - "Allow multiple ways to demonstrate learning"
+      - "Ask: 'Who might this NOT work for?'"
+      - "Design for variability, not the 'average'"
+
+  - type: closing
+    main_text: "You know your class will have variability."
+    subtext: "Design for it from the start."

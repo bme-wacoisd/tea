@@ -1,0 +1,118 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Planning Backward from the End (Wiggins & McTighe)
+
+title: "Planning Backward from the End"
+subtitle: "Why Great Teachers Start with the Destination"
+
+# Navigation/journey color palette - greens and golds
+theme:
+  primary: {r: 0.15, g: 0.35, b: 0.25}      # deep forest green
+  secondary: {r: 0.85, g: 0.65, b: 0.2}     # gold
+  accent1: {r: 0.3, g: 0.55, b: 0.4}        # medium green
+  accent2: {r: 0.6, g: 0.2, b: 0.2}         # muted red (wrong way)
+  background: {r: 0.98, g: 0.97, b: 0.93}   # warm cream
+  text: {r: 0.15, g: 0.15, b: 0.15}         # dark gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE PROBLEM"
+    main_text: "Teachers often plan lessons backward—starting with activities instead of goals."
+    supporting_text: "Fun projects that don't prove learning.\nTests that measure the wrong things."
+
+  - type: bullets
+    title: "How Teachers Usually Plan"
+    accent: accent2
+    items:
+      - "1. What activities sound fun?"
+      - "2. What content should I cover?"
+      - "3. I guess I'll make a test at the end."
+      - "Result: engaging activities that don't teach the objective"
+
+  - type: quote
+    quote: "The best designs derive backward from the learnings sought."
+    attribution: "Grant Wiggins"
+
+  - type: bullets
+    title: "Grant Wiggins & Jay McTighe"
+    accent: primary
+    items:
+      - "Authors of Understanding by Design"
+      - "Trained thousands of educators"
+      - "Pushed back against 'coverage' mentality"
+      - "Asked: What should students understand years later?"
+
+  - type: numbered
+    title: "The Three Stages of Backward Design"
+    accent: secondary
+    items:
+      - "IDENTIFY DESIRED RESULTS — What should students know and be able to DO?"
+      - "DETERMINE ACCEPTABLE EVIDENCE — How will you KNOW they can do it?"
+      - "PLAN LEARNING EXPERIENCES — What activities will GET them there?"
+
+  - type: comparison
+    title: "The GPS Metaphor"
+    accent_left: accent1
+    accent_right: secondary
+    left_header: "GPS NAVIGATION"
+    right_header: "BACKWARD DESIGN"
+    left_items:
+      - "Enter destination first"
+      - "GPS knows when you arrive"
+      - "Then it plans the route"
+    right_items:
+      - "Identify learning goal first"
+      - "Design assessment that shows mastery"
+      - "Then plan activities"
+
+  - type: big_idea
+    label: "THE TWIN SINS"
+    main_text: "Activity-focused design:\n'I found this great activity!'"
+    supporting_text: "Coverage-focused design:\n'I need to get through Chapter 7.'"
+
+  - type: table
+    title: "Misaligned vs. Aligned Planning"
+    accent: accent2
+    headers: ["Element", "Misaligned Example", "Aligned Example"]
+    rows:
+      - ["Goal", "Teach main idea", "Teach main idea"]
+      - ["Activity", "Make posters, act out stories", "Identify main idea in passages"]
+      - ["Assessment", "Match vocabulary to definitions", "Write the main idea of a new passage"]
+
+  - type: comparison
+    title: "Factual Questions vs. Essential Questions"
+    accent_left: accent2
+    accent_right: primary
+    left_header: "CLOSED & FACTUAL"
+    right_header: "OPEN & ESSENTIAL"
+    left_items:
+      - "What is the capital of Texas?"
+      - "Define democracy"
+      - "List the steps of the water cycle"
+    right_items:
+      - "Why do some cities become capitals?"
+      - "Design a fair voting system—defend it"
+      - "Explain to a younger student why it rains"
+
+  - type: bullets
+    title: "Authentic Performance Tasks"
+    accent: secondary
+    items:
+      - "Don't just ask students to recall"
+      - "Ask them to DO something"
+      - "Require genuine understanding to succeed"
+      - "Show transfer to new situations"
+
+  - type: bullets
+    title: "Practical Steps"
+    accent: primary
+    items:
+      - "Write the assessment BEFORE planning activities"
+      - "Ensure every activity connects to the objective"
+      - "Ask: 'How will I know students can do this?'"
+      - "Design for understanding, not coverage"
+
+  - type: closing
+    main_text: "You wouldn't drive random directions hoping to end up somewhere good."
+    subtext: "Start with where you want students to arrive."

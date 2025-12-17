@@ -1,0 +1,120 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Checking for Understanding Every Six Minutes (Dylan Wiliam)
+
+title: "Checking for Understanding"
+subtitle: "Every Six Minutes"
+
+# Assessment/feedback palette - warm oranges and blues
+theme:
+  primary: {r: 0.2, g: 0.3, b: 0.45}       # deep blue
+  secondary: {r: 0.9, g: 0.5, b: 0.2}      # warm orange
+  accent1: {r: 0.3, g: 0.55, b: 0.5}       # teal
+  accent2: {r: 0.7, g: 0.2, b: 0.25}       # muted red
+  background: {r: 0.98, g: 0.97, b: 0.95}  # warm cream
+  text: {r: 0.15, g: 0.15, b: 0.18}        # dark gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE PROBLEM"
+    main_text: "Teacher teaches. Test on Friday. Half the class fails."
+    supporting_text: "Too late—the learning moment has passed.\nThe teacher moves on. The confusion compounds."
+
+  - type: quote
+    quote: "The shorter the assessment-action cycle, the greater the impact on learning. Not every six weeks. Not every six days. Every six minutes."
+    attribution: "Dylan Wiliam"
+
+  - type: bullets
+    title: "Dylan Wiliam"
+    accent: primary
+    items:
+      - "Emeritus Professor, University of London"
+      - "Decades researching what improves learning"
+      - "Found: formative assessment has massive impact"
+      - "But feedback alone isn't enough..."
+
+  - type: quote
+    quote: "Feedback is formative only if the information fed back to the learner is used by the learner in improving performance."
+    attribution: "Dylan Wiliam"
+
+  - type: table
+    title: "Three Types of Assessment"
+    accent: secondary
+    headers: ["Type", "When", "Purpose", "Example"]
+    rows:
+      - ["DIAGNOSTIC", "Before", "What do they already know?", "Pre-test, KWL chart"]
+      - ["FORMATIVE", "During", "Are they understanding?", "Exit tickets, thumbs up/down"]
+      - ["SUMMATIVE", "After", "Did they achieve the goals?", "Unit test, final project"]
+
+  - type: comparison
+    title: "The Key Shift"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "OLD QUESTION"
+    right_header: "NEW QUESTION"
+    left_items:
+      - "Did I teach it?"
+      - "Did I cover the content?"
+      - "Did I give enough information?"
+    right_items:
+      - "Did they learn it?"
+      - "Can they demonstrate understanding?"
+      - "What do they need next?"
+
+  - type: numbered
+    title: "Wiliam's Five Key Strategies"
+    accent: primary
+    items:
+      - "CLARIFY learning intentions — Students know what they're aiming for"
+      - "ENGINEER discussions that reveal thinking — Activities that show understanding"
+      - "PROVIDE feedback that moves learning forward — Comments that cause thinking"
+      - "ACTIVATE students as resources for each other — Peer feedback"
+      - "ACTIVATE students as owners of their own learning — Self-assessment"
+
+  - type: comparison
+    title: "What Makes Feedback Effective?"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "DOESN'T CAUSE THINKING"
+    right_header: "CAUSES THINKING"
+    left_items:
+      - "'Good job!'"
+      - "'92%'"
+      - "'Try harder'"
+      - "'See me'"
+    right_items:
+      - "'Your introduction hooks the reader, but...'"
+      - "'The evidence doesn't connect to your claim'"
+      - "'Try explaining WHY the quote supports your point'"
+      - "Specific, forward-looking, actionable"
+
+  - type: bullets
+    title: "Quick Formative Techniques"
+    accent: secondary
+    items:
+      - "Exit tickets — Quick check at end of class"
+      - "Thumbs up/middle/down — Instant whole-class check"
+      - "Whiteboards — All students show answers simultaneously"
+      - "Think-Pair-Share — Process before responding"
+      - "No hands up — Random calling prevents opt-out"
+      - "Wait time — 3-5 seconds after questions"
+
+  - type: big_idea
+    label: "AI AND ASSESSMENT"
+    main_text: "AI tutors can check every six seconds."
+    supporting_text: "But students don't trust AI for final evaluation.\nAI asks 'Is this correct?' Teachers ask 'What were you thinking?'"
+
+  - type: bullets
+    title: "Practical Steps"
+    accent: primary
+    items:
+      - "Use exit tickets daily"
+      - "Wait 3-5 seconds after questions"
+      - "Make feedback specific and forward-looking"
+      - "Check understanding BEFORE moving on"
+      - "Adjust instruction based on what you learn"
+
+  - type: closing
+    main_text: "Formative assessment isn't about more tests."
+    subtext: "It's about knowing whether they're learning while there's still time to help."
