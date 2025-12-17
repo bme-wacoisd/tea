@@ -1,0 +1,111 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Learning to Observe - Watching Teaching in Action
+
+title: "Learning to Observe"
+subtitle: "Watching Teaching in Action"
+
+# Thoughtful observation palette - calm blues and earth tones
+theme:
+  primary: {r: 0.25, g: 0.35, b: 0.45}       # slate blue
+  secondary: {r: 0.45, g: 0.4, b: 0.3}       # warm tan
+  accent1: {r: 0.35, g: 0.45, b: 0.4}        # sage
+  accent2: {r: 0.5, g: 0.35, b: 0.35}        # dusty rose
+  background: {r: 0.97, g: 0.96, b: 0.94}    # warm cream
+  text: {r: 0.2, g: 0.2, b: 0.22}            # charcoal
+
+slides:
+  - type: title
+
+  - type: comparison
+    title: "Watching vs. Observing"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "WATCHING"
+    right_header: "OBSERVING"
+    left_items:
+      - "Sitting in the back"
+      - "Taking scattered notes"
+      - "Watching the clock"
+    right_items:
+      - "Active and focused"
+      - "Noticing what works"
+      - "Thinking how to apply it"
+
+  - type: bullets
+    title: "Selective Attention"
+    accent: primary
+    items:
+      - "You cannot watch everything at once"
+      - "Choose ONE focus before you observe"
+      - "Narrow focus → Deeper learning"
+      - "Trying to see everything means seeing nothing well"
+
+  - type: bullets
+    title: "What to Observe: Teacher Actions"
+    accent: secondary
+    items:
+      - "How do they start class?"
+      - "How do they give directions?"
+      - "How do they check for understanding?"
+      - "How do they handle transitions?"
+      - "How do they respond to confusion?"
+
+  - type: bullets
+    title: "What to Observe: Student Actions"
+    accent: accent1
+    items:
+      - "Who participates? Who doesn't?"
+      - "What are students doing during instruction?"
+      - "How do students respond to each other?"
+      - "What happens when students struggle?"
+
+  - type: two_column
+    title: "Environment and Pacing"
+    accent: primary
+    left_title: "Environment"
+    right_title: "Pacing"
+    left_items:
+      - "Room arrangement"
+      - "What's on the walls"
+      - "Available resources"
+    right_items:
+      - "How long do activities last?"
+      - "Are transitions smooth?"
+      - "Is there wait time?"
+
+  - type: comparison
+    title: "Observation vs. Judgment"
+    accent_left: accent2
+    accent_right: accent1
+    left_header: "JUDGMENT"
+    right_header: "OBSERVATION"
+    left_items:
+      - "Doesn't manage behavior well"
+      - "Boring lesson"
+      - "Students weren't engaged"
+    right_items:
+      - "Three students talked through instruction"
+      - "Activity lasted 20 minutes"
+      - "Five students had heads down"
+
+  - type: numbered
+    title: "The Observation-Reflection Cycle"
+    accent: secondary
+    items:
+      - "BEFORE: What will I focus on? What do I want to learn?"
+      - "DURING: Record what I see factually"
+      - "AFTER: What surprised me? What questions do I have?"
+      - "APPLY: What will I try in my own teaching?"
+
+  - type: bullets
+    title: "Learning from Imperfect Teaching"
+    accent: accent2
+    items:
+      - "Not every lesson will be excellent—that's okay"
+      - "What would you do differently? Why?"
+      - "What constraints might explain what you saw?"
+      - "Every classroom teaches you something"
+
+  - type: closing
+    main_text: "Observation is a skill, not passive watching."
+    subtext: "Every classroom has something to teach you if you watch with curiosity."

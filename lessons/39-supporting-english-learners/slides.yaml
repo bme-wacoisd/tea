@@ -1,0 +1,101 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Supporting English Learners in Every Classroom
+
+title: "Supporting English Learners in Every Classroom"
+subtitle: "Every Teacher Is a Language Teacher"
+
+# Welcoming, warm palette - inclusive colors
+theme:
+  primary: {r: 0.3, g: 0.4, b: 0.5}          # slate blue
+  secondary: {r: 0.5, g: 0.4, b: 0.3}        # warm sienna
+  accent1: {r: 0.35, g: 0.5, b: 0.45}        # sage green
+  accent2: {r: 0.55, g: 0.35, b: 0.4}        # dusty rose
+  background: {r: 0.98, g: 0.97, b: 0.95}    # warm cream
+  text: {r: 0.18, g: 0.18, b: 0.2}           # dark gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    main_text: "Every teacher is a language teacher."
+    subtext: "In many Texas schools, a third or more of students are learning English while learning content."
+
+  - type: comparison
+    title: "BICS vs. CALP"
+    accent_left: secondary
+    accent_right: primary
+    left_header: "BICS (1-3 YEARS)"
+    right_header: "CALP (5-7+ YEARS)"
+    left_items:
+      - "Playground language"
+      - "'Let's play!'"
+      - "Social conversation"
+    right_items:
+      - "Classroom language"
+      - "'Analyze the symbolism'"
+      - "Academic discourse"
+
+  - type: bullets
+    title: "Strategy 1: Visuals"
+    accent: accent1
+    items:
+      - "Pictures, diagrams, graphic organizers"
+      - "Demonstrate rather than just describe"
+      - "Use gestures and facial expressions"
+      - "Show, don't just tell"
+
+  - type: bullets
+    title: "Strategy 2: Pre-Teach Vocabulary"
+    accent: secondary
+    items:
+      - "Introduce key terms BEFORE the lesson"
+      - "Connect to known concepts"
+      - "Use word walls and glossaries"
+      - "Don't let students face new concepts AND new words"
+
+  - type: bullets
+    title: "Strategy 3: Sentence Stems"
+    accent: primary
+    items:
+      - "'I think ___ because ___'"
+      - "'This is similar to ___ because ___'"
+      - "'I agree/disagree because ___'"
+      - "Scaffolds language without reducing thinking"
+
+  - type: two_column
+    title: "Strategy 4: Wait Time and Partnering"
+    accent: accent1
+    left_title: "Wait Time"
+    right_title: "Partnering"
+    left_items:
+      - "3-5+ seconds"
+      - "Processing takes time"
+      - "Silence ≠ confusion"
+    right_items:
+      - "Pair with supportive peers"
+      - "Think-Pair-Share"
+      - "Reduces spotlight stress"
+
+  - type: bullets
+    title: "What NOT to Do"
+    accent: accent2
+    items:
+      - "Don't assume quiet = not learning"
+      - "Don't simplify CONTENT—just language"
+      - "Don't seat ELLs in the back"
+      - "Don't skip calling on ELLs"
+      - "Don't grade based on English proficiency in non-language subjects"
+
+  - type: bullets
+    title: "Home Language Is an Asset"
+    accent: secondary
+    items:
+      - "Students who maintain first language develop stronger cognitive skills"
+      - "Better academic outcomes"
+      - "Maintain family and cultural connections"
+      - "Bilingual advantages for future careers"
+      - "Encourage home language—it supports English"
+
+  - type: closing
+    main_text: "Every teacher is a language teacher."
+    subtext: "Home languages are assets, not barriers. Welcome what students bring."
