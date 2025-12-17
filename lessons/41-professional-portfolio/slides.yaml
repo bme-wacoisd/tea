@@ -1,0 +1,105 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Building Your Professional Portfolio
+
+title: "Building Your Professional Portfolio"
+subtitle: "Curated Evidence of Your Teaching Competence"
+
+# Professional/polished palette - deep purple and gold
+theme:
+  primary: {r: 0.3, g: 0.25, b: 0.4}         # deep purple
+  secondary: {r: 0.55, g: 0.45, b: 0.25}     # gold
+  accent1: {r: 0.35, g: 0.45, b: 0.45}       # teal
+  accent2: {r: 0.5, g: 0.3, b: 0.35}         # mauve
+  background: {r: 0.98, g: 0.97, b: 0.96}    # warm white
+  text: {r: 0.18, g: 0.18, b: 0.2}           # dark gray
+
+slides:
+  - type: title
+
+  - type: bullets
+    title: "What Is a Portfolio?"
+    accent: primary
+    items:
+      - "NOT a scrapbook of everything you've done"
+      - "A strategic, curated collection of evidence"
+      - "Answers: 'What can you do? How do you know?'"
+      - "Quality over quantity, always"
+
+  - type: bullets
+    title: "Why Portfolios Matter"
+    accent: secondary
+    items:
+      - "Job applications—show what you can do"
+      - "Certification requirements"
+      - "Professional reflection"
+      - "Continuous improvement documentation"
+      - "Proves competence with evidence, not just claims"
+
+  - type: table
+    title: "What Goes in a Portfolio?"
+    accent: accent1
+    headers: ["Category", "Examples"]
+    rows:
+      - ["Identity", "Philosophy statement, resume, goals"]
+      - ["Planning", "Lesson plans, unit plans, assessments"]
+      - ["Teaching Evidence", "Video clips, student work, photos"]
+      - ["Professional Growth", "PD records, certifications"]
+      - ["Impact", "Achievement data, evaluations"]
+
+  - type: bullets
+    title: "The Artifact + Reflection Formula"
+    accent: primary
+    items:
+      - "An artifact alone doesn't speak—you explain it"
+      - "What skill does this demonstrate?"
+      - "Why did I include it?"
+      - "What did I learn?"
+      - "What would I do differently?"
+
+  - type: bullets
+    title: "Quality Over Quantity"
+    accent: accent2
+    items:
+      - "5 excellent artifacts with reflections beats 50 random items"
+      - "Does this demonstrate a key competency?"
+      - "Is this my best work?"
+      - "Does this show growth or achievement?"
+      - "Can I reflect meaningfully on this?"
+
+  - type: comparison
+    title: "Digital vs. Physical Portfolios"
+    accent_left: accent1
+    accent_right: accent2
+    left_header: "DIGITAL"
+    right_header: "PHYSICAL"
+    left_items:
+      - "Easily shared via link"
+      - "Can include video/audio"
+      - "Continuously updatable"
+    right_items:
+      - "Tangible, browsable"
+      - "Harder to share"
+      - "Challenging to update"
+
+  - type: bullets
+    title: "What Hiring Committees Look For"
+    accent: secondary
+    items:
+      - "Evidence you can plan effective lessons"
+      - "Evidence you can manage a classroom"
+      - "Evidence you work with diverse learners"
+      - "Evidence of reflection and growth"
+      - "Evidence of professionalism"
+
+  - type: numbered
+    title: "Start Now, Not Later"
+    accent: primary
+    items:
+      - "Collect artifacts as you create them"
+      - "Write reflections while experiences are fresh"
+      - "Organize regularly"
+      - "Update before you need it"
+
+  - type: closing
+    main_text: "Start building now. Curate quality. Reflect on everything."
+    subtext: "Your portfolio answers: 'What can you do? How do you know?'"

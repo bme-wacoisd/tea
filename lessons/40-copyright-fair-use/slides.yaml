@@ -1,0 +1,92 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Copyright, Fair Use, and Finding Legal Resources
+
+title: "Copyright, Fair Use, and Finding Legal Resources"
+subtitle: "What Teachers Need to Know"
+
+# Legal/professional palette - navy and gold
+theme:
+  primary: {r: 0.15, g: 0.25, b: 0.4}        # deep navy
+  secondary: {r: 0.55, g: 0.45, b: 0.25}     # gold
+  accent1: {r: 0.3, g: 0.45, b: 0.45}        # teal
+  accent2: {r: 0.5, g: 0.3, b: 0.3}          # burgundy
+  background: {r: 0.97, g: 0.96, b: 0.94}    # warm white
+  text: {r: 0.15, g: 0.15, b: 0.18}          # near black
+
+slides:
+  - type: title
+
+  - type: bullets
+    title: "The Problem"
+    accent: accent2
+    items:
+      - "You find a great image on Google Images"
+      - "Can you use it in your presentation?"
+      - "'Freely available' ≠ 'Free to use'"
+      - "Copyright law applies to teachers too"
+
+  - type: bullets
+    title: "Copyright Basics"
+    accent: primary
+    items:
+      - "When someone creates something original, copyright is automatic"
+      - "No registration needed"
+      - "The creator controls how it's used"
+      - "Copying without permission = infringement"
+      - "Applies to Google Images, YouTube, song lyrics, articles"
+
+  - type: big_idea
+    main_text: "Fair use is a legal defense, not a guarantee."
+    subtext: "\"Educational use\" doesn't automatically make copying legal."
+
+  - type: table
+    title: "Four Factors of Fair Use"
+    accent: secondary
+    headers: ["Factor", "Favors Fair Use"]
+    rows:
+      - ["Purpose", "Educational, nonprofit, transformative"]
+      - ["Nature of work", "Factual, published"]
+      - ["Amount used", "Small portion, not the 'heart'"]
+      - ["Market effect", "No harm to creator's income"]
+
+  - type: comparison
+    title: "What Teachers CAN vs. CANNOT Do"
+    accent_left: accent1
+    accent_right: accent2
+    left_header: "GENERALLY OK"
+    right_header: "CROSSES THE LINE"
+    left_items:
+      - "Video clips for discussion"
+      - "Images for instruction"
+      - "Short quotes for analysis"
+    right_items:
+      - "Copy entire textbooks"
+      - "Post videos publicly"
+      - "Assume 'educational' = legal"
+
+  - type: bullets
+    title: "Finding Legal Resources"
+    accent: accent1
+    items:
+      - "PUBLIC DOMAIN: No protection (expired, government works)"
+      - "CREATIVE COMMONS: Sharing with conditions (CC-BY, CC-BY-NC)"
+      - "OER: Open Educational Resources (made for free use)"
+      - "Abundant legal resources exist—you need to know where"
+
+  - type: bullets
+    title: "Where to Search"
+    accent: secondary
+    items:
+      - "search.creativecommons.org"
+      - "Google Advanced Search (usage rights filter)"
+      - "Unsplash, Pexels (free photos)"
+      - "Wikimedia Commons"
+      - "OER Commons, OpenStax"
+
+  - type: quote
+    quote: "Students who see teachers cut corners learn to cut corners."
+    attribution: "Model proper attribution. Credit your sources."
+
+  - type: closing
+    main_text: "Respecting creators is legally required and ethically right."
+    subtext: "Find legal resources. Give credit. Practice what you preach."
