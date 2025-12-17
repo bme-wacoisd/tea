@@ -341,18 +341,44 @@ def clean_markdown(text: str) -> str:
 
 
 def main():
-    lesson_dir = Path("lessons/01-james-baldwin-civil-rights")
+    """
+    Convert lesson materials to PDF and PowerPoint.
+
+    Usage:
+        python convert_lesson.py <lesson_directory>
+        python convert_lesson.py lessons/01-james-baldwin-civil-rights
+    """
+    import sys
+
+    if len(sys.argv) < 2:
+        print("Usage: python convert_lesson.py <lesson_directory>")
+        print("Example: python convert_lesson.py lessons/01-james-baldwin-civil-rights")
+        sys.exit(1)
+
+    lesson_dir = Path(sys.argv[1])
+
+    if not lesson_dir.exists():
+        print(f"ERROR: Directory not found: {lesson_dir}")
+        sys.exit(1)
 
     # Convert lesson plan to PDF
     lesson_plan_md = lesson_dir / "lesson-plan.md"
-    lesson_plan_pdf = lesson_dir / "lesson-plan.pdf"
-    md_to_pdf(lesson_plan_md, lesson_plan_pdf)
+    if lesson_plan_md.exists():
+        lesson_plan_pdf = lesson_dir / "lesson-plan.pdf"
+        md_to_pdf(lesson_plan_md, lesson_plan_pdf)
+    else:
+        print(f"Skipping lesson-plan.md (not found)")
 
     # Convert slides to PowerPoint
     slides_md = lesson_dir / "slides.md"
-    slides_pptx = lesson_dir / "slides.pptx"
-    assets_dir = lesson_dir / "assets"
-    md_to_pptx(slides_md, slides_pptx, assets_dir)
+    if slides_md.exists():
+        slides_pptx = lesson_dir / "slides.pptx"
+        assets_dir = lesson_dir / "assets"
+        md_to_pptx(slides_md, slides_pptx, assets_dir)
+    else:
+        print(f"Skipping slides.md (not found)")
+
+    print(f"\nConversion complete for: {lesson_dir}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,119 @@
+# Slide presentation configuration for Google Slides API
+
+title: "How to Teach AI Like Andrej Karpathy"
+subtitle: "AI Research From Scratch"
+
+# Color theme - tech/neural network inspired, clean
+# accent2 (red) = ALWAYS means "don't do this"
+theme:
+  primary: {r: 0.12, g: 0.12, b: 0.18}    # near black
+  secondary: {r: 0.2, g: 0.5, b: 0.55}    # teal-cyan (positive)
+  accent1: {r: 0.4, g: 0.8, b: 0.4}       # green (code/terminal)
+  accent2: {r: 0.75, g: 0.25, b: 0.3}     # muted red (negative/warning)
+  background: {r: 0.98, g: 0.98, b: 1.0}  # cool white
+  text: {r: 0.1, g: 0.1, b: 0.12}         # near black
+
+slides:
+  - type: title
+
+  - type: bullets
+    title: "First, Definitions"
+    accent: primary
+    items:
+      - "AI RESEARCH: Building machines that do tasks requiring human intelligence"
+      - "NEURAL NETWORK: A function that learns by adjusting connections"
+      - "DEEP LEARNING: Neural networks with many layers"
+      - "TRANSFORMER: Architecture that processes words using attention"
+
+  - type: bullets
+    title: "Who Is Andrej Karpathy?"
+    accent: primary
+    items:
+      - "PhD Stanford (with Fei-Fei Li)"
+      - "Co-founder, OpenAI"
+      - "Former Director of AI, Tesla"
+      - "YouTube: \"Let's build GPT from scratch\""
+
+  - type: big_idea
+    label: "HIS CORE PHILOSOPHY"
+    main_text: "Build it from scratch."
+    supporting_text: "Don't use black boxes.\nUnderstand every piece."
+
+  - type: comparison
+    title: "Karpathy's Method"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "✓ HIS WAY"
+    right_header: "✗ THE SHORTCUT"
+    left_items:
+      - "Start with basic math"
+      - "Build one piece at a time"
+      - "Show every line of code"
+      - "Demystify the magic"
+    right_items:
+      - "Use libraries you don't understand"
+      - "Copy-paste solutions"
+      - "Hide the complexity"
+      - "Accept black boxes"
+
+  - type: quote
+    quote: "If you understand how it's built,\nyou understand it."
+    attribution: "The principle behind Karpathy's teaching"
+
+  - type: numbered
+    title: "How Neural Networks Learn"
+    items:
+      - "Input data (pixels, words, numbers)"
+      - "Pass through layers of neurons"
+      - "Each layer extracts more abstract features"
+      - "Adjust connections based on errors"
+      - "Repeat until accurate"
+
+  - type: table
+    title: "AI Terms Simplified"
+    accent: secondary
+    headers: ["Term", "Plain English"]
+    rows:
+      - ["Neural Network", "A function that learns by adjusting numbers"]
+      - ["Deep Learning", "Many layers, each finding patterns"]
+      - ["Transformer", "Reads all words at once, pays attention to what matters"]
+      - ["Training", "Adjusting the numbers until it works"]
+
+  - type: comparison
+    title: "Black Boxes in Teaching"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "✓ UNPACK"
+    right_header: "✗ HAND-WAVE"
+    left_items:
+      - "Show how it works"
+      - "Build from simple to complex"
+      - "Answer 'why' questions"
+    right_items:
+      - "\"It just works\""
+      - "Skip to the fancy stuff"
+      - "\"Don't worry about it\""
+
+  - type: table
+    title: "Adapting for Different Ages"
+    accent: secondary
+    headers: ["Age", "Building Block Concepts"]
+    rows:
+      - ["Pre-K to 2nd", "Patterns, sorting, \"the computer noticed...\""]
+      - ["3rd to 5th", "Rules the computer follows, practice makes better"]
+      - ["6th to 8th", "Algorithms, how recommendations work"]
+      - ["9th to 12th", "Basic programming, how AI models are trained"]
+
+  - type: bullets
+    title: "Group Discussion"
+    accent: primary
+    items:
+      - "Read prompts on your device"
+      - "Discuss verbally with your group"
+      - "Summarize key points on paper"
+      - "I'll visit each group"
+
+  - type: closing
+    quote: "Don't hide complexity.\nUnpack it, step by step,\nfrom the simplest pieces."
+    attribution: "From this lesson"
+    call_to_action: "Next: Complete the quiz on Google Classroom"

@@ -1,0 +1,111 @@
+# Slide presentation configuration for Google Slides API
+
+title: "How to Teach Science Like Derek Muller"
+subtitle: "Veritasium"
+
+# Color theme - scientific blue/gray with amber accents
+# accent2 (red) = ALWAYS means "don't do this"
+theme:
+  primary: {r: 0.2, g: 0.3, b: 0.45}      # steel blue
+  secondary: {r: 0.35, g: 0.55, b: 0.45}  # muted teal (positive)
+  accent1: {r: 0.9, g: 0.7, b: 0.25}      # amber
+  accent2: {r: 0.75, g: 0.3, b: 0.3}      # muted red (negative/warning)
+  background: {r: 0.96, g: 0.96, b: 0.97} # cool gray
+  text: {r: 0.15, g: 0.15, b: 0.2}        # near black
+
+slides:
+  - type: title
+
+  - type: bullets
+    title: "Who Is Derek Muller?"
+    accent: primary
+    items:
+      - "PhD in physics education, University of Sydney"
+      - "Creator of Veritasium (15+ million subscribers)"
+      - "His thesis changed how we think about teaching"
+      - "Question: Why do clear explanations often fail?"
+
+  - type: big_idea
+    label: "THE SURPRISING FINDING"
+    main_text: "Students who watched 'clear' videos learned LESS."
+    supporting_text: "They felt confident.\nBut they performed worse."
+
+  - type: comparison
+    title: "The Experiment"
+    accent_left: accent2
+    accent_right: secondary
+    left_header: "✗ CLEAR VIDEO"
+    right_header: "✓ CONFUSING VIDEO"
+    left_items:
+      - "Polished, organized"
+      - "Went straight to correct answer"
+      - "Students felt confident"
+      - "Test scores: WORSE"
+    right_items:
+      - "Started with misconceptions"
+      - "Let viewers sit with confusion"
+      - "Students felt uncertain"
+      - "Test scores: BETTER"
+
+  - type: quote
+    quote: "Students don't arrive empty-headed.\nThey arrive with ideas.\nSome of those ideas are wrong."
+    attribution: "From Muller's research"
+
+  - type: big_idea
+    label: "WHY THIS WORKS"
+    main_text: "Learning happens at the collision."
+    supporting_text: "Where what you believed\nmeets what is actually true."
+
+  - type: comparison
+    title: "Muller's Method"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "✓ DO THIS"
+    right_header: "✗ NOT THIS"
+    left_items:
+      - "Surface the misconception first"
+      - "Ask what students already think"
+      - "Let them feel the gap"
+      - "Then explain"
+    right_items:
+      - "Jump to correct answer"
+      - "Assume students are blank slates"
+      - "Polish over confusion"
+      - "Wonder why they didn't get it"
+
+  - type: bullets
+    title: "How Veritasium Videos Work"
+    accent: primary
+    items:
+      - "Start with a question"
+      - "Interview people to reveal wrong ideas"
+      - "Show the collision with reality"
+      - "THEN explain the science"
+
+  - type: quote
+    quote: "Science is a way of noticing\nwhen your intuitions are wrong\nand updating them."
+    attribution: "The point of science education"
+
+  - type: table
+    title: "Adapting for Different Ages"
+    accent: secondary
+    headers: ["Age", "Surfacing Misconceptions"]
+    rows:
+      - ["Pre-K to 2nd", "\"What do you think will happen?\" before experiments"]
+      - ["3rd to 5th", "Draw predictions, compare to results"]
+      - ["6th to 8th", "\"Most people think X. Let's test it.\""]
+      - ["9th to 12th", "Structured claim-evidence-reasoning"]
+
+  - type: bullets
+    title: "Group Discussion"
+    accent: primary
+    items:
+      - "Read prompts on your device"
+      - "Discuss verbally with your group"
+      - "Summarize key points on paper"
+      - "I'll visit each group"
+
+  - type: closing
+    quote: "Don't just tell students the answer.\nMake them feel the gap between\nwhat they believed and what's real."
+    attribution: "From this lesson"
+    call_to_action: "Next: Complete the quiz on Google Classroom"

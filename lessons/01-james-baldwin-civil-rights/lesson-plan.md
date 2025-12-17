@@ -3,8 +3,8 @@
 **Course**: Grow Your Own Educator Preparation Program
 **Grade Level**: 9-12 (Future Educators)
 **Duration**: 35-40 minutes
-**Instructor**: ___________________
-**Date**: ___________________
+**Instructor**: Brian Edwards (brian.edwards@wacoisd.org)
+**Date Prepared**: December 16, 2025
 
 ---
 
@@ -20,14 +20,21 @@ By the end of this lesson, students will be able to:
 
 ## Standards Alignment
 
-**Texas TEKS (Texas Essential Knowledge and Skills) - Education and Training Career Cluster:**
-- 130.122(c)(3)(A): Analyze the role of the educator in promoting student success
-- 130.122(c)(5)(B): Identify methods for enhancing student learning
-- 130.122(c)(6)(A): Discuss strategies for meeting diverse student needs
+**Texas TEKS - Instructional Practices (Education and Training Career Cluster):**
+
+| TEKS | Standard |
+|------|----------|
+| 4 | **The student understands the learner and the learning process.** Demonstrate techniques for development of effective relationships with students that foster mutual respect and rapport and result in effective instruction. |
+| 5 | **The student understands instructional planning and delivery.** Present subject matter effectively, including selecting and using a variety of instructional strategies to promote student success. |
+| 7 | **The student creates an effective learning environment.** Describe and implement a safe and effective learning environment; demonstrate teacher characteristics that promote effective learning. |
 
 **Connection to Educator Preparation:**
-- This lesson prepares future educators to teach sensitive historical content appropriately across grade levels
-- Develops skills in differentiation (adjusting instruction for different learners) and inclusive classroom discussion
+- Develops skills for teaching sensitive historical content appropriately across grade levels
+- Models differentiation strategies (adjusting complexity, not importance, by age)
+- Demonstrates discussion-based approaches to inclusive classroom conversation
+- Shows how to use personal stories and present-day connections to make content accessible
+
+**Source:** TEKS from `teks/practices/generated/` (Instructional Practices course materials)
 
 ---
 

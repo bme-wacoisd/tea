@@ -1,0 +1,113 @@
+# Slide presentation configuration for Google Slides API
+
+title: "How to Teach American History Like Heather Cox Richardson"
+subtitle: "History Professor, Boston College"
+
+# Color theme - purple/plum tones (different from Baldwin's blue/teal)
+# accent2 (red) = ALWAYS means "don't do this"
+theme:
+  primary: {r: 0.35, g: 0.2, b: 0.45}     # deep plum
+  secondary: {r: 0.4, g: 0.6, b: 0.5}     # sage green (positive)
+  accent1: {r: 0.85, g: 0.65, b: 0.4}     # warm gold
+  accent2: {r: 0.8, g: 0.3, b: 0.3}       # muted red (negative/warning)
+  background: {r: 0.98, g: 0.97, b: 0.95} # warm white
+  text: {r: 0.2, g: 0.2, b: 0.22}         # near black
+
+slides:
+  - type: title
+
+  - type: bullets
+    title: "Who Is Heather Cox Richardson?"
+    accent: primary
+    items:
+      - "Professor of History, Boston College"
+      - "PhD from Harvard"
+      - "\"Letters from an American\" newsletter"
+      - "2.6 million subscribers read her every night"
+
+  - type: quote
+    quote: "The past doesn't repeat itself.\nIt rhymes."
+    attribution: "Historians' saying Richardson lives by"
+
+  - type: big_idea
+    label: "HER CORE BELIEF"
+    main_text: "If people have true facts, they make good decisions."
+    supporting_text: "Not necessarily YOUR decisions.\nTheir decisions. That's democracy."
+
+  - type: quote
+    quote: "If you do your job really well,\nnobody needs you anymore.\nI am a teacher at heart."
+    attribution: "Heather Cox Richardson"
+
+  - type: comparison
+    title: "Richardson's Method"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "✓ START HERE"
+    right_header: "✗ NOT HERE"
+    left_items:
+      - "The story: Who did what?"
+      - "The human drama first"
+      - "Let patterns emerge"
+    right_items:
+      - "The abstract principle"
+      - "The generalization"
+      - "Examples afterward"
+
+  - type: table
+    title: "Connect Past to Present"
+    accent: secondary
+    headers: ["Historical Topic", "Why It Matters NOW"]
+    rows:
+      - ["Reconstruction (1865-1877)", "Debates about voting rights continue"]
+      - ["1850s democracy debates", "Same arguments, different century"]
+      - ["Economic policies of 1920s", "Echoes in today's tax debates"]
+
+  - type: comparison
+    title: "Teaching History"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "✓ IS"
+    right_header: "✗ IS NOT"
+    left_items:
+      - "Tool for understanding NOW"
+      - "Stories of real people"
+      - "Trusting students with facts"
+      - "Clear, jargon-free language"
+    right_items:
+      - "List of dead people and dates"
+      - "Memorizing timelines"
+      - "Telling students what to conclude"
+      - "Professor performing expertise"
+
+  - type: bullets
+    title: "The Harkness Method"
+    accent: primary
+    items:
+      - "Students sit around a table"
+      - "Everyone participates"
+      - "No lectures, no memorizing"
+      - "Discussion-based learning"
+
+  - type: table
+    title: "Adapting for Different Ages"
+    accent: secondary
+    headers: ["Age", "Historical Thinking Skill"]
+    rows:
+      - ["Pre-K to 2nd", "Stories: \"What happened? Then what?\""]
+      - ["3rd to 5th", "Cause and effect: \"Why did that happen?\""]
+      - ["6th to 8th", "Patterns: \"Have we seen this before?\""]
+      - ["9th to 12th", "Analysis: \"How does this connect to today?\""]
+
+  - type: bullets
+    title: "Group Discussion"
+    accent: primary
+    items:
+      - "Read prompts on your device"
+      - "Discuss verbally with your group"
+      - "Summarize key points on paper"
+      - "I'll visit each group"
+
+  - type: closing
+    quote: "Historians are fond of saying that\nthe past doesn't repeat itself; it rhymes.\nTo understand the present,\nwe have to understand how we got here."
+    attribution: "Heather Cox Richardson"
+    call_to_action: "Next: Complete the quiz on Google Classroom"

@@ -1,0 +1,3 @@
+# Requirements for Google Classroom scripts
+google-auth-oauthlib>=1.0.0
+google-api-python-client>=2.100.0

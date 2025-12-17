@@ -1,0 +1,39 @@
+# C2U10_1013_SGAK-4kfa
+
+
+## Student Guide – Answer Key
+
+### Lesson 10.13: Professional Portfolio | Cover Letters, Admissions Essays, and Personal Statements
+
+Name:
+Date:
+Bellringer:
+Five Minute Free Write: What about you makes you unique? What skills, interests, talents, are you most proud of?
+Answers will vary.
+
+Understanding Personal Statements:
+What are Personal Statements?
+Statements, often in the form of an essay or letter, which highlight personal achievements, goals, or interests when applying for a program or opportunity.
+
+Key Considerations for Writing Personal Statements:
+- Research the Position/Program/Place/Opportunity
+- What do they value?
+- What are they looking for?
+- How does this align with your values and what you want to do?
+
+- Examine Your Skills
+- List the skills and experiences that match the values and needs of the program or position.
+- Determine how your skills and experience can make that program/position better.
+
+
+- Top Three Skills
+- Review the list of skills you created in step 2 and select three that you feel most strongly align with the values and needs of the organization as well as with your goals.
+- These three skills will inform your body paragraphs in your personal statement.
+Writing a Personal Statement:
+Use the space below to draft your personal statement. Be sure to include the name of the program/school/job/scholarship to which you are applying.
+I'm writing to apply for the _______. I value the program's commitment to _____, and am confident that my skills and experience are a good match.
+Body 1
+Body 2
+Body 3
+The closing paragraph will vary dependent on the type of statement, but it should reiterate their skills and how they would benefit the program if given the opportunity.
+Answers will vary.

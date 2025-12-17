@@ -1,0 +1,107 @@
+# Slide presentation configuration for Google Slides API
+
+title: "How to Teach Math Like Grant Sanderson"
+subtitle: "3Blue1Brown"
+
+# Color theme - blue tones (fitting for 3Blue1Brown) but different from Baldwin
+# accent2 (red) = ALWAYS means "don't do this"
+theme:
+  primary: {r: 0.15, g: 0.35, b: 0.55}    # deep blue
+  secondary: {r: 0.25, g: 0.55, b: 0.45}  # teal-green (positive)
+  accent1: {r: 0.9, g: 0.6, b: 0.2}       # warm orange
+  accent2: {r: 0.75, g: 0.25, b: 0.25}    # muted red (negative/warning)
+  background: {r: 0.12, g: 0.12, b: 0.14} # dark (like his videos)
+  text: {r: 0.95, g: 0.95, b: 0.95}       # near white
+
+slides:
+  - type: title
+
+  - type: bullets
+    title: "Who Is Grant Sanderson?"
+    accent: primary
+    items:
+      - "Stanford math graduate (2015)"
+      - "Creator of 3Blue1Brown on YouTube"
+      - "Millions of subscribers worldwide"
+      - "Teachers use his videos to build intuition"
+
+  - type: big_idea
+    label: "HIS CORE PRINCIPLE"
+    main_text: "Start with the example, not the abstraction."
+    supporting_text: "Let students SEE the math.\nThe formula comes after."
+
+  - type: comparison
+    title: "Traditional vs. Sanderson"
+    accent_left: accent2
+    accent_right: secondary
+    left_header: "✗ TYPICAL TEXTBOOK"
+    right_header: "✓ SANDERSON'S WAY"
+    left_items:
+      - "Definition first"
+      - "Theorem, then proof"
+      - "Examples afterward"
+    right_items:
+      - "Concrete example first"
+      - "Visualize the problem"
+      - "Pattern emerges naturally"
+
+  - type: quote
+    quote: "Abstract concepts are best explained\nwhen preceded by concrete examples."
+    attribution: "Grant Sanderson"
+
+  - type: big_idea
+    label: "TREAT MATH LIKE ART"
+    main_text: "Not just useful. Beautiful."
+    supporting_text: "We don't ask \"when will I use Harry Potter?\"\nWe engage because of wonder."
+
+  - type: comparison
+    title: "What Visualization Does"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "✓ WITH VISUALS"
+    right_header: "✗ WITHOUT"
+    left_items:
+      - "Matrix = space stretching"
+      - "Derivative = rate of change you can SEE"
+      - "Intuition grounds the formula"
+    right_items:
+      - "Matrix = numbers in a grid"
+      - "Derivative = rule to memorize"
+      - "Formula without meaning"
+
+  - type: bullets
+    title: "What Videos Can't Replace"
+    accent: accent2
+    items:
+      - "Doing problems yourself"
+      - "Wrestling with confusion"
+      - "Practice and repetition"
+      - "The hard work of learning"
+
+  - type: quote
+    quote: "Watching someone else solve math\nis like watching someone else exercise.\nYou don't get stronger."
+    attribution: "Grant Sanderson"
+
+  - type: table
+    title: "Adapting for Different Ages"
+    accent: secondary
+    headers: ["Age", "How to Build Visual Intuition"]
+    rows:
+      - ["Pre-K to 2nd", "Physical objects: blocks, shapes, groups"]
+      - ["3rd to 5th", "Drawings, number lines, area models"]
+      - ["6th to 8th", "Graphs, geometry, animated patterns"]
+      - ["9th to 12th", "Dynamic software, real-world modeling"]
+
+  - type: bullets
+    title: "Group Discussion"
+    accent: primary
+    items:
+      - "Read prompts on your device"
+      - "Discuss verbally with your group"
+      - "Summarize key points on paper"
+      - "I'll visit each group"
+
+  - type: closing
+    quote: "The formula isn't the lesson.\nThe understanding is."
+    attribution: "From this lesson"
+    call_to_action: "Next: Complete the quiz on Google Classroom"

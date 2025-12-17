@@ -1,15 +1,16 @@
 # Slide presentation configuration for Google Slides API
 # This file defines the content and structure of the presentation
 
-title: "Teaching Civil Rights Through James Baldwin"
-subtitle: "Helping Students Connect with History"
+title: "James Baldwin"
+subtitle: "Harlem, 1924–1987"
 
-# Color theme for this lesson (rotate themes between lessons)
+# Color theme for this lesson
+# accent2 (red/coral) = ALWAYS means "don't do this"
 theme:
   primary: {r: 0.1, g: 0.2, b: 0.4}      # deep_blue
-  secondary: {r: 0.2, g: 0.6, b: 0.6}    # teal
+  secondary: {r: 0.2, g: 0.6, b: 0.6}    # teal (positive)
   accent1: {r: 0.95, g: 0.75, b: 0.2}    # gold
-  accent2: {r: 0.95, g: 0.4, b: 0.35}    # coral
+  accent2: {r: 0.85, g: 0.25, b: 0.25}   # red (negative/warning)
   background: {r: 1.0, g: 0.98, b: 0.94} # cream
   text: {r: 0.2, g: 0.2, b: 0.25}        # charcoal
 
@@ -21,107 +22,83 @@ slides:
   - type: title
     # Uses presentation title/subtitle above
 
-  - type: big_idea
-    label: "THE BIG IDEA"
-    main_text: "Connection > Coverage"
-    supporting_text: "When students see themselves in history,\neverything clicks."
-
   - type: image_bio
-    title: "James Baldwin (1924-1987)"
+    title: "James Baldwin (1924–1987)"
     image: subject_photo
-    description: "Writer. Essayist.\nTeacher (in his own way).\n\nMade big ideas\nfeel personal."
+    description: "Harlem. Oldest of 9 kids.\nRead two libraries by age 13.\n\nAt 14, started preaching—\ndrew bigger crowds than\nhis father."
 
   - type: quote
-    quote: "History is not the past.\nIt is the present."
+    quote: "Write a sentence\nas clean as a bone."
     attribution: "James Baldwin"
+
+  - type: big_idea
+    label: "HIS ADVICE TO WRITERS"
+    main_text: "Don't describe. Show."
+    supporting_text: "\"Don't describe a purple sunset—\nmake me SEE that it is purple.\""
+
+  - type: bullets
+    title: "October 1963: A Talk to Teachers"
+    accent: primary
+    items:
+      - "One month after Birmingham church bombing"
+      - "Four children killed"
+      - "Baldwin stood before NYC teachers"
+      - "Told them something they didn't want to hear"
+
+  - type: quote
+    quote: "The purpose of education is to create\nin a person the ability to look at\nthe world for himself."
+    attribution: "James Baldwin, 1963"
+
+  - type: quote
+    quote: "It is your responsibility to change\nsociety if you think of yourself\nas an educated person."
+    attribution: "James Baldwin"
+
+  - type: big_idea
+    label: "WHAT HE UNDERSTOOD AT 14"
+    main_text: "People don't change because you tell them to."
+    supporting_text: "They change when you make them\nFEEL something true."
+
+  - type: comparison
+    title: "Baldwin's Method"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "✓ SHOW"
+    right_header: "✗ DESCRIBE"
+    left_items:
+      - "Ruby Bridges, age 6, walked past crowds"
+      - "John Lewis, age 23, beaten on a bridge"
+      - "Claudette Colvin, age 15, refused her seat"
+    right_items:
+      - "\"Schools were segregated\""
+      - "\"People protested\""
+      - "\"Laws eventually changed\""
 
   - type: table
     title: "Start Where They Are"
     accent: secondary
     headers: ["Age", "They Already Get", "Build From There"]
     rows:
-      - ["Pre-K to 2nd", "Fairness, \"that's not fair!\"", "\"What makes something fair?\""]
-      - ["3rd to 5th", "Rules exist, rules can change", "\"Who decides? Can rules be wrong?\""]
-      - ["6th to 8th", "Injustice exists, people fight", "\"What gives movements power?\""]
-      - ["9th to 12th", "Systems, power, complexity", "\"How does this apply today?\""]
+      - ["Pre-K to 2nd", "\"That's not fair!\"", "\"What makes something fair?\""]
+      - ["3rd to 5th", "Rules can be wrong", "\"Who gets to decide the rules?\""]
+      - ["6th to 8th", "Injustice exists", "\"What gives movements power?\""]
+      - ["9th to 12th", "Systems, complexity", "\"How does this connect to now?\""]
 
   - type: comparison
-    title: "Questions > Answers"
-    left_header: "✓ DO THIS"
-    right_header: "✗ NOT THIS"
+    title: "Teaching Civil Rights"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "✓ IS"
+    right_header: "✗ IS NOT"
     left_items:
-      - "Ask: \"When did something feel unfair?\""
-      - "Build on what they know"
-      - "Create genuine curiosity"
-    right_items:
-      - "\"The Civil Rights Movement was...\""
-      - "Start with dates and names"
-      - "Lecture at them"
-
-  - type: table
-    title: "Stories > Abstractions"
-    accent: accent2
-    headers: ["Don't Say", "Say Instead"]
-    rows:
-      - ["\"Schools were segregated\"", "\"Ruby Bridges, age 6, walked past crowds\""]
-      - ["\"People protested\"", "\"John Lewis, age 23, was beaten on a bridge\""]
-      - ["\"Laws changed\"", "\"Claudette Colvin, age 15, refused her seat\""]
-
-  - type: comparison
-    title: "Teaching Civil Rights IS vs. IS NOT"
-    left_header: "IS"
-    right_header: "IS NOT"
-    left_items:
-      - "Understanding shared history"
       - "Connecting past to present"
       - "Age-appropriate honesty"
-      - "Building empathy"
+      - "Trusting students with truth"
       - "Ongoing conversation"
     right_items:
       - "Making anyone feel guilty"
-      - "Staying stuck in the past"
       - "Traumatizing with details"
-      - "Telling students what to think"
+      - "Telling them what to think"
       - "One-and-done checkbox"
-
-  - type: two_column
-    title: "Adapting for Learners"
-    left_title: "Need More Support"
-    left_items:
-      - "More visuals, fewer words"
-      - "Pre-teach vocabulary"
-      - "Sentence starters"
-    right_title: "Ready for More"
-    right_items:
-      - "Original Baldwin texts"
-      - "Cross-curricular connections"
-      - "Leadership roles"
-
-  - type: bullets
-    title: "Building Your Intuition"
-    accent: secondary
-    items:
-      - "When to push deeper vs. pause"
-      - "Which stories resonate"
-      - "How much context different ages need"
-      - "What kind of civil rights teacher YOU want to be"
-
-  - type: bullets
-    title: "Common Pitfalls"
-    accent: accent2
-    items:
-      - "Oversimplifying: \"Good guys won, bad guys lost\""
-      - "Avoiding discomfort: Students sense it"
-      - "Assuming sameness: Disrespects their experiences"
-      - "Overcorrecting: So heavy students shut down"
-
-  - type: numbered
-    title: "Key Takeaways"
-    items:
-      - "Connection, not coverage"
-      - "Personal stories + present relevance"
-      - "Adjust for age, never skip the topic"
-      - "Your style emerges through practice"
 
   - type: bullets
     title: "Group Discussion"
@@ -133,6 +110,6 @@ slides:
       - "I'll visit each group"
 
   - type: closing
-    quote: "The purpose of education is to create\nin a person the ability to look at the\nworld for himself."
+    quote: "History is not the past.\nIt is the present."
     attribution: "James Baldwin"
     call_to_action: "Next: Complete the quiz on Google Classroom"

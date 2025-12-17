@@ -1,0 +1,106 @@
+# Slide presentation configuration for Google Slides API
+
+title: "How to Teach Archaeology Like Stefan Milo"
+subtitle: "Archaeology and Anthropology"
+
+# Color theme - earthy tones (fitting for archaeology)
+# accent2 (red) = ALWAYS means "don't do this"
+theme:
+  primary: {r: 0.35, g: 0.28, b: 0.22}    # deep brown
+  secondary: {r: 0.5, g: 0.55, b: 0.35}   # olive green (positive)
+  accent1: {r: 0.85, g: 0.7, b: 0.45}     # warm sand
+  accent2: {r: 0.7, g: 0.3, b: 0.28}      # terracotta red (negative/warning)
+  background: {r: 0.97, g: 0.95, b: 0.92} # warm parchment
+  text: {r: 0.18, g: 0.16, b: 0.14}       # near black
+
+slides:
+  - type: title
+
+  - type: bullets
+    title: "First, Definitions"
+    accent: primary
+    items:
+      - "ARCHAEOLOGY: The study of the human past through physical remains"
+      - "ANTHROPOLOGY: The study of humans and human societies"
+      - "PREHISTORY: The time before written records"
+      - "HOMININ: A member of the human family tree"
+
+  - type: bullets
+    title: "Who Is Stefan Milo?"
+    accent: primary
+    items:
+      - "BA in Archaeology & Anthropology, Sheffield"
+      - "YouTube: prehistory, human evolution, ancient DNA"
+      - "First full-time anthropology YouTuber"
+      - "Author: Tales of Ancient Worlds"
+
+  - type: big_idea
+    label: "HIS MOTTO"
+    main_text: "No Atlantis. No Aliens. No Nonsense."
+    supporting_text: "Only academic sources.\nList all sources.\nMark opinions clearly."
+
+  - type: bullets
+    title: "Milo's 3 Golden Rules"
+    accent: secondary
+    items:
+      - "1. Use only academic sources"
+      - "2. List all sources so people can check"
+      - "3. Explicitly say when giving personal opinion"
+
+  - type: big_idea
+    label: "WHAT HE DOES BEST"
+    main_text: "Makes ancient people REAL."
+    supporting_text: "Not facts about them.\nWhat it was like to BE them."
+
+  - type: quote
+    quote: "Imagine waking up in a cave.\nIce outside. Your family around you.\nMaking a stone tool with your hands—\nthe same shape your father made."
+
+  - type: comparison
+    title: "Teaching Prehistory"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "✓ MILO'S WAY"
+    right_header: "✗ TEXTBOOK WAY"
+    left_items:
+      - "What did they see, eat, fear?"
+      - "Personal stories from evidence"
+      - "Connection first"
+      - "DNA tells human stories"
+    right_items:
+      - "Dates and definitions only"
+      - "Abstract timeline of species"
+      - "Content without caring"
+      - "Facts without feeling"
+
+  - type: bullets
+    title: "What Ancient DNA Tells Us"
+    accent: primary
+    items:
+      - "Humans and Neanderthals had children together"
+      - "We carry Neanderthal genes TODAY"
+      - "Denisovans too—another human species"
+      - "Our ancestors' story is messier than we thought"
+
+  - type: table
+    title: "Adapting for Different Ages"
+    accent: secondary
+    headers: ["Age", "Making Prehistory Tangible"]
+    rows:
+      - ["Pre-K to 2nd", "Stories: \"Once there was a child who lived long ago...\""]
+      - ["3rd to 5th", "Physical objects: replica tools, bones, cave art images"]
+      - ["6th to 8th", "Mystery: \"We found this skeleton. What's its story?\""]
+      - ["9th to 12th", "Evidence analysis: What does the DNA/archaeology tell us?"]
+
+  - type: bullets
+    title: "Group Discussion"
+    accent: primary
+    items:
+      - "Read prompts on your device"
+      - "Discuss verbally with your group"
+      - "Summarize key points on paper"
+      - "I'll visit each group"
+
+  - type: closing
+    quote: "Facts matter.\nBut connection makes facts live.\nHelp students imagine being there."
+    attribution: "From this lesson"
+    call_to_action: "Next: Complete the quiz on Google Classroom"

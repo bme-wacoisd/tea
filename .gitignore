@@ -218,3 +218,18 @@ all_courses_combined.pdf
 # Google API credentials (NEVER commit these!)
 credentials.json
 token.pickle
+token.json
+token_*.pickle
+token_*.json
+*.credentials
+service-account*.json
+client_secret*.json
+
+# Never commit student data or PII
+students*.json
+students*.csv
+roster*.json
+roster*.csv
+*roster*.csv
+*frontline*.csv
+name-mappings.csv
