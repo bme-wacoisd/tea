@@ -1,0 +1,110 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Questions That Make Students Think
+
+title: "Questions That Make Students Think"
+subtitle: "Asking Questions That Deepen Learning"
+
+# Thoughtful/curious palette - deep greens and warm accents
+theme:
+  primary: {r: 0.2, g: 0.35, b: 0.3}        # forest green
+  secondary: {r: 0.65, g: 0.5, b: 0.25}     # golden brown
+  accent1: {r: 0.4, g: 0.5, b: 0.45}        # sage
+  accent2: {r: 0.75, g: 0.35, b: 0.3}       # warm red
+  background: {r: 0.97, g: 0.96, b: 0.94}   # warm cream
+  text: {r: 0.18, g: 0.2, b: 0.18}          # dark green-gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE PROBLEM"
+    main_text: "Most classroom questions require only recall."
+    supporting_text: "What's the capital? Who wrote this? What's 7 times 8?\nThese check memory—but don't build thinking."
+
+  - type: bullets
+    title: "The Wait Time Discovery"
+    accent: primary
+    items:
+      - "Teachers typically wait less than 1 second after asking"
+      - "When teachers wait 3-5 seconds:"
+      - "  → More students participate"
+      - "  → Answers are longer and more thoughtful"
+      - "  → Students build on each other's ideas"
+
+  - type: comparison
+    title: "Closed vs. Open Questions"
+    accent_left: accent2
+    accent_right: primary
+    left_header: "CLOSED"
+    right_header: "OPEN"
+    left_items:
+      - "Single correct answer"
+      - "Recall or recognition"
+      - "'What year did WWII end?'"
+    right_items:
+      - "Multiple valid answers"
+      - "Thinking and elaboration"
+      - "'Why might historians disagree?'"
+
+  - type: table
+    title: "Question Stems by Bloom's Level"
+    accent: secondary
+    headers: ["Level", "Question Stems"]
+    rows:
+      - ["Remember", "What is...? Who was...? List the..."]
+      - ["Understand", "Explain why... Summarize... What does this mean?"]
+      - ["Apply", "How would you use...? What example shows...?"]
+      - ["Analyze", "Why do you think...? What's the relationship?"]
+      - ["Evaluate", "Do you agree...? Which is better and why?"]
+      - ["Create", "What would happen if...? Design a..."]
+
+  - type: bullets
+    title: "The Art of Follow-Up"
+    accent: primary
+    items:
+      - "The first answer is the beginning, not the end"
+      - "Probing: 'Tell me more.' 'What makes you say that?'"
+      - "Extending: 'Who can add to what Maria said?'"
+      - "Clarifying: 'What do you mean by...?'"
+
+  - type: numbered
+    title: "Think-Pair-Share"
+    accent: secondary
+    items:
+      - "THINK: Silent processing time (everyone)"
+      - "PAIR: Discuss with a partner"
+      - "SHARE: Report to the class"
+      - "Result: Every student processes the question"
+
+  - type: bullets
+    title: "Cold Calling (No Hands Up)"
+    accent: accent1
+    items:
+      - "Call on students randomly, not just volunteers"
+      - "Everyone must be ready"
+      - "Prevents the same five students from dominating"
+      - "Not 'gotcha'—just equity"
+
+  - type: bullets
+    title: "Questions That Shut Down Thinking"
+    accent: accent2
+    items:
+      - "Leading: 'Don't you think that...?'"
+      - "Gotcha: Asked to catch students off-guard"
+      - "Rapid-fire: No time to think between questions"
+      - "Self-answered: 'What is...? It's _____.'"
+
+  - type: two_column
+    title: "Transform the Question"
+    accent: primary
+    left_title: "Remember Level"
+    right_title: "Analyze Level"
+    left_items:
+      - "'What are the three branches of government?'"
+    right_items:
+      - "'Why might the founders have divided government into three branches?'"
+      - "'What were they trying to prevent?'"
+
+  - type: closing
+    main_text: "The questions you ask shape the thinking students do."
+    subtext: "Wait. Follow up. Include everyone."

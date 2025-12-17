@@ -1,0 +1,110 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Feedback That Moves Learning Forward
+
+title: "Feedback That Moves Learning Forward"
+subtitle: "Giving Feedback That Actually Helps"
+
+# Growth-oriented palette - warm greens and encouraging tones
+theme:
+  primary: {r: 0.25, g: 0.45, b: 0.35}      # deep green
+  secondary: {r: 0.7, g: 0.5, b: 0.2}       # warm gold
+  accent1: {r: 0.45, g: 0.55, b: 0.5}       # sage green
+  accent2: {r: 0.6, g: 0.35, b: 0.35}       # muted red
+  background: {r: 0.98, g: 0.97, b: 0.95}   # warm cream
+  text: {r: 0.18, g: 0.2, b: 0.18}          # dark gray-green
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE PROBLEM"
+    main_text: "B+, Good work!"
+    supporting_text: "What did the student learn?\nNothing about what was good.\nNothing about how to improve."
+
+  - type: quote
+    quote: "Feedback should cause thinking."
+    attribution: "Dylan Wiliam"
+
+  - type: comparison
+    title: "Evaluative vs. Descriptive Feedback"
+    accent_left: accent2
+    accent_right: primary
+    left_header: "EVALUATIVE"
+    right_header: "DESCRIPTIVE"
+    left_items:
+      - "Judges quality"
+      - "'B+' or 'Good work!'"
+      - "Answers: How did I do?"
+    right_items:
+      - "Tells what to improve"
+      - "'Your evidence supports claims'"
+      - "Answers: How do I improve?"
+
+  - type: bullets
+    title: "Characteristics of Effective Feedback"
+    accent: primary
+    items:
+      - "Specific — not 'good work' but 'your evidence supports claims'"
+      - "Work-focused — about the essay, not the student's identity"
+      - "Forward-looking — what to do NEXT, not just what was done"
+      - "Actionable — student knows exactly what to do"
+      - "Timely — while they still remember and care"
+
+  - type: table
+    title: "Vague → Specific Examples"
+    accent: secondary
+    headers: ["Vague", "Specific"]
+    rows:
+      - ["'Good work!'", "'Your thesis clearly states your argument'"]
+      - ["'Needs more detail'", "'Explain WHY the character was angry'"]
+      - ["'Try harder'", "'Check work by substituting answer back'"]
+
+  - type: bullets
+    title: "The Grade Problem"
+    accent: accent2
+    items:
+      - "Ruth Butler (1988) compared three groups"
+      - "Comments only → Improved most"
+      - "Grades only → Improved least"
+      - "Comments AND grades → Same as grades only"
+      - "The grade 'drowns out' the comments"
+
+  - type: two_column
+    title: "Glow and Grow"
+    accent: primary
+    left_title: "GLOW"
+    right_title: "GROW"
+    left_items:
+      - "Something specific that worked well"
+      - "'Your thesis clearly states your argument'"
+    right_items:
+      - "Something specific to improve"
+      - "'Add a sentence after quotes explaining connection'"
+
+  - type: comparison
+    title: "AI Feedback: Strengths vs. Limitations"
+    accent_left: accent1
+    accent_right: accent2
+    left_header: "STRENGTHS"
+    right_header: "LIMITATIONS"
+    left_items:
+      - "Instant, tireless"
+      - "No shame in asking"
+      - "Good for drafts"
+    right_items:
+      - "Misses context"
+      - "Can be confidently wrong"
+      - "Can't see effort or growth"
+
+  - type: table
+    title: "The Hybrid Model"
+    accent: secondary
+    headers: ["AI Role", "Human Role"]
+    rows:
+      - ["First-pass suggestions", "Final evaluation"]
+      - ["Grammar/mechanics", "Contextual judgment"]
+      - ["Available at 2am", "Relationship-based encouragement"]
+
+  - type: closing
+    main_text: "When you write feedback, you're saying: I read your work. I took time with your thinking. You matter."
+    subtext: "Feedback is relationship as much as information."
