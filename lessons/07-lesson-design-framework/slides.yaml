@@ -1,0 +1,127 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: The Five Artifacts of Effective Lesson Design
+
+title: "Lesson Design"
+subtitle: "The Five Artifacts Framework"
+
+# Color theme - professional slate/indigo with warm accents
+# accent2 (coral) = ALWAYS means "don't do this" or caution
+theme:
+  primary: {r: 0.25, g: 0.3, b: 0.45}     # slate blue
+  secondary: {r: 0.3, g: 0.55, b: 0.5}    # sage green (positive)
+  accent1: {r: 0.9, g: 0.65, b: 0.3}      # warm amber
+  accent2: {r: 0.8, g: 0.35, b: 0.35}     # coral (negative/warning)
+  background: {r: 0.97, g: 0.97, b: 0.98} # cool white
+  text: {r: 0.2, g: 0.22, b: 0.28}        # dark slate
+
+slides:
+  - type: title
+    # Uses presentation title/subtitle above
+
+  - type: big_idea
+    label: "THINK ABOUT IT"
+    main_text: "Architects draw blueprints before builders lay bricks."
+    supporting_text: "Teachers design lessons before students arrive."
+
+  - type: bullets
+    title: "The Five Artifacts"
+    accent: primary
+    items:
+      - "1. Lesson Plan - Documentation for administrators"
+      - "2. Slides - Visual support for instruction"
+      - "3. Reading - Instructor read-aloud text"
+      - "4. Worksheet - Group discussion prompts"
+      - "5. Quiz - End-of-lesson assessment"
+
+  - type: table
+    title: "Each Artifact Has a Purpose"
+    accent: secondary
+    headers: ["Artifact", "Audience", "Tool"]
+    rows:
+      - ["Lesson Plan", "Administrators (Ms. Knight)", "Google Docs"]
+      - ["Slides", "Students during instruction", "Google Slides"]
+      - ["Reading", "Students following along", "Google Docs"]
+      - ["Worksheet", "Small groups discussing", "Google Docs"]
+      - ["Quiz", "Individual students", "Google Forms"]
+
+  - type: numbered
+    title: "Artifact 1: The Lesson Plan"
+    accent: primary
+    items:
+      - "Learning objectives: What students will know or do"
+      - "Standards alignment: Which TEKS are addressed"
+      - "Materials needed: Everything required for the lesson"
+      - "Lesson sequence: Minute-by-minute breakdown"
+      - "Assessment strategy: How learning is measured"
+
+  - type: comparison
+    title: "Artifact 2: The Slides"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "Effective Slides"
+    right_header: "Ineffective Slides"
+    left_items:
+      - "Key ideas, not paragraphs"
+      - "Images that support content"
+      - "Guide attention, don't overwhelm"
+    right_items:
+      - "Walls of text to read verbatim"
+      - "Clip art that adds nothing"
+      - "Everything crammed on one slide"
+
+  - type: big_idea
+    label: "ARTIFACT 3: THE READING"
+    main_text: "Instructor reads aloud.\nStudents follow along."
+    supporting_text: "Listeners AND readers both get what they need."
+
+  - type: comparison
+    title: "Artifact 4: The Worksheet"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "Our Worksheets"
+    right_header: "Traditional Worksheets"
+    left_items:
+      - "Discussion prompts"
+      - "Talk with your group"
+      - "Instructor circulates and engages"
+    right_items:
+      - "Fill-in-the-blank"
+      - "Work silently alone"
+      - "Collect and grade later"
+
+  - type: bullets
+    title: "Artifact 5: The Quiz"
+    accent: primary
+    items:
+      - "Delivered through Google Classroom"
+      - "Questions are randomized"
+      - "Immediate feedback to instructor"
+      - "Not a gotcha - a signal for what to reteach"
+
+  - type: big_idea
+    label: "THE SYSTEM"
+    main_text: "Slides support the reading.\nReading prepares discussion.\nDiscussion deepens understanding.\nQuiz measures if it worked."
+    supporting_text: "Remove one piece, the whole system weakens."
+
+  - type: bullets
+    title: "Your Future Assignment"
+    accent: accent1
+    items:
+      - "I provide three or four artifacts"
+      - "You create the missing piece"
+      - "Maybe: slides, reading, worksheet, or quiz"
+      - "By building part, you understand the whole"
+
+  - type: bullets
+    title: "Group Discussion"
+    accent: primary
+    items:
+      - "Read prompts on your device"
+      - "Discuss verbally with your group"
+      - "Summarize key points on paper"
+      - "I'll visit each group"
+
+  - type: closing
+    quote: "A lesson is a system.\nEvery piece serves the whole."
+    attribution: "Grow Texas Teachers"
+    call_to_action: "Next: Complete the quiz on Google Classroom"

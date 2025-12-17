@@ -1,0 +1,128 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Six Levels of Thinking (Bloom's Taxonomy)
+
+title: "Six Levels of Thinking"
+subtitle: "Beyond 'What?' Questions"
+
+# Cognitive, layered color palette - blues building to purple
+theme:
+  primary: {r: 0.2, g: 0.25, b: 0.5}      # deep blue-purple
+  secondary: {r: 0.4, g: 0.55, b: 0.75}  # medium blue
+  accent1: {r: 0.6, g: 0.7, b: 0.9}      # light blue
+  accent2: {r: 0.7, g: 0.25, b: 0.25}    # muted red (negative)
+  background: {r: 0.97, g: 0.98, b: 1.0} # very light blue
+  text: {r: 0.15, g: 0.15, b: 0.2}       # dark blue-gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE DISCOVERY"
+    main_text: "Most test questions only asked for recall."
+    supporting_text: "Students were memorizing facts\nbut not actually thinking."
+
+  - type: bullets
+    title: "Benjamin Bloom (1913–1999)"
+    accent: primary
+    items:
+      - "Educational psychologist at University of Chicago"
+      - "Analyzed thousands of test questions"
+      - "Found most were basic recall"
+      - "Created a hierarchy of thinking levels"
+      - "Believed almost anyone can achieve mastery"
+
+  - type: quote
+    quote: "What any person can learn,\nalmost all persons can learn\nif provided with appropriate conditions."
+    attribution: "Benjamin Bloom"
+
+  - type: table
+    title: "The Six Levels of Thinking"
+    accent: secondary
+    headers: ["Level", "What It Means", "Question Starters"]
+    rows:
+      - ["1. REMEMBER", "Retrieve facts", "What is...? List... Define..."]
+      - ["2. UNDERSTAND", "Explain ideas", "Explain... Summarize... Compare..."]
+      - ["3. APPLY", "Use in new situations", "How would you use...? Demonstrate..."]
+      - ["4. ANALYZE", "Break apart, find relationships", "Why...? What's the relationship...?"]
+      - ["5. EVALUATE", "Make judgments", "Which is better...? Justify..."]
+      - ["6. CREATE", "Produce something new", "Design... Invent... What if...?"]
+
+  - type: comparison
+    title: "Lower Order vs. Higher Order"
+    accent_left: accent1
+    accent_right: primary
+    left_header: "LOWER ORDER"
+    right_header: "HIGHER ORDER"
+    left_items:
+      - "Remember"
+      - "Understand"
+      - "Apply"
+      - "Necessary but not sufficient"
+    right_items:
+      - "Analyze"
+      - "Evaluate"
+      - "Create"
+      - "Where deep thinking lives"
+
+  - type: big_idea
+    label: "THE 'WHAT' TRAP"
+    main_text: "Teachers often only ask 'What?' questions."
+    supporting_text: "What is photosynthesis?\nWhat are the branches of government?\nThese are all REMEMBER level."
+
+  - type: table
+    title: "Transforming Questions"
+    accent: secondary
+    headers: ["Remember Level", "Higher Level"]
+    rows:
+      - ["What is photosynthesis?", "Why does photosynthesis matter to animals? (Analyze)"]
+      - ["What are the three branches?", "Is the balance of powers working today? (Evaluate)"]
+      - ["What happened in the story?", "What if the character chose differently? (Create)"]
+
+  - type: bullets
+    title: "The Question Ladder"
+    accent: primary
+    items:
+      - "Start with Remember to activate knowledge"
+      - "Then CLIMB the ladder:"
+      - "1. What do plants need to grow? (Remember)"
+      - "2. Explain how plants get energy. (Understand)"
+      - "3. What would happen without plants? (Analyze)"
+      - "4. Design an experiment to test this. (Create)"
+
+  - type: bullets
+    title: "Match Assessment to Objective"
+    accent: secondary
+    items:
+      - "If your objective says 'analyze'..."
+      - "Your assessment must require analysis"
+      - "Not just recall of facts"
+      - "The verb in your objective = the level of thinking"
+
+  - type: table
+    title: "Practice: What Level?"
+    accent: secondary
+    headers: ["Question", "Level"]
+    rows:
+      - ["List the parts of a cell", "Remember"]
+      - ["Explain how a cell gets energy", "Understand"]
+      - ["Compare plant and animal cells", "Analyze"]
+      - ["Design a cell that could survive on Mars", "Create"]
+
+  - type: big_idea
+    label: "THE RESEARCH"
+    main_text: "Higher-order questions improve retention."
+    supporting_text: "Even of lower-order facts.\nWhen students think deeply, they remember better."
+
+  - type: bullets
+    title: "Practical Strategies"
+    accent: primary
+    items:
+      - "Audit your questions: What level are they?"
+      - "Plan questions at multiple levels"
+      - "Start low, build high"
+      - "Match assessments to objectives"
+      - "Don't skip levels—build systematically"
+
+  - type: closing
+    main_text: "If you only ask 'What?' you only get recall."
+    subtext: "Teach students to think by asking them to think."
