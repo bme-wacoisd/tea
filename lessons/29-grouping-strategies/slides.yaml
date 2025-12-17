@@ -1,0 +1,107 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Grouping Students for Learning
+
+title: "Grouping Students for Learning"
+subtitle: "Intentional Grouping for Maximum Learning"
+
+# Collaborative palette - warm and inviting
+theme:
+  primary: {r: 0.35, g: 0.25, b: 0.4}       # deep purple
+  secondary: {r: 0.6, g: 0.45, b: 0.25}     # warm gold
+  accent1: {r: 0.4, g: 0.45, b: 0.55}       # slate blue
+  accent2: {r: 0.65, g: 0.35, b: 0.35}      # muted red
+  background: {r: 0.98, g: 0.97, b: 0.95}   # warm cream
+  text: {r: 0.2, g: 0.18, b: 0.22}          # dark purple-gray
+
+slides:
+  - type: title
+
+  - type: bullets
+    title: "Grouping Is a Teaching Decision"
+    accent: primary
+    items:
+      - "The way you group affects who talks, who listens, who learns"
+      - "Thoughtful grouping accelerates learning"
+      - "Careless grouping reinforces inequities"
+      - "Don't default to the same structure every time"
+
+  - type: table
+    title: "Four Grouping Types"
+    accent: secondary
+    headers: ["Type", "When to Use"]
+    rows:
+      - ["Whole Class", "Introducing content, building shared knowledge"]
+      - ["Small Group", "Collaborative problem-solving, discussion"]
+      - ["Pairs", "Quick processing, peer support"]
+      - ["Individual", "Practice, assessment, quiet processing"]
+
+  - type: comparison
+    title: "Homogeneous vs. Heterogeneous"
+    accent_left: accent2
+    accent_right: primary
+    left_header: "HOMOGENEOUS"
+    right_header: "HETEROGENEOUS"
+    left_items:
+      - "Similar ability levels"
+      - "Targeted instruction"
+      - "Risk: Permanent tracking"
+    right_items:
+      - "Mixed ability levels"
+      - "Varied perspectives"
+      - "Benefit: Peer modeling"
+
+  - type: bullets
+    title: "The Problem with Tracking"
+    accent: accent2
+    items:
+      - "Students locked into fixed identities"
+      - "'Low' groups receive less challenging content"
+      - "Self-fulfilling prophecies develop"
+      - "Inequities are reinforced"
+
+  - type: big_idea
+    label: "THE SOLUTION"
+    main_text: "Flexible Grouping"
+    supporting_text: "Groups change based on the task.\nNo permanent 'high' and 'low' identities."
+
+  - type: bullets
+    title: "Making Groups Work: Roles"
+    accent: primary
+    items:
+      - "Facilitator — Keeps group on task"
+      - "Recorder — Documents group thinking"
+      - "Reporter — Shares with class"
+      - "Timekeeper — Monitors time"
+      - "Rotate roles so everyone practices"
+
+  - type: bullets
+    title: "Monitoring During Group Work"
+    accent: secondary
+    items:
+      - "Circulate the room"
+      - "Listen to discussions"
+      - "Ask probing questions"
+      - "Redirect off-task groups"
+      - "Take notes on understanding"
+
+  - type: bullets
+    title: "Individual Accountability"
+    accent: accent1
+    items:
+      - "Group work can hide individual non-learning"
+      - "Random reporter — anyone might share"
+      - "Individual reflection after group work"
+      - "Each person submits their own thinking"
+
+  - type: bullets
+    title: "The 'One Person Does All the Work' Problem"
+    accent: accent2
+    items:
+      - "Happens when task could be done by one person"
+      - "No individual accountability"
+      - "Roles aren't assigned"
+      - "Solution: Design tasks requiring multiple contributions"
+
+  - type: closing
+    main_text: "Match grouping to learning goal. Keep groups flexible."
+    subtext: "Every student should be pushed to think, contribute, and learn."

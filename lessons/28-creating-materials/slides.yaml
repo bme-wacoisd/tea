@@ -1,0 +1,97 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Creating Materials That Work
+
+title: "Creating Materials That Work"
+subtitle: "Designing for Learning, Not Confusion"
+
+# Clean, professional palette - reflects design quality
+theme:
+  primary: {r: 0.25, g: 0.3, b: 0.45}       # slate blue
+  secondary: {r: 0.5, g: 0.4, b: 0.25}      # warm brown
+  accent1: {r: 0.4, g: 0.5, b: 0.55}        # steel blue
+  accent2: {r: 0.65, g: 0.4, b: 0.3}        # terracotta
+  background: {r: 0.98, g: 0.98, b: 0.97}   # clean off-white
+  text: {r: 0.18, g: 0.2, b: 0.22}          # dark gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE PROBLEM"
+    main_text: "Clip art. Multiple fonts. Crowded text. Unclear directions."
+    supporting_text: "Students spend more time figuring out WHAT TO DO\nthan actually learning."
+
+  - type: bullets
+    title: "Cognitive Load"
+    accent: primary
+    items:
+      - "Working memory is limited"
+      - "Confusing materials consume mental resources"
+      - "Students decode format instead of learning content"
+      - "Good design reduces extraneous load"
+
+  - type: numbered
+    title: "Four Key Principles"
+    accent: secondary
+    items:
+      - "ALIGNMENT — Material matches the learning objective"
+      - "CLARITY — Students understand what to do within seconds"
+      - "CHALLENGE — Within zone of proximal development"
+      - "PURPOSEFUL — Every element serves learning"
+
+  - type: table
+    title: "Alignment Examples"
+    accent: primary
+    headers: ["Objective", "Poor Match", "Good Match"]
+    rows:
+      - ["Compare fractions", "Identify fractions", "Order and explain which is larger"]
+      - ["Explain causes", "List events", "Describe why each caused the event"]
+
+  - type: bullets
+    title: "Clarity Checklist"
+    accent: accent1
+    items:
+      - "Numbered directions"
+      - "Adequate white space"
+      - "Readable font (minimum 12pt)"
+      - "Consistent formatting"
+      - "Space for responses"
+
+  - type: table
+    title: "Match Organizer to Thinking Task"
+    accent: secondary
+    headers: ["Organizer", "Best For"]
+    rows:
+      - ["Venn diagram", "Comparing two things"]
+      - ["T-chart", "Two categories"]
+      - ["Sequence chain", "Order of events"]
+      - ["Concept map", "Showing relationships"]
+
+  - type: bullets
+    title: "Adapt, Don't Just Adopt"
+    accent: primary
+    items:
+      - "Simplify complex language"
+      - "Break long tasks into chunks"
+      - "Add scaffolds (word banks, sentence stems)"
+      - "Remove distracting elements"
+      - "Adjust for your specific students"
+
+  - type: numbered
+    title: "The Materials Checklist"
+    accent: accent2
+    items:
+      - "Does it align to my objective?"
+      - "Are directions clear?"
+      - "Is it visually clean?"
+      - "Is the reading level appropriate?"
+      - "Does every element serve learning?"
+
+  - type: big_idea
+    label: "THE TEST"
+    main_text: "Could a substitute use this?"
+    supporting_text: "If you need to explain it verbally,\nit's not clear enough."
+
+  - type: closing
+    main_text: "Every element should serve learning—or it shouldn't be there."
+    subtext: "Preview materials from the student perspective before using them."

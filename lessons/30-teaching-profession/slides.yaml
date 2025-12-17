@@ -1,0 +1,118 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: What Makes Teaching a Profession?
+
+title: "What Makes Teaching a Profession?"
+subtitle: "The Five Pillars of Professionalism"
+
+# Professional/distinguished palette - deep navy and gold
+theme:
+  primary: {r: 0.15, g: 0.2, b: 0.35}       # deep navy
+  secondary: {r: 0.7, g: 0.55, b: 0.2}      # gold
+  accent1: {r: 0.3, g: 0.4, b: 0.5}         # slate
+  accent2: {r: 0.6, g: 0.3, b: 0.3}         # muted burgundy
+  background: {r: 0.98, g: 0.97, b: 0.95}   # cream
+  text: {r: 0.15, g: 0.15, b: 0.2}          # dark navy
+
+slides:
+  - type: title
+
+  - type: comparison
+    title: "Job vs. Profession"
+    accent_left: accent2
+    accent_right: primary
+    left_header: "JOB"
+    right_header: "PROFESSION"
+    left_items:
+      - "Show up, do tasks, go home"
+      - "Basic requirements"
+      - "Employment"
+    right_items:
+      - "Specialized knowledge"
+      - "Ethical commitments"
+      - "Ongoing growth"
+
+  - type: numbered
+    title: "The Five Pillars of Professionalism"
+    accent: secondary
+    items:
+      - "Knowledge of Subject Matter"
+      - "Pedagogical Expertise"
+      - "Ethical Commitment"
+      - "Continuous Improvement"
+      - "Professional Community"
+
+  - type: bullets
+    title: "Pillar 1: Subject Knowledge"
+    accent: primary
+    items:
+      - "Actually KNOW what you're teaching"
+      - "Deep understanding, not one chapter ahead"
+      - "Explain concepts multiple ways"
+      - "Awareness of common misconceptions"
+
+  - type: bullets
+    title: "Pillar 2: Pedagogical Expertise"
+    accent: secondary
+    items:
+      - "Knowing your subject is necessary but not sufficient"
+      - "You must know how to TEACH it"
+      - "Understanding how learning works"
+      - "A toolkit of strategies for different learners"
+
+  - type: bullets
+    title: "Pillar 3: Ethical Commitment"
+    accent: accent1
+    items:
+      - "Putting students' needs first"
+      - "Maintaining appropriate boundaries"
+      - "Fair treatment of all students"
+      - "Following the Code of Ethics"
+
+  - type: bullets
+    title: "Pillar 4: Continuous Improvement"
+    accent: primary
+    items:
+      - "Professionals keep learning"
+      - "Staying current with research"
+      - "Reflecting on practice"
+      - "Seeking feedback"
+      - "Growing throughout career"
+
+  - type: table
+    title: "Professional vs. Unprofessional Conduct"
+    accent: secondary
+    headers: ["Professional", "Unprofessional"]
+    rows:
+      - ["Arrives prepared", "Wings it"]
+      - ["Keeps learning", "Stopped growing"]
+      - ["Maintains boundaries", "Crosses lines"]
+      - ["Takes responsibility", "Blames others"]
+      - ["Respects confidentiality", "Shares student info"]
+
+  - type: bullets
+    title: "First Impressions Matter"
+    accent: accent1
+    items:
+      - "Dress appropriate for context"
+      - "Clear, error-free communication"
+      - "Consistent punctuality"
+      - "Organized materials"
+      - "Calm under pressure"
+
+  - type: two_column
+    title: "The 'Calling' Question"
+    accent: primary
+    left_title: "Benefits"
+    right_title: "Dangers"
+    left_items:
+      - "Deep commitment"
+      - "Meaning beyond paycheck"
+      - "Moral purpose"
+    right_items:
+      - "Can justify underpaying teachers"
+      - "Unrealistic sacrifice expectations"
+      - "Boundaries get blurred"
+
+  - type: closing
+    main_text: "Professionalism is demonstrated through daily actions—not claimed, but shown."
+    subtext: "Your reputation takes years to build and moments to destroy."
