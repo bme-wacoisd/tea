@@ -1,0 +1,123 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: The Birth of Public Education (Horace Mann)
+
+title: "The Birth of Public Education"
+subtitle: "How One Man Changed American Schools Forever"
+
+# Historical color palette - deep browns, golds, parchment
+theme:
+  primary: {r: 0.35, g: 0.25, b: 0.15}    # deep brown
+  secondary: {r: 0.72, g: 0.53, b: 0.25}  # gold/bronze
+  accent1: {r: 0.85, g: 0.75, b: 0.55}    # light gold
+  accent2: {r: 0.6, g: 0.2, b: 0.2}       # burgundy (negative)
+  background: {r: 0.98, g: 0.95, b: 0.88} # parchment
+  text: {r: 0.2, g: 0.15, b: 0.1}         # dark brown
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE YEAR IS 1840"
+    main_text: "Most American children don't go to school."
+    supporting_text: "Education is for the wealthy.\nTeaching is not a profession.\nOne man is about to change everything."
+
+  - type: bullets
+    title: "Horace Mann (1796–1859)"
+    accent: primary
+    items:
+      - "Born in poverty in Massachusetts"
+      - "Only 6-8 weeks of schooling per year"
+      - "Became first Secretary of Massachusetts Board of Education"
+      - "Called \"The Father of American Public Education\""
+
+  - type: quote
+    quote: "Be ashamed to die until you have\nwon some victory for humanity."
+    attribution: "Horace Mann's final words"
+
+  - type: big_idea
+    label: "HIS RADICAL IDEA"
+    main_text: "Every child deserves free, quality education."
+    supporting_text: "Regardless of social class.\nThis was revolutionary."
+
+  - type: bullets
+    title: "What \"Common School\" Meant"
+    accent: secondary
+    items:
+      - "FREE - No tuition, funded by taxes"
+      - "UNIVERSAL - For all children, not just the wealthy"
+      - "NON-SECTARIAN - Moral but not religious"
+      - "COMMON - Rich and poor learning together"
+
+  - type: table
+    title: "Before Mann vs. After Mann"
+    accent: secondary
+    headers: ["Before 1840", "Mann's Vision"]
+    rows:
+      - ["Only wealthy children educated", "All children in school"]
+      - ["Anyone could teach", "Trained, professional teachers"]
+      - ["Private, religious schools", "Public, tax-funded schools"]
+      - ["Education as privilege", "Education as right"]
+
+  - type: bullets
+    title: "Why Professional Teachers?"
+    accent: primary
+    items:
+      - "Mann created \"Normal Schools\" - first teacher training"
+      - "Before this, teachers were often teenagers"
+      - "No standards, no preparation, no profession"
+      - "Mann believed: quality schools require quality teachers"
+
+  - type: quote
+    quote: "A republic cannot remain\nignorant and free."
+    attribution: "Horace Mann"
+
+  - type: bullets
+    title: "Mann's Six Propositions"
+    accent: secondary
+    items:
+      - "1. Democracy requires educated citizens"
+      - "2. Education must be publicly funded and controlled"
+      - "3. Schools should embrace all children"
+      - "4. Schools must be moral but non-sectarian"
+      - "5. Methods must reflect a free society"
+      - "6. Only trained teachers can deliver this"
+
+  - type: big_idea
+    label: "THE CONTROVERSIAL TRIP"
+    main_text: "In 1843, Mann visited Prussia."
+    supporting_text: "He admired their professional teacher training.\nCritics accused him of importing \"foreign\" ideas."
+
+  - type: comparison
+    title: "The Debate Continues"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "MANN'S VISION"
+    right_header: "CRITICS SAID"
+    left_items:
+      - "Universal education for all"
+      - "Professional teacher training"
+      - "Systematic curriculum"
+      - "Public funding and oversight"
+    right_items:
+      - "Too much government control"
+      - "Foreign ideas, un-American"
+      - "Parents should decide"
+      - "Religious education is best"
+
+  - type: bullets
+    title: "His Legacy Today"
+    accent: primary
+    items:
+      - "Free public schools in every American community"
+      - "Compulsory attendance laws in all 50 states"
+      - "Teacher certification requirements"
+      - "The idea that education is a public responsibility"
+
+  - type: big_idea
+    label: "REMEMBER"
+    main_text: "What seems \"normal\" was once revolutionary."
+    supporting_text: "Free schools, trained teachers, education for all—\nsomeone had to fight for these ideas."
+
+  - type: closing
+    main_text: "The schools you teach in exist because of Mann."
+    subtext: "What will YOUR contribution be?"

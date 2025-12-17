@@ -1,0 +1,11 @@
+# Every Kid Needs a Champion
+
+Rita Pierson was a professional educator for forty years. Her parents were educators. Her grandparents were educators. Teaching wasn't just her job—it was her family's calling. In 2013, she stood on a TED stage and delivered a seven-minute talk that has now been viewed over fifteen million times. Her message was simple but powerful: "Kids don't learn from people they don't like."
+
+Pierson told the story of a colleague who once said, "They don't pay me to like the kids." Her response? "Kids don't learn from people they don't like." She wasn't just making a clever comeback. She was stating something that research has confirmed again and again: the relationship between teacher and student is the foundation of learning. James Comer, the child psychiatrist, put it plainly: "No significant learning can occur without a significant relationship."
+
+One of Pierson's most famous stories involved a student who missed eighteen out of twenty questions on a test. Instead of writing "-18" at the top of the paper, Pierson wrote "+2" with a big smiley face. When the student asked what that meant, she said, "You got two right. You didn't miss them all!" Same information, completely different message. One says "you failed." The other says "you started—keep going." How we frame feedback shapes how students see themselves.
+
+Pierson also spoke about the power of vulnerability. She told her class about a time she came in on a Monday and said, "I was wrong yesterday. I apologize." That simple admission built trust. It modeled what she wanted students to learn about admitting mistakes. It showed them that she was human, that she cared about the relationship enough to be honest.
+
+In the years to come, students will have access to AI tutors that are infinitely patient, available at any hour, and never have a bad day. These tools can explain concepts in forty different ways without getting frustrated. But they cannot believe in a student. They cannot look at a child who just failed a test and genuinely think, "I know you can do better." They cannot witness a student's growth over time and feel proud. They cannot be a champion. That remains the irreplaceable work of human teachers—seeing students, believing in them, and never giving up.

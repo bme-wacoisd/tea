@@ -1,0 +1,135 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: How Children Think at Different Ages (Piaget)
+
+title: "How Children Think"
+subtitle: "Why Kids Aren't Just Small Adults"
+
+# Scientific, thoughtful color palette - blues and greens
+theme:
+  primary: {r: 0.15, g: 0.35, b: 0.55}    # deep blue
+  secondary: {r: 0.2, g: 0.55, b: 0.45}   # teal
+  accent1: {r: 0.45, g: 0.7, b: 0.8}      # light blue
+  accent2: {r: 0.75, g: 0.25, b: 0.25}    # muted red (negative)
+  background: {r: 0.96, g: 0.98, b: 1.0}  # very light blue
+  text: {r: 0.15, g: 0.2, b: 0.25}        # dark blue-gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "A REVOLUTIONARY DISCOVERY"
+    main_text: "Children don't think like adults."
+    supporting_text: "They think in fundamentally different ways\nat different ages."
+
+  - type: bullets
+    title: "Jean Piaget (1896–1980)"
+    accent: primary
+    items:
+      - "Swiss psychologist, originally trained as biologist"
+      - "Fascinated by children's \"wrong\" answers on tests"
+      - "Same-age children made the same mistakes"
+      - "Discovered: cognition develops in stages"
+
+  - type: quote
+    quote: "It's not that children know less.\nTheir minds actually work differently."
+    attribution: "The core insight of Piaget's work"
+
+  - type: big_idea
+    label: "THE FAMOUS EXPERIMENT"
+    main_text: "Pour water into a taller glass."
+    supporting_text: "Young children insist there's MORE water now.\nThey're not confused. Their brains can't process it yet."
+
+  - type: bullets
+    title: "What Is Conservation?"
+    accent: secondary
+    items:
+      - "Understanding that quantity stays the same"
+      - "Even when appearance changes"
+      - "Tall glass vs. short glass: same amount"
+      - "Young children literally cannot see this"
+
+  - type: table
+    title: "Piaget's Four Stages"
+    accent: secondary
+    headers: ["Stage", "Ages", "What's Happening"]
+    rows:
+      - ["Sensorimotor", "0-2 years", "Learning through senses and movement"]
+      - ["Preoperational", "2-7 years", "Language, pretend play, egocentric"]
+      - ["Concrete Operational", "7-11 years", "Logical thinking with concrete objects"]
+      - ["Formal Operational", "11+ years", "Abstract and hypothetical thinking"]
+
+  - type: bullets
+    title: "Preoperational (Ages 2-7)"
+    accent: primary
+    items:
+      - "Language explodes"
+      - "Symbolic play emerges (pretend!)"
+      - "Egocentric: assumes others see what they see"
+      - "Cannot yet do logical operations"
+      - "Conservation not yet understood"
+
+  - type: bullets
+    title: "Concrete Operational (Ages 7-11)"
+    accent: secondary
+    items:
+      - "Logical thinking with concrete objects"
+      - "Conservation NOW understood"
+      - "Can classify, order, and organize"
+      - "Still struggles with pure abstraction"
+      - "Need hands-on materials to reason"
+
+  - type: bullets
+    title: "Formal Operational (11+)"
+    accent: primary
+    items:
+      - "Abstract and hypothetical thinking"
+      - "\"What if\" reasoning"
+      - "Can think about thinking"
+      - "Scientific hypothesis testing"
+      - "Not everyone fully reaches this stage"
+
+  - type: comparison
+    title: "What This Means for Teachers"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "✓ UNDERSTAND"
+    right_header: "✗ DON'T ASSUME"
+    left_items:
+      - "Match activities to developmental stage"
+      - "Use concrete before abstract"
+      - "Mistakes often = development, not laziness"
+      - "Build on what they CAN do"
+    right_items:
+      - "\"I explained it, so they should get it\""
+      - "Abstract concepts work for all ages"
+      - "Struggling means not trying"
+      - "All kids develop at the same rate"
+
+  - type: big_idea
+    label: "KEY INSIGHT"
+    main_text: "Readiness matters."
+    supporting_text: "Clear explanation isn't enough.\nThe brain must be ready to process."
+
+  - type: bullets
+    title: "Practical Applications"
+    accent: secondary
+    items:
+      - "Use manipulatives before symbols"
+      - "Let students handle, touch, experience"
+      - "Don't skip concrete to get to abstract faster"
+      - "Recognize developmental limits, not laziness"
+      - "Design activities for the stage, not the grade"
+
+  - type: table
+    title: "Concrete → Abstract"
+    accent: secondary
+    headers: ["Concept", "Concrete First", "Then Abstract"]
+    rows:
+      - ["Addition", "Counting blocks", "Number sentences"]
+      - ["Fractions", "Pizza slices", "⅓ + ¼"]
+      - ["History", "Stories of real people", "Themes and patterns"]
+      - ["Science", "Hands-on experiments", "Formulas and laws"]
+
+  - type: closing
+    main_text: "Meet students where their minds are."
+    subtext: "Development, not deficiency."

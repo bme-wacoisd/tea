@@ -1,0 +1,125 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Every Kid Needs a Champion (Rita Pierson)
+
+title: "Every Kid Needs a Champion"
+subtitle: "The Power of Believing in Students"
+
+# Warm, encouraging color theme
+theme:
+  primary: {r: 0.55, g: 0.27, b: 0.07}    # warm brown
+  secondary: {r: 0.93, g: 0.49, b: 0.19}  # orange (positive)
+  accent1: {r: 0.99, g: 0.84, b: 0.41}    # golden yellow
+  accent2: {r: 0.75, g: 0.22, b: 0.22}    # muted red (negative)
+  background: {r: 1.0, g: 0.97, b: 0.93}  # warm cream
+  text: {r: 0.2, g: 0.18, b: 0.16}        # dark brown
+
+slides:
+  - type: title
+
+  - type: quote
+    quote: "Kids don't learn from\npeople they don't like."
+    attribution: "Rita Pierson"
+
+  - type: bullets
+    title: "Rita Pierson (1941–2013)"
+    accent: primary
+    items:
+      - "40 years as a professional educator"
+      - "Parents and grandparents were educators"
+      - "Her TED Talk: over 15 million views"
+      - "Spoke about what really makes teachers effective"
+
+  - type: big_idea
+    label: "THE CORE INSIGHT"
+    main_text: "No significant learning without significant relationship."
+    supporting_text: "— James Comer, child psychiatrist"
+
+  - type: quote
+    quote: "All learning is\nunderstanding relationships."
+    attribution: "George Washington Carver"
+
+  - type: bullets
+    title: "The Colleague Who Said..."
+    accent: accent2
+    items:
+      - "\"They don't pay me to like the kids.\""
+      - "Pierson's response became legendary"
+      - "Some teachers deliver content"
+      - "Champions believe in children"
+
+  - type: big_idea
+    label: "THE +2 STORY"
+    main_text: "A student missed 18 out of 20."
+    supporting_text: "Pierson wrote \"+2\" with a smiley face.\n\"2 ain't bad!\""
+
+  - type: bullets
+    title: "Why the +2 Mattered"
+    accent: secondary
+    items:
+      - "Same information: 2 correct answers"
+      - "Completely different message"
+      - "-18 says: \"You failed\""
+      - "+2 says: \"You started. Keep going.\""
+
+  - type: quote
+    quote: "I am somebody.\nI was somebody when I came.\nI'll be a better somebody when I leave.\nI am powerful, and I am strong."
+    attribution: "Pierson's classroom mantra"
+
+  - type: bullets
+    title: "The Power of Apology"
+    accent: secondary
+    items:
+      - "\"I came in on a Monday and said...\""
+      - "\"I was wrong yesterday.\""
+      - "Vulnerability builds trust"
+      - "Models what we want students to learn"
+
+  - type: comparison
+    title: "Two Kinds of Teachers"
+    accent_left: secondary
+    accent_right: accent2
+    left_header: "CHAMPIONS"
+    right_header: "TOLERATORS"
+    left_items:
+      - "Believe students can improve"
+      - "See potential, not just performance"
+      - "Build relationships intentionally"
+      - "Never give up on a child"
+    right_items:
+      - "Tolerate difficult students"
+      - "Focus on current behavior"
+      - "Keep professional distance"
+      - "Move struggling students along"
+
+  - type: big_idea
+    label: "WHAT AI CANNOT DO"
+    main_text: "An AI can say \"You can do this!\""
+    supporting_text: "But it doesn't believe it.\nIt has no stakes in your success."
+
+  - type: bullets
+    title: "The Irreplaceable Human Element"
+    accent: primary
+    items:
+      - "AI cannot genuinely believe in you"
+      - "AI cannot be vulnerable or apologize meaningfully"
+      - "AI cannot witness your growth over time"
+      - "AI cannot be your champion"
+
+  - type: table
+    title: "Building Relationships"
+    accent: secondary
+    headers: ["Strategy", "What It Communicates"]
+    rows:
+      - ["Learn student names quickly", "\"You matter as an individual\""]
+      - ["Greet students at the door", "\"I'm glad you're here\""]
+      - ["Remember details about their lives", "\"I see you beyond this class\""]
+      - ["Celebrate small wins", "\"I notice your effort\""]
+      - ["Admit when you're wrong", "\"I respect you enough to be honest\""]
+
+  - type: quote
+    quote: "Every child deserves a champion—\nan adult who will never give up on them,\nwho understands the power of connection,\nand insists that they become the best\nthey can possibly be."
+    attribution: "Rita Pierson"
+
+  - type: closing
+    main_text: "Be the teacher who believes."
+    subtext: "Your students will know the difference."
