@@ -1,0 +1,105 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Resolving Conflicts in the Classroom
+
+title: "Resolving Conflicts in the Classroom"
+subtitle: "Teaching Students to Resolve Disputes"
+
+# Calm/balanced palette - soothing blues and neutrals
+theme:
+  primary: {r: 0.25, g: 0.35, b: 0.45}      # calm blue
+  secondary: {r: 0.55, g: 0.45, b: 0.3}     # warm tan
+  accent1: {r: 0.4, g: 0.5, b: 0.55}        # slate
+  accent2: {r: 0.55, g: 0.35, b: 0.35}      # muted red
+  background: {r: 0.97, g: 0.97, b: 0.96}   # cool cream
+  text: {r: 0.18, g: 0.2, b: 0.22}          # dark gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE REALITY"
+    main_text: "Conflicts will happen."
+    supporting_text: "The question is whether students learn from them."
+
+  - type: numbered
+    title: "The Four-Step Mediation Model"
+    accent: primary
+    items:
+      - "COOL DOWN — Emotions must settle first"
+      - "SHARE PERSPECTIVES — Each person describes their view"
+      - "IDENTIFY THE PROBLEM — Name the actual issue"
+      - "GENERATE SOLUTIONS — Brainstorm together"
+
+  - type: bullets
+    title: "Step 1: Cool Down"
+    accent: secondary
+    items:
+      - "Separate students if needed"
+      - "Allow time to calm down"
+      - "Use calming strategies"
+      - "'We'll talk when everyone is ready'"
+
+  - type: bullets
+    title: "Step 2: Share Perspectives"
+    accent: primary
+    items:
+      - "One person at a time"
+      - "No interrupting"
+      - "Teacher paraphrases: 'So you're saying...'"
+      - "Both feel heard before problem-solving"
+
+  - type: two_column
+    title: "Position vs. Interest"
+    accent: secondary
+    left_title: "Position"
+    right_title: "Interest"
+    left_items:
+      - "'I want that seat'"
+      - "What they say they want"
+    right_items:
+      - "Needs to see the board"
+      - "Or wants to sit by friend"
+      - "WHY they want it"
+
+  - type: comparison
+    title: "Teacher Role in Mediation"
+    accent_left: primary
+    accent_right: accent2
+    left_header: "DO"
+    right_header: "DON'T"
+    left_items:
+      - "Stay neutral"
+      - "Listen actively"
+      - "Paraphrase and ask questions"
+      - "Guide, don't dictate"
+    right_items:
+      - "Take sides"
+      - "Rush to judgment"
+      - "Impose solutions"
+      - "Minimize feelings"
+
+  - type: comparison
+    title: "Teaching 'I' Statements"
+    accent_left: accent2
+    accent_right: primary
+    left_header: "BLAMING"
+    right_header: "EXPRESSING"
+    left_items:
+      - "'You made me feel angry!'"
+      - "Attacks the other person"
+    right_items:
+      - "'I felt hurt when...'"
+      - "Owns feelings without attacking"
+
+  - type: bullets
+    title: "When Mediation Isn't Appropriate"
+    accent: accent2
+    items:
+      - "Bullying — patterns of power imbalance"
+      - "Safety threats — immediate action needed"
+      - "Serious offenses — consequences may be required"
+      - "One party refuses — both must be willing"
+
+  - type: closing
+    main_text: "Teach skills for resolving future conflicts—not just ending this one."
+    subtext: "These are skills they'll use for life."

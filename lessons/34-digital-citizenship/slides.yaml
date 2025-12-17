@@ -1,0 +1,98 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Digital Citizenship
+
+title: "Digital Citizenship"
+subtitle: "Teaching Students to Navigate the Online World"
+
+# Tech/digital palette - modern blues and contrasts
+theme:
+  primary: {r: 0.2, g: 0.35, b: 0.5}        # tech blue
+  secondary: {r: 0.5, g: 0.45, b: 0.25}     # warm gold
+  accent1: {r: 0.35, g: 0.5, b: 0.55}       # teal
+  accent2: {r: 0.6, g: 0.35, b: 0.35}       # muted red
+  background: {r: 0.97, g: 0.97, b: 0.98}   # cool cream
+  text: {r: 0.15, g: 0.18, b: 0.22}         # dark blue-gray
+
+slides:
+  - type: title
+
+  - type: comparison
+    title: "Digital Native vs. Digital Citizen"
+    accent_left: accent2
+    accent_right: primary
+    left_header: "NATIVE"
+    right_header: "CITIZEN"
+    left_items:
+      - "Grew up with technology"
+      - "Knows how to USE it"
+      - "Skills"
+    right_items:
+      - "Uses technology responsibly"
+      - "Knows how to USE IT WISELY"
+      - "Wisdom"
+
+  - type: bullets
+    title: "What Is Digital Citizenship?"
+    accent: primary
+    items:
+      - "Responsible, ethical, and safe use of technology"
+      - "Protecting yourself and your data"
+      - "Respecting others online"
+      - "Evaluating information critically"
+      - "Understanding consequences of digital actions"
+
+  - type: table
+    title: "Key Elements"
+    accent: secondary
+    headers: ["Element", "What It Covers"]
+    rows:
+      - ["Literacy", "Evaluating sources, understanding algorithms"]
+      - ["Etiquette", "Treating others with respect online"]
+      - ["Security", "Passwords, phishing, protection"]
+      - ["Law", "Copyright, privacy, consequences"]
+      - ["Health", "Screen time, digital wellness"]
+
+  - type: table
+    title: "Age-Appropriate Instruction"
+    accent: primary
+    headers: ["Age", "Focus"]
+    rows:
+      - ["Elementary", "Being kind, asking permission, telling adults"]
+      - ["Middle School", "Reputation, cyberbullying, permanence"]
+      - ["High School", "Digital footprint, intellectual property"]
+
+  - type: bullets
+    title: "Your Digital Footprint"
+    accent: accent1
+    items:
+      - "Everything you do online leaves a trail"
+      - "Posts, photos, searches, messages"
+      - "This footprint is permanent and searchable"
+      - "Affects college admissions and job prospects"
+
+  - type: quote
+    quote: "A classmate posts something mean about a teacher online. What do you do?"
+    attribution: "Teaching through scenarios develops judgment"
+
+  - type: bullets
+    title: "Model Your Thinking Aloud"
+    accent: secondary
+    items:
+      - "'Before I share this image, let me check if it's licensed...'"
+      - "'I'm removing students' last names for privacy...'"
+      - "Students learn by watching how YOU make decisions"
+      - "What you do teaches more than what you say"
+
+  - type: bullets
+    title: "Cyberbullying Response"
+    accent: accent2
+    items:
+      - "Take it seriously even if outside school"
+      - "Document what you see"
+      - "Report according to school policy"
+      - "Support the victim"
+      - "Address the behavior"
+
+  - type: closing
+    main_text: "Model what you teach. Students are watching."
+    subtext: "Your digital behavior teaches every day."
