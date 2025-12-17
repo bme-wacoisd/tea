@@ -1,0 +1,116 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Technology as a Tool, Not a Toy - SAMR Model
+
+title: "Technology as a Tool, Not a Toy"
+subtitle: "The SAMR Model"
+
+# Tech-forward palette - blues and greens with modern feel
+theme:
+  primary: {r: 0.15, g: 0.3, b: 0.5}        # tech blue
+  secondary: {r: 0.2, g: 0.5, b: 0.45}      # teal
+  accent1: {r: 0.4, g: 0.65, b: 0.8}        # light blue
+  accent2: {r: 0.9, g: 0.55, b: 0.2}        # orange accent
+  background: {r: 0.96, g: 0.97, b: 0.98}   # cool off-white
+  text: {r: 0.15, g: 0.18, b: 0.22}         # dark blue-gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE QUESTION"
+    main_text: "A teacher replaces worksheets with an iPad app."
+    supporting_text: "Students tap instead of write.\nIs this 'technology integration'?"
+
+  - type: quote
+    quote: "What can students do now that they couldn't do before?"
+    attribution: "The essential question for technology integration"
+
+  - type: table
+    title: "The SAMR Model"
+    accent: primary
+    headers: ["Level", "Type", "Description"]
+    rows:
+      - ["Substitution", "Enhancement", "Technology replaces tool, no change"]
+      - ["Augmentation", "Enhancement", "Technology adds functional improvement"]
+      - ["Modification", "Transformation", "Technology enables task redesign"]
+      - ["Redefinition", "Transformation", "Technology enables new tasks"]
+
+  - type: two_column
+    title: "Enhancement Levels"
+    accent: accent1
+    left_title: "Substitution"
+    right_title: "Augmentation"
+    left_items:
+      - "Direct substitute"
+      - "No functional change"
+      - "Ex: Typing instead of handwriting"
+    right_items:
+      - "Adds improvement"
+      - "Same task, better features"
+      - "Ex: Google Docs with spell check"
+
+  - type: two_column
+    title: "Transformation Levels"
+    accent: secondary
+    left_title: "Modification"
+    right_title: "Redefinition"
+    left_items:
+      - "Significant task redesign"
+      - "New capabilities"
+      - "Ex: Real-time collaboration"
+    right_items:
+      - "New tasks possible"
+      - "Previously inconceivable"
+      - "Ex: Global audience for student work"
+
+  - type: table
+    title: "AI at Every SAMR Level"
+    accent: accent2
+    headers: ["Level", "How AI Is Used", "What Student Learns"]
+    rows:
+      - ["Substitution", "AI writes the essay", "Nothing—AI learned"]
+      - ["Augmentation", "AI suggests fixes", "Writing mechanics"]
+      - ["Modification", "Student revises AI feedback", "Critical evaluation"]
+      - ["Redefinition", "Student critiques AI accuracy", "Content + AI literacy"]
+
+  - type: big_idea
+    label: "THE AI QUESTION"
+    main_text: "Who is doing the thinking?"
+    supporting_text: "The student or the machine?"
+
+  - type: comparison
+    title: "AI Use: Harmful vs. Powerful"
+    accent_left: accent2
+    accent_right: secondary
+    left_header: "SUBSTITUTION (Harmful)"
+    right_header: "TRANSFORMATION (Powerful)"
+    left_items:
+      - "AI does the work"
+      - "Student can't explain output"
+      - "Learning bypassed"
+    right_items:
+      - "AI provides raw material"
+      - "Student analyzes, critiques"
+      - "Learning deepened"
+
+  - type: bullets
+    title: "Not a Ladder—A Toolbox"
+    accent: primary
+    items:
+      - "Sometimes Substitution is the right tool"
+      - "Not every lesson needs Redefinition"
+      - "Match tool sophistication to task demands"
+      - "A pencil might work better than VR headsets"
+
+  - type: numbered
+    title: "The Right Questions"
+    accent: secondary
+    items:
+      - "What's the learning objective? (Start here)"
+      - "Does technology help achieve it?"
+      - "What can students do now that they couldn't before?"
+      - "Who is doing the thinking?"
+
+  - type: closing
+    main_text: "Technology should serve learning—not the other way around."
+    subtext: "The goal isn't to be high-tech. The goal is for students to learn."

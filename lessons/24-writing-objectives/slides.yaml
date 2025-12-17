@@ -1,0 +1,105 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Writing Objectives That Mean Something
+
+title: "Writing Objectives That Mean Something"
+subtitle: "Clear, Measurable Learning Objectives"
+
+# Focused/academic palette - deep purples and warm golds
+theme:
+  primary: {r: 0.3, g: 0.2, b: 0.45}        # deep purple
+  secondary: {r: 0.75, g: 0.55, b: 0.15}    # golden
+  accent1: {r: 0.5, g: 0.35, b: 0.6}        # lighter purple
+  accent2: {r: 0.85, g: 0.45, b: 0.3}       # coral
+  background: {r: 0.98, g: 0.97, b: 0.96}   # warm cream
+  text: {r: 0.18, g: 0.15, b: 0.2}          # dark purple-gray
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE PROBLEM"
+    main_text: "Students will understand fractions."
+    supporting_text: "How do you know when they 'understand'?\nWhat does it look like?"
+
+  - type: table
+    title: "The Solution: ABCD Objectives"
+    accent: primary
+    headers: ["Component", "Question"]
+    rows:
+      - ["Audience", "Who is learning?"]
+      - ["Behavior", "What will they DO?"]
+      - ["Condition", "Under what circumstances?"]
+      - ["Degree", "How well?"]
+
+  - type: bullets
+    title: "Example: ABCD in Action"
+    accent: secondary
+    items:
+      - "Audience: Students"
+      - "Behavior: will compare fractions using <, >, = symbols"
+      - "Condition: Given pairs of fractions with unlike denominators"
+      - "Degree: with at least 80% accuracy"
+
+  - type: comparison
+    title: "The Verb Matters Most"
+    accent_left: accent2
+    accent_right: primary
+    left_header: "VAGUE (Avoid)"
+    right_header: "OBSERVABLE (Use)"
+    left_items:
+      - "Understand"
+      - "Know"
+      - "Learn"
+      - "Appreciate"
+    right_items:
+      - "Explain, Compare"
+      - "Identify, Describe"
+      - "Demonstrate, Apply"
+      - "Analyze, Evaluate"
+
+  - type: table
+    title: "Bloom's Taxonomy Verbs"
+    accent: accent1
+    headers: ["Level", "Verbs"]
+    rows:
+      - ["Remember", "identify, list, define, name, recall"]
+      - ["Understand", "explain, describe, summarize, compare"]
+      - ["Apply", "demonstrate, solve, use, illustrate"]
+      - ["Analyze", "examine, distinguish, categorize"]
+      - ["Evaluate", "judge, critique, justify, assess"]
+      - ["Create", "design, construct, compose, produce"]
+
+  - type: table
+    title: "Weak → Strong Transformations"
+    accent: secondary
+    headers: ["Weak", "Strong"]
+    rows:
+      - ["'Understand the Civil War'", "'Identify three causes and explain impact'"]
+      - ["'Know about plants'", "'Label five plant parts with 100% accuracy'"]
+      - ["'Learn addition'", "'Solve 10 problems correctly in 2 minutes'"]
+
+  - type: bullets
+    title: "Objectives Drive Everything"
+    accent: primary
+    items:
+      - "If your objective says COMPARE → assessment requires comparison"
+      - "If your objective says CREATE → worksheets won't cut it"
+      - "If your objective says IDENTIFY → matching test works"
+      - "The verb determines activities and assessments"
+
+  - type: quote
+    quote: "I can name the three branches of government and explain what each one does."
+    attribution: "Student-friendly objective ('I can' statement)"
+
+  - type: bullets
+    title: "The Rule"
+    accent: secondary
+    items:
+      - "Write the objective FIRST"
+      - "Then plan activities that build toward it"
+      - "Then design assessment that measures it"
+      - "The objective focuses everything else"
+
+  - type: closing
+    main_text: "A clear objective tells you what to teach, what to assess, and when you're done."
+    subtext: "If you can't measure it, you can't teach it."

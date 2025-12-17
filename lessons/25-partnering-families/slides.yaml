@@ -1,0 +1,102 @@
+# Slide presentation configuration for Google Slides API
+# Lesson: Partnering with Families
+
+title: "Partnering with Families"
+subtitle: "Building Relationships That Support Learning"
+
+# Warm, welcoming palette - soft oranges and earthy tones
+theme:
+  primary: {r: 0.55, g: 0.35, b: 0.25}      # warm brown
+  secondary: {r: 0.85, g: 0.55, b: 0.3}     # warm orange
+  accent1: {r: 0.45, g: 0.55, b: 0.45}      # sage green
+  accent2: {r: 0.7, g: 0.4, b: 0.35}        # terra cotta
+  background: {r: 0.99, g: 0.97, b: 0.94}   # warm cream
+  text: {r: 0.2, g: 0.18, b: 0.15}          # dark brown
+
+slides:
+  - type: title
+
+  - type: big_idea
+    label: "THE RESEARCH"
+    main_text: "Family engagement is one of the strongest predictors of student success."
+    supporting_text: "Stronger than family income.\nStronger than parent education level."
+
+  - type: quote
+    quote: "Many families only hear from school when something's wrong. Phone rings — they brace for bad news."
+    attribution: "The pattern we must change"
+
+  - type: bullets
+    title: "The 'Positive First' Principle"
+    accent: secondary
+    items:
+      - "Contact families with positive news FIRST"
+      - "'I wanted you to know how well Marcus participated today'"
+      - "'Jasmine helped another student with math'"
+      - "Build positive history before difficult conversations"
+      - "These calls take 2 minutes but build lasting trust"
+
+  - type: comparison
+    title: "One-Way vs. Two-Way Communication"
+    accent_left: primary
+    accent_right: accent1
+    left_header: "ONE-WAY"
+    right_header: "TWO-WAY"
+    left_items:
+      - "Newsletters"
+      - "Announcements"
+      - "Websites"
+      - "Syllabi"
+    right_items:
+      - "Conversations"
+      - "Phone calls"
+      - "Conferences"
+      - "Listening"
+
+  - type: table
+    title: "Breaking Down Barriers"
+    accent: primary
+    headers: ["Barrier", "Strategy"]
+    rows:
+      - ["Language", "Translation services (not students)"]
+      - ["Time", "Flexible meetings, multiple channels"]
+      - ["Trust", "Consistency, listening, respect"]
+      - ["Culture", "Learn about communities you serve"]
+
+  - type: bullets
+    title: "Common Mistakes"
+    accent: accent2
+    items:
+      - "Using jargon: 'phonemic awareness' instead of 'letter sounds'"
+      - "Only focusing on problems"
+      - "Assuming absent families don't care"
+      - "Same communication for all families"
+      - "Implying problems are family's fault"
+
+  - type: numbered
+    title: "Conference Structure"
+    accent: secondary
+    items:
+      - "Start positive — something genuine"
+      - "Share data — where the student is"
+      - "Identify goals — what we're working on"
+      - "Listen — what do you see at home?"
+      - "Plan together — school AND home next steps"
+
+  - type: bullets
+    title: "When Conversations Are Difficult"
+    accent: primary
+    items:
+      - "Frame as partnership: 'I need your help understanding...'"
+      - "Be specific: Describe behaviors, not character"
+      - "Listen first: 'What do you see at home?'"
+      - "Focus on solutions: What can we try?"
+      - "Follow up: Don't drop the ball"
+
+  - type: big_idea
+    label: "REMEMBER"
+    main_text: "Invisible doesn't mean uninvolved."
+    supporting_text: "Families who don't attend events may have work conflicts,\ntransportation challenges, or past negative experiences."
+
+  - type: closing
+    main_text: "Communication is partnership, not announcement."
+    subtext: "Make positive contacts before negative ones. Listen more than you talk."
