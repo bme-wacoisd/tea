@@ -13,6 +13,23 @@ This repository contains lesson materials for a **Grow Your Own** educator prepa
 - **Lesson duration** - 30-40 minutes total
 - **Mixed grade levels** - Students come from overlapping courses with different requirements
 
+### Teaching Model (CRITICAL for understanding assignment distribution)
+
+**Fluid schedule, self-contained lessons**: Mr. Edwards has a complex teaching environment:
+- Students range from grades 9-12
+- Some students have 15 hours/week, others only 3 hours/week
+- Students leave the classroom frequently to shadow-teach in elementary classrooms on unsynchronized schedules
+- Course types (Instructional Practices vs Communications) are administrative distinctions, not content silos
+
+**Strategy**: Teach self-contained 30-45 minute lessons with group work and a quiz at the end. No prerequisites between lessons. This means:
+- A student with only 3 hours/week won't complete all assignments, but that's expected
+- Lessons are ready to teach whenever students are present
+- Enough grades will accumulate by end of six weeks to meet district policy
+
+**Assignment distribution**: Our `create_lesson_assignment.py` script assigns EVERY lesson to ALL students across all 8 periods. The `deduplicate_assignments.py` script then ensures multi-period students only get ONE copy (via round-robin distribution across their enrolled periods).
+
+**This means**: A student enrolled in "Instructional Practices" periods can and should complete quizzes that might seem like "Communications" content. All students get all quizzes - the course type distinction is for scheduling, not content access.
+
 ### Course Resources
 
 Downloaded course materials are in the `output/` folder, scraped from:
@@ -487,5 +504,328 @@ python scripts/send_classroom_reminders.py --send -y    # Send without confirmat
 - `token_dedup.json` - Token for dedup script (gitignored)
 - `token_classroom.pickle` - Token for status script (gitignored)
 - `token_reminders.json` - Token for email reminders script (gitignored)
+- `token_assignment.json` - Token for assignment creation scripts (gitignored)
+- `token_quiz_check.json` - Token for quiz completion check (gitignored)
 - `name-mappings.csv` - Maps Frontline names to Google Classroom names
 - `ab-frontline-roster-2025-12-11.csv` - Frontline TEAMS roster export
+
+### Course Names (CRITICAL)
+
+The 8 class periods alternate between course types:
+
+| Period | Course Name |
+|--------|-------------|
+| 1 | 1 Instructional Practices & Practicum |
+| 2 | 2 Communications and Technology |
+| 3 | 3 Instructional Practices & Practicum |
+| 4 | 4 Communications and Technology |
+| 5 | 5 Instructional Practices & Practicum |
+| 6 | 6 Communications and Technology |
+| 7 | 7 Instructional Practices & Practicum |
+| 8 | 8 Communications and Technology |
+
+**Pattern**: Odd periods = Instructional Practices & Practicum, Even periods = Communications and Technology
+
+**IMPORTANT**: These exact course names must be used in all scripts. Common mistake is getting periods 3-4 and 7-8 swapped.
+
+### Creating Lesson Assignments
+
+**`scripts/create_lesson_assignment.py`** - Complete lesson assignment pipeline
+- Creates Google Form with anti-cheat settings (shuffle questions, no answers shown, require login)
+- **Enables email collection** (`emailCollectionType: VERIFIED`) so we can identify respondents
+- Creates Google Slides presentation
+- Distributes assignment across all 8 periods with round-robin for multi-period students
+- Uses `associatedWithDeveloper: true` for API grading
+- Shares form with wacoisd.org domain for proper title display in Classroom
+- Due date: Feb 13, 2026 at 8:00 AM Central
+
+```bash
+python scripts/create_lesson_assignment.py lessons/XX-lesson-name --dry-run   # Preview
+python scripts/create_lesson_assignment.py lessons/XX-lesson-name             # Create
+```
+
+**`scripts/delete_and_recreate_lesson.py`** - Delete and recreate lesson assignments
+- Finds existing assignments by title
+- Deletes from all 8 courses
+- Recreates with latest content
+
+```bash
+python scripts/delete_and_recreate_lesson.py lessons/XX-lesson-name --dry-run  # Preview
+python scripts/delete_and_recreate_lesson.py lessons/XX-lesson-name            # Execute
+```
+
+**`scripts/check_quiz_completions.py`** - Find completed quizzes and report scores
+- Checks Google Forms responses for all quiz forms
+- Cross-references with Classroom submission states
+- Reports students who completed quizzes but didn't click "Turn In"
+- Requires email collection enabled on forms (see enable_form_email_collection.py)
+
+```bash
+python scripts/check_quiz_completions.py
+```
+
+**`scripts/enable_form_email_collection.py`** - Fix forms to collect respondent emails
+- Updates all quiz forms to collect verified email addresses
+- Required for identifying which student submitted each response
+- Run once to fix all existing forms
+
+```bash
+python scripts/enable_form_email_collection.py --dry-run  # Preview
+python scripts/enable_form_email_collection.py            # Apply
+```
+
+### Google Classroom API Notes
+
+**CRITICAL - No notifications by design**:
+- Assignments created via the Classroom API do NOT send email notifications to students
+- Only assignments created through the Classroom web UI trigger email notifications
+- This is a built-in API behavior - we don't need to do anything special to avoid spam
+- NEVER sacrifice features (due dates, etc.) to "avoid notifications" - API already handles this
+- **Web UI actions DO notify**: If you manually create/delete/modify assignments in the web UI, students get emails. Use our scripts instead to avoid notification spam.
+
+**Materials cannot be updated after creation**:
+- The `updateMask` parameter does NOT support `materials`
+- To fix material titles/links, you must delete and recreate the assignment
+- Share forms with wacoisd.org domain BEFORE creating assignment for proper title display
+
+**Due time requires due date**:
+- When updating `dueTime`, you MUST include `dueDate` in the `updateMask`
+- Use: `updateMask='dueDate,dueTime'`
+
+**Form title display**:
+- By default, form links using responderUri (`/e/.../viewform`) show "Google Forms: Sign-in"
+- Fix: Use direct form URL (`/d/{form_id}/viewform`) AND enable link sharing ("anyone" as reader)
+- When you pass a Google Forms URL as a `link` material, Classroom auto-converts it to a `form` material and fetches the proper title from the form metadata
+
+**Assignment titles**:
+- The OAuth app name shows as "Assignment via [APP_NAME]" in the assignment footer
+- App name is set in Google Cloud Console OAuth consent screen, not via API
+
+**Calendar events**:
+- Assignments created via the API do NOT create Google Calendar events
+- Only assignments created through the Classroom web UI create calendar events
+- This is beneficial - no calendar clutter for students from API-created assignments
+- Verified with `scripts/check_calendar_events.py`
+
+**Form email collection (CRITICAL)**:
+- Forms MUST have `emailCollectionType: VERIFIED` to identify who submitted responses
+- Without this, form responses show as anonymous and we can't match them to students
+- The `create_lesson_assignment.py` script automatically enables this setting
+- Use `scripts/enable_form_email_collection.py` to fix existing forms
+
+**Quiz completion vs Classroom turn-in**:
+- Students often complete the quiz (Google Form) but forget to click "Turn In" in Classroom
+- The form response exists but Classroom shows the assignment as "CREATED" not "TURNED_IN"
+- Use `scripts/check_quiz_completions.py` to find all form completions regardless of Classroom state
+- Future: `scripts/sync_quiz_grades.py` will auto-turn-in and enter grades for completed quizzes
+
+---
+
+## Student Data and Tracking System
+
+### Student Email Formats (CRITICAL)
+
+Waco ISD students have **TWO email addresses** that can be used interchangeably:
+
+1. **Name Email**: `firstname.lastname@student.wacoisd.org`
+   - Example: `allison.leyva@student.wacoisd.org`
+
+2. **ID Email**: `s########@student.wacoisd.org`
+   - The `s` prefix stands for "student"
+   - The number is their Student ID
+   - Example: `s30004214@student.wacoisd.org` (Allinson Leyva)
+
+**When students submit Google Forms**, they may use either email. The form response will show whichever email they used at the time.
+
+**To look up a student by ID email**: Remove the `s` prefix to get the Student ID (e.g., `s30020013` → Student ID `30020013`).
+
+### Student Lookup Table
+
+The `scripts/build_student_lookup.py` script creates a comprehensive student roster:
+
+**Output locations** (all containing PII - never commit to git):
+- `student_lookup/students_latest.csv` - Latest CSV (gitignored)
+- `student_lookup/students_YYYY-MM-DD.csv` - Dated archive (gitignored)
+- `~/Documents/gyo-student-roster/` - Human-readable reports
+
+**Data includes**:
+- Student ID
+- Name (Frontline spelling)
+- Name (Google Classroom spelling)
+- ID Email
+- Name Email
+- Periods enrolled
+- Course types (Instructional Practices, Communications)
+
+```bash
+python scripts/build_student_lookup.py --dry-run  # Preview
+python scripts/build_student_lookup.py            # Build lookup table
+```
+
+### GYO Grade Tracking Spreadsheet
+
+A Google Sheets spreadsheet tracks all assignments and quiz completions:
+
+**Spreadsheet**: "GYO Grade Tracking"
+**URL stored in**: `tracking_spreadsheet_id.txt` (gitignored)
+**Managed by**: `scripts/sheets_tracker.py`
+
+**Sheets**:
+1. **Assignments** - All created lesson assignments
+   - Assignment Title, Form ID, Form URL, Slides ID, Slides URL
+   - Total Points, Created At, Updated At, Status (ACTIVE/DELETED)
+
+2. **Quiz Completions** - All form responses/quiz submissions
+   - Response ID, Assignment Title, Student Email, Student Name
+   - Score, Total Points, Percentage, Submitted At
+   - Synced to Classroom (YES/NO), Sync Time, Notes
+
+3. **Students** - Student lookup data (built by build_student_lookup.py)
+
+**Scripts integrated with tracker**:
+- `create_lesson_assignment.py` - Records new assignments
+- `delete_and_recreate_lesson.py` - Marks assignments as DELETED
+- `sync_quiz_completions.py` - Fetches form responses and records completions
+- `backfill_tracker.py` - One-time backfill of existing data
+
+### Sync Scripts
+
+**`scripts/sync_quiz_completions.py`** - Fetch new quiz completions
+```bash
+python scripts/sync_quiz_completions.py --dry-run  # Preview
+python scripts/sync_quiz_completions.py            # Sync completions
+```
+
+**`scripts/backfill_tracker.py`** - One-time backfill of existing data
+```bash
+python scripts/backfill_tracker.py --dry-run  # Preview
+python scripts/backfill_tracker.py            # Execute backfill
+```
+
+### Token Files (all gitignored)
+
+Each script uses its own OAuth token file to avoid scope conflicts:
+- `token_assignment.json` - Assignment creation
+- `token_sheets.json` - Sheets tracker
+- `token_sync.json` - Quiz sync
+- `token_student_lookup.json` - Student lookup builder
+- `token_backfill.json` - Backfill script
+- `token_dedup.json` - Deduplication
+- `token_classroom.pickle` - Classroom status
+- `token_reminders.json` - Email reminders
+- `token_quiz_check.json` - Quiz completion check
+
+### Name Mappings
+
+Some students have different name spellings in Frontline TEAMS vs Google Classroom:
+
+**File**: `~/google-classroom/waco-teams-hosting/rosters/name-mappings.csv`
+
+Example:
+```csv
+"Frontline Teams","Google Classroom"
+"Leyva, Allinson Ruth","Allison Leyva"
+"Hernandez, Leana Rose","Leana Cruz"
+```
+
+---
+
+## Reading.md Writing Guidelines
+
+**Structure for readings featuring master teachers/educators**:
+- Do NOT start the first paragraph with the individual's name
+- Open with a compelling scene, question, or universal concept
+- Introduce the specific educator in paragraph 2 or later
+- Embody the teaching approach being described, don't just explain it
+
+**Example structure**:
+1. **Hook**: Universal observation, compelling scene, or thought-provoking question
+2. **Context**: Introduce the educator and their key insight
+3. **Framework**: Explain the practical approach or methodology
+4. **Application**: Connect to classroom practice
+5. **Closing**: Memorable takeaway or call to action
+
+---
+
+## Primary Content Source: Knight Lesson Plans
+
+The file `teks/knight-lesson-plans-extracted/knight-lesson-plans.md` contains the base curriculum content that inspires our lessons. This is a comprehensive semester curriculum covering three units across 18 weeks.
+
+### Source Structure
+
+**UNIT 1: Professional Identity & Classroom Foundations (Weeks 1-6)**
+- Week 1: Professional Standards & The Teaching Profession
+- Week 2: Understanding Learners & Human Development
+- Week 3: Creating Effective Learning Environments
+- Week 4: Assessment & Feedback
+- Week 5: Professional Responsibilities & Unit 1 Synthesis
+
+**UNIT 2: Instructional Planning & Curriculum Development (Weeks 7-12)**
+- Week 7: Understanding TEKS & Instructional Planning
+- Week 8: Instructional Theories & Differentiation
+- Week 9: Creating Instructional Materials & Resources
+- Week 10: Unit Planning & Microteaching Preparation
+- Week 11: Professional Ethics & Responsibilities
+- Week 12: Unit 2 Synthesis & Portfolio Development
+
+**UNIT 3: Professional Growth & Career Readiness (Weeks 13-18)**
+- Week 13: Observation and Evaluation Skills
+- Week 14: Mentorship and Professional Relationships
+- Week 15: Employment Readiness and Certification
+- Week 16: Practicum Culmination and Documentation
+- Week 17: Final Portfolio Development
+- Week 18: Presentations and Course Celebration
+
+### Adaptation Approach
+
+When creating lessons from this source:
+
+1. **Do NOT create 1:1 lesson mappings** - The source uses 45-minute blocks; our lessons are 30-40 minutes with different artifacts
+2. **Zoom into captivating elements** - Go deeper on compelling topics rather than shallow coverage
+3. **Feature master teachers** - When possible, connect concepts to real educators who exemplify the approach
+4. **Research rabbit holes** - For rich topics (Piaget, Vygotsky, Bloom's Taxonomy), research deeply and bring fresh insights
+5. **Define terms from first principles** - Source assumes more background; our lessons must define everything clearly
+6. **Front-load key concepts** - Our reading and slides lead with the most important ideas
+
+### Key Educators & Frameworks to Feature
+
+From the source material, these warrant deep exploration:
+
+**Historical Educators:**
+- Horace Mann - Father of American Public Education (1840s)
+- John Dewey - Progressive Education, Learning by Doing
+- Maria Montessori - Child-centered, self-directed learning
+- Jean Piaget - Stages of Cognitive Development
+- Lev Vygotsky - Zone of Proximal Development, Scaffolding
+- Erik Erikson - Psychosocial Development Stages
+- B.F. Skinner - Behaviorism, Reinforcement
+- Albert Bandura - Social Learning Theory, Modeling
+
+**Modern Educators to Research:**
+- Rita Pierson - "Every Kid Needs a Champion" TED Talk
+- Carol Tomlinson - Differentiation Framework
+- Grant Wiggins & Jay McTighe - Backward Design (Understanding by Design)
+- Patrick Lencioni - 5 Dysfunctions of a Team
+- Ruben Puentedura - SAMR Model for technology integration
+
+**Key Frameworks:**
+- Bloom's Taxonomy (6 cognitive levels)
+- Universal Design for Learning (UDL) - 3 principles
+- 4 Ways to Differentiate (Content, Process, Product, Environment)
+- Backward Design (3 stages)
+- SAMR Model (Substitution, Augmentation, Modification, Redefinition)
+- Assessment Types (Formative, Summative, Diagnostic)
+- The Assessment Cycle
+
+### Lesson Topic Clusters
+
+When creating lessons, consider these thematic clusters:
+
+1. **Building Relationships** - Rita Pierson, relationship strategies, knowing students
+2. **How Students Learn** - Piaget, Vygotsky, constructivism vs. behaviorism
+3. **Classroom Design** - UDL, physical environment, grouping strategies
+4. **Planning Backwards** - Backward design, objectives, alignment
+5. **Reaching All Learners** - Differentiation, IEPs, 504s, English learners
+6. **Assessment for Learning** - Formative assessment, feedback, questioning
+7. **Professional Ethics** - Boundaries, mandatory reporting, confidentiality
+8. **Technology as a Tool** - SAMR model, purposeful integration

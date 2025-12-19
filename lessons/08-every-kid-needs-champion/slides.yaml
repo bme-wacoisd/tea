@@ -13,6 +13,9 @@ theme:
   background: {r: 1.0, g: 0.97, b: 0.93}  # warm cream
   text: {r: 0.2, g: 0.18, b: 0.16}        # dark brown
 
+images:
+  rita_pierson: "assets/rita-pierson.jpg"
+
 slides:
   - type: title
 
@@ -20,14 +23,10 @@ slides:
     quote: "Kids don't learn from\npeople they don't like."
     attribution: "Rita Pierson"
 
-  - type: bullets
+  - type: image_bio
     title: "Rita Pierson (1941–2013)"
-    accent: primary
-    items:
-      - "40 years as a professional educator"
-      - "Parents and grandparents were educators"
-      - "Her TED Talk: over 15 million views"
-      - "Spoke about what really makes teachers effective"
+    image: rita_pierson
+    description: "40 years as a professional educator. Parents and grandparents were educators. Her TED Talk has over 15 million views. She spoke about what really makes teachers effective—believing in every child."
 
   - type: big_idea
     label: "THE CORE INSIGHT"

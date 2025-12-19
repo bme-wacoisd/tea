@@ -418,8 +418,6 @@ class SlideBuilder:
         if subtitle:
             self.add_shape(requests, slide_id, self.make_id('subtitle'), 'TEXT_BOX', 0.4, 2.4, W - 0.8, 0.6, None)
             self.add_text(requests, self.make_id('subtitle'), subtitle, font_size=22, color=self.colors['text'], alignment='CENTER')
-        # Decorative circle
-        self.add_shape(requests, slide_id, self.make_id('circle'), 'ELLIPSE', W - 1.5, H - 1.3, 1.1, 1.1, self.colors['accent2'])
 
         return requests
 
@@ -629,14 +627,13 @@ class SlideBuilder:
     def build_closing_slide(self, slide_id, slide_config):
         """Build closing slide."""
         requests = []
-        quote = slide_config.get('quote', '')
-        attribution = slide_config.get('attribution', '')
+        # Support both field name formats for backwards compatibility
+        quote = slide_config.get('quote', '') or slide_config.get('main_text', '')
+        attribution = slide_config.get('attribution', '') or slide_config.get('subtext', '')
         cta = slide_config.get('call_to_action', '')
         W, H = self.SLIDE_WIDTH, self.SLIDE_HEIGHT
 
         self.add_shape(requests, slide_id, self.make_id('bg'), 'RECTANGLE', 0, 0, W, H, self.colors['primary'])
-        self.add_shape(requests, slide_id, self.make_id('deco1'), 'ELLIPSE', -0.5, -0.5, 2, 2, self.colors['secondary'])
-        self.add_shape(requests, slide_id, self.make_id('deco2'), 'ELLIPSE', W - 1.5, H - 1.5, 2, 2, self.colors['accent2'])
 
         self.add_shape(requests, slide_id, self.make_id('quote'), 'TEXT_BOX', 1, 0.8, W - 2, 2.2, None)
         self.add_text(requests, self.make_id('quote'), f'"{quote}"', font_size=24, color=self.colors['white'], alignment='CENTER')

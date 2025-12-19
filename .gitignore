@@ -233,3 +233,14 @@ roster*.csv
 *roster*.csv
 *frontline*.csv
 name-mappings.csv
+migration_exports/
+token_sheets.json
+tracking_spreadsheet_id.txt
+
+# Student lookup data (PII - never commit)
+student_lookup/
+students*.csv
+students*.json
+token_student_lookup.json
+# Windows artifacts
+nul
