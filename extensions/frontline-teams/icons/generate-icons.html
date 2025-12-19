@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Extension Icons</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .icon-container { margin: 20px 0; }
+    canvas { border: 1px solid #ccc; margin: 5px; }
+    a { display: inline-block; margin: 5px; padding: 10px 20px; background: #4285f4; color: white; text-decoration: none; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Extension Icon Generator</h1>
+  <p>Right-click each canvas and "Save image as" to download the icons.</p>
+
+  <div class="icon-container">
+    <h3>16x16</h3>
+    <canvas id="icon16" width="16" height="16"></canvas>
+    <a id="download16" download="icon16.png">Download 16x16</a>
+  </div>
+
+  <div class="icon-container">
+    <h3>48x48</h3>
+    <canvas id="icon48" width="48" height="48"></canvas>
+    <a id="download48" download="icon48.png">Download 48x48</a>
+  </div>
+
+  <div class="icon-container">
+    <h3>128x128</h3>
+    <canvas id="icon128" width="128" height="128"></canvas>
+    <a id="download128" download="icon128.png">Download 128x128</a>
+  </div>
+
+  <script>
+    function drawIcon(canvas, size) {
+      const ctx = canvas.getContext('2d');
+
+      // Background circle
+      ctx.beginPath();
+      ctx.arc(size/2, size/2, size/2 - 1, 0, Math.PI * 2);
+      ctx.fillStyle = '#4285f4';
+      ctx.fill();
+
+      // Inner circle (white)
+      ctx.beginPath();
+      ctx.arc(size/2, size/2, size/3, 0, Math.PI * 2);
+      ctx.fillStyle = 'white';
+      ctx.fill();
+
+      // Sync arrows (simplified)
+      ctx.strokeStyle = '#4285f4';
+      ctx.lineWidth = size > 32 ? 3 : (size > 20 ? 2 : 1);
+      ctx.lineCap = 'round';
+
+      // Arrow 1 (top-right)
+      const arrowSize = size / 6;
+      const cx = size / 2;
+      const cy = size / 2;
+
+      ctx.beginPath();
+      ctx.arc(cx, cy, size/4, -Math.PI/4, Math.PI/2, false);
+      ctx.stroke();
+
+      // Arrow head
+      if (size >= 48) {
+        ctx.beginPath();
+        ctx.moveTo(cx + size/5, cy + size/6);
+        ctx.lineTo(cx + size/4, cy + size/4);
+        ctx.lineTo(cx + size/8, cy + size/4);
+        ctx.stroke();
+      }
+
+      return canvas.toDataURL('image/png');
+    }
+
+    // Generate icons
+    ['16', '48', '128'].forEach(size => {
+      const canvas = document.getElementById('icon' + size);
+      const dataUrl = drawIcon(canvas, parseInt(size));
+      document.getElementById('download' + size).href = dataUrl;
+    });
+  </script>
+</body>
+</html>

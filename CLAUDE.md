@@ -829,3 +829,141 @@ When creating lessons, consider these thematic clusters:
 6. **Assessment for Learning** - Formative assessment, feedback, questioning
 7. **Professional Ethics** - Boundaries, mandatory reporting, confidentiality
 8. **Technology as a Tool** - SAMR model, purposeful integration
+
+---
+
+## Web Application (React/TypeScript)
+
+### Tech Stack
+- React 18 + TypeScript
+- Vite 6
+- Turborepo (monorepo)
+- npm (packageManager)
+- Vitest (unit testing)
+- Playwright (E2E testing)
+
+### Project Structure (Node.js Apps)
+```
+tea/
+├── apps/
+│   └── web/                 # React application
+│       ├── src/
+│       │   ├── components/  # React components
+│       │   ├── App.tsx
+│       │   ├── googleApi.ts # Google API utilities
+│       │   └── types.ts     # TypeScript types
+│       ├── e2e/             # Playwright tests
+│       └── package.json
+├── packages/                # Shared packages
+├── extensions/              # Chrome extensions
+│   └── frontline-teams/     # Frontline TEAMS grade sync extension
+├── .github/
+│   └── workflows/           # GitHub Actions CI
+├── turbo.json
+└── package.json
+```
+
+### Development Commands
+```bash
+npm run dev          # Start dev server (http://localhost:3000)
+npm run build        # Production build
+npm run type-check   # TypeScript checking
+npm run lint         # ESLint
+npm run test         # Run Vitest unit tests
+npm run test:e2e     # Run Playwright E2E tests
+```
+
+### Deployment
+The React app is deployed to GitHub Pages at https://bme-wacoisd.github.io/google-classroom/
+
+```bash
+npm run build
+npx gh-pages -d apps/web/dist
+```
+
+---
+
+## Chrome Extension: Frontline TEAMS Grade Sync
+
+Located in `extensions/frontline-teams/`. This extension syncs grades from Google Classroom to Frontline TEAMS (the district SIS).
+
+**Key Files:**
+- `manifest.json` - Extension configuration
+- `background.js` - Service worker
+- `content.js` - Content script for TEAMS pages
+- `google-classroom.js` - Classroom API integration
+- `popup.html/js/css` - Extension popup UI
+
+---
+
+## WBL Group Planner
+
+Generate a Work-Based Learning schedule report to help form student groups.
+
+**Schedule Structure:**
+| Day Type | Morning | Afternoon |
+|----------|---------|-----------|
+| A-Day | Periods 1, 2 (~90 min) | Periods 3, 4 (~90 min) |
+| B-Day | Periods 5, 6 (~90 min) | Periods 7, 8 (~90 min) |
+
+**Generate Report:**
+```bash
+python scripts/generate_wbl_report.py
+npx md-to-pdf waco-teams-hosting/wbl-group-planner.md --stylesheet waco-teams-hosting/pdf-style.css
+```
+
+**Output (gitignored - contains student PII):**
+- `waco-teams-hosting/wbl-group-planner.md`
+- `waco-teams-hosting/wbl-group-planner.pdf`
+
+**Group Stability Ratings:**
+- ★★★ = Together ALL day types (best for long projects)
+- ★★ = Together most days
+- ★ = Together some days
+
+---
+
+## Development Workflow (for Node.js apps)
+
+### 1. Create Feature Branch
+```bash
+git checkout main
+git pull origin main
+git checkout -b feature/<issue-number>-<short-description>
+```
+
+### 2. Implement & Test
+```bash
+npm run type-check
+npm run lint
+npm run test
+npm run build
+```
+
+### 3. Commit
+```bash
+git commit -m "feat(scope): description
+
+Closes #<issue-number>
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>"
+```
+
+### 4. Create PR
+```bash
+gh pr create --title "feat(scope): description" --body "## Summary
+- What this PR does
+
+## Test Plan
+- [ ] Tests pass
+- [ ] Manual testing completed
+
+Closes #<issue-number>"
+```
+
+### 5. Merge
+```bash
+gh pr merge --squash --delete-branch
+```

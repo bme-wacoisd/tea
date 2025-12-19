@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontline TEAMS Roster Sync</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>TEAMS Roster Sync</h1>
+      <p class="subtitle">Compare Frontline TEAMS with Google Classroom</p>
+    </header>
+
+    <section id="status-section" class="section">
+      <div id="page-status" class="status-card">
+        <span class="status-icon">⏳</span>
+        <span class="status-text">Checking page...</span>
+      </div>
+    </section>
+
+    <section id="actions-section" class="section">
+      <button id="extract-all-btn" class="btn btn-primary" disabled>
+        <span class="btn-icon">📋</span>
+        Extract All Classes
+      </button>
+
+      <button id="mark-attendance-btn" class="btn btn-secondary" disabled>
+        <span class="btn-icon">✓</span>
+        Mark Attendance (All Classes)
+      </button>
+
+      <button id="compare-btn" class="btn btn-secondary" disabled>
+        <span class="btn-icon">🔍</span>
+        Compare with Google Classroom
+      </button>
+
+      <button id="extract-btn" class="btn btn-outline btn-small" disabled>
+        Extract Today Only
+      </button>
+    </section>
+
+    <section id="data-section" class="section hidden">
+      <h2>Extracted Data</h2>
+      <div id="data-summary" class="data-summary">
+        <div class="stat">
+          <span class="stat-value" id="student-count">0</span>
+          <span class="stat-label">Records</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="course-count">0</span>
+          <span class="stat-label">Classes</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="extract-time">-</span>
+          <span class="stat-label">Last Sync</span>
+        </div>
+      </div>
+      <div id="student-list" class="student-list"></div>
+    </section>
+
+    <section id="comparison-section" class="section hidden">
+      <h2>Comparison Results</h2>
+      <div class="comparison-summary">
+        <div class="comparison-stat matched">
+          <span class="stat-value" id="matched-count">0</span>
+          <span class="stat-label">Matched</span>
+        </div>
+        <div class="comparison-stat missing">
+          <span class="stat-value" id="missing-count">0</span>
+          <span class="stat-label">Missing</span>
+        </div>
+        <div class="comparison-stat extra">
+          <span class="stat-value" id="extra-count">0</span>
+          <span class="stat-label">Extra</span>
+        </div>
+      </div>
+
+      <div id="missing-list" class="issue-list hidden">
+        <h3>Missing from Google Classroom</h3>
+        <ul id="missing-students"></ul>
+      </div>
+
+      <div id="extra-list" class="issue-list hidden">
+        <h3>Extra in Google Classroom</h3>
+        <ul id="extra-students"></ul>
+      </div>
+    </section>
+
+    <section id="export-section" class="section">
+      <button id="export-csv-btn" class="btn btn-outline" disabled>
+        <span class="btn-icon">📥</span>
+        Export CSV
+      </button>
+      <button id="copy-btn" class="btn btn-outline" disabled>
+        <span class="btn-icon">📋</span>
+        Copy
+      </button>
+    </section>
+
+    <section id="settings-section" class="section">
+      <details>
+        <summary>Settings</summary>
+        <div class="settings-content">
+          <div class="setting">
+            <label for="gc-client-id">Google OAuth Client ID:</label>
+            <input type="text" id="gc-client-id" placeholder="Paste your Client ID here">
+            <small>From Google Cloud Console</small>
+          </div>
+          <div class="setting">
+            <label for="day-count">Unique day rotations to capture:</label>
+            <input type="number" id="day-count" value="3" min="1" max="7">
+            <small>A/B/C days = 3 (default)</small>
+          </div>
+          <div class="setting">
+            <button id="clear-data-btn" class="btn btn-outline btn-small">
+              Clear All Data
+            </button>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <footer>
+      <p>Waco ISD • Frontline TEAMS to Google Classroom</p>
+    </footer>
+  </div>
+
+  <script src="google-classroom.js"></script>
+  <script src="compare.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

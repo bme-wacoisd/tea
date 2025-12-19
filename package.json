@@ -1,0 +1,24 @@
+{
+  "name": "google-classroom-integration",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@10.9.4",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "test": "turbo run test:run",
+    "test:watch": "turbo run test",
+    "test:coverage": "turbo run test:coverage"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "turbo": "^2.3.3"
+  }
+}

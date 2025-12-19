@@ -1,0 +1,459 @@
+/**
+ * Frontline TEAMS Roster Sync - Popup Styles
+ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  background: #f5f5f5;
+  width: 380px;
+  min-height: 400px;
+}
+
+.container {
+  padding: 16px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a73e8;
+  margin-bottom: 4px;
+}
+
+header .subtitle {
+  font-size: 12px;
+  color: #666;
+}
+
+.section {
+  margin-bottom: 16px;
+}
+
+.section h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.section.hidden {
+  display: none;
+}
+
+/* Status Card */
+.status-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.status-card.success {
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  border-left: 4px solid #34a853;
+}
+
+.status-card.error {
+  background: linear-gradient(135deg, #ffebee, #ffcdd2);
+  border-left: 4px solid #ea4335;
+}
+
+.status-card.warning {
+  background: linear-gradient(135deg, #fff8e1, #ffecb3);
+  border-left: 4px solid #fbbc04;
+}
+
+.status-icon {
+  font-size: 24px;
+}
+
+.status-text {
+  font-size: 13px;
+  color: #333;
+}
+
+/* Buttons */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4285f4, #1a73e8);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #5a95f5, #4285f4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #34a853, #2e7d32);
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #46b864, #34a853);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+}
+
+.btn-outline {
+  background: white;
+  color: #1a73e8;
+  border: 1px solid #dadce0;
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: #f8f9fa;
+  border-color: #1a73e8;
+}
+
+.btn-icon {
+  font-size: 16px;
+}
+
+/* Data Summary */
+.data-summary {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.stat {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stat-value {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a73e8;
+}
+
+.stat-label {
+  display: block;
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Comparison Stats */
+.comparison-summary {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.comparison-stat {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.comparison-stat.matched {
+  background: #e8f5e9;
+}
+
+.comparison-stat.matched .stat-value {
+  color: #34a853;
+}
+
+.comparison-stat.missing {
+  background: #ffebee;
+}
+
+.comparison-stat.missing .stat-value {
+  color: #ea4335;
+}
+
+.comparison-stat.extra {
+  background: #fff8e1;
+}
+
+.comparison-stat.extra .stat-value {
+  color: #fbbc04;
+}
+
+/* Student List */
+.student-list {
+  max-height: 200px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.student-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.student-item:last-child {
+  border-bottom: none;
+}
+
+.student-name {
+  font-weight: 500;
+}
+
+.student-course {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Issue List */
+.issue-list {
+  margin-top: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.issue-list h3 {
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.issue-list ul {
+  list-style: none;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.issue-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 13px;
+}
+
+.issue-list li:last-child {
+  border-bottom: none;
+}
+
+/* Settings */
+details {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+details summary {
+  padding: 12px 16px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+}
+
+details summary:hover {
+  background: #f8f9fa;
+}
+
+.settings-content {
+  padding: 12px 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.setting {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.setting:last-child {
+  margin-bottom: 0;
+}
+
+.setting input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.setting input[type="text"] {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px 12px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.setting input[type="text"]:focus {
+  outline: none;
+  border-color: #1a73e8;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+footer p {
+  font-size: 11px;
+  color: #999;
+}
+
+/* Export buttons row */
+#export-section {
+  display: flex;
+  gap: 8px;
+}
+
+#export-section .btn {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* Period grouping in results */
+.period-group {
+  margin-bottom: 8px;
+  list-style: none;
+}
+
+.period-group > ul {
+  margin: 4px 0 0 16px;
+  padding: 0;
+}
+
+.period-group > ul > li {
+  padding: 2px 0;
+  border-bottom: none;
+}
+
+.period-group small {
+  color: #666;
+  font-size: 11px;
+}
+
+/* Unmatched periods warning */
+.unmatched-warning {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+
+/* Settings small button */
+.btn-small {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+/* Extraction info display */
+.extraction-info {
+  background: #e8f5e9;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.period-summary {
+  font-size: 13px;
+  color: #555;
+  padding: 6px 10px;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+/* Status card info state */
+.status-card.info {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  border-left: 4px solid #1a73e8;
+}
+
+/* Warning when no students found */
+.extraction-warning {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.extraction-warning strong {
+  color: #856404;
+}
+
+/* Student preview */
+.student-preview {
+  font-size: 12px;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
