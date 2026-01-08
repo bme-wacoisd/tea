@@ -4,9 +4,12 @@ sync_quiz_completions.py - Sync quiz completions from Forms to tracker and Class
 
 This script:
 1. Fetches form responses for all tracked assignments
-2. Records new completions in the tracker spreadsheet
+2. Records new completions in the tracker spreadsheet (batch writes)
 3. Looks up student info using the Students sheet
 4. Reports anomalies (e.g., students taking quizzes they're not enrolled in)
+5. Uses local cache to avoid re-processing responses
+
+IMPORTANT: Stops on errors (rate limits, auth failures) per error handling policy
 
 Usage:
     python scripts/sync_quiz_completions.py --dry-run   # Preview
@@ -15,8 +18,10 @@ Usage:
 
 import argparse
 import csv
+import json
 import re
 import sys
+import time
 from pathlib import Path
 from datetime import datetime
 
@@ -45,6 +50,10 @@ TOKEN_PATH = PROJECT_ROOT / 'token_sync.json'
 # Student lookup file
 STUDENT_LOOKUP = PROJECT_ROOT / 'student_lookup' / 'students_latest.csv'
 
+# Local cache file for processed responses
+CACHE_DIR = PROJECT_ROOT / '.cache'
+RESPONSE_CACHE = CACHE_DIR / 'processed_responses.json'
+
 
 def get_credentials():
     creds = None
@@ -62,6 +71,67 @@ def get_credentials():
         with open(TOKEN_PATH, 'w') as token:
             token.write(creds.to_json())
     return creds
+
+
+def load_response_cache():
+    """Load cache of already-processed response IDs."""
+    if not RESPONSE_CACHE.exists():
+        return set()
+
+    try:
+        with open(RESPONSE_CACHE, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            return set(data.get('processed_response_ids', []))
+    except (json.JSONDecodeError, IOError) as e:
+        print(f"  Warning: Could not load response cache: {e}")
+        return set()
+
+
+def save_response_cache(response_ids):
+    """Save processed response IDs to cache."""
+    CACHE_DIR.mkdir(exist_ok=True)
+
+    data = {
+        'processed_response_ids': list(response_ids),
+        'last_updated': datetime.now().isoformat(),
+    }
+
+    try:
+        with open(RESPONSE_CACHE, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2)
+    except IOError as e:
+        print(f"  Warning: Could not save response cache: {e}")
+
+
+def api_call_with_retry(api_call, max_retries=5):
+    """
+    Execute API call with exponential backoff on rate limit errors.
+    STOPS AND RAISES on rate limit after retries exhausted.
+    """
+    for attempt in range(max_retries):
+        try:
+            return api_call()
+        except HttpError as e:
+            if e.resp.status == 429:  # Rate limit error
+                if attempt < max_retries - 1:
+                    wait_time = 2 ** attempt  # 1s, 2s, 4s, 8s, 16s
+                    print(f"    Rate limit hit. Waiting {wait_time}s before retry {attempt + 1}/{max_retries}...")
+                    time.sleep(wait_time)
+                else:
+                    # Exhausted retries - STOP per error handling policy
+                    print("\n" + "=" * 70)
+                    print("ERROR: API RATE LIMIT EXCEEDED")
+                    print("=" * 70)
+                    print(f"Exceeded Google API rate limit after {max_retries} retries.")
+                    print("Per error handling policy: STOPPING to preserve data integrity.")
+                    print("\nSuggestions:")
+                    print("  1. Wait 60 seconds and run again")
+                    print("  2. Check quota at https://console.cloud.google.com")
+                    print("  3. Consider running with smaller batches")
+                    raise
+            else:
+                # Other HTTP errors - also stop
+                raise
 
 
 def load_student_lookup():
@@ -118,7 +188,7 @@ def main():
     args = parser.parse_args()
 
     print("=" * 70)
-    print("SYNC QUIZ COMPLETIONS")
+    print("SYNC QUIZ COMPLETIONS (v2 - with batching & caching)")
     print("=" * 70)
 
     if args.dry_run:
@@ -137,27 +207,57 @@ def main():
     student_lookup = load_student_lookup()
     print(f"  {len(student_lookup)} email entries loaded\n")
 
+    # Load local response cache
+    print("Loading response cache...")
+    cached_response_ids = load_response_cache()
+    print(f"  {len(cached_response_ids)} cached response IDs\n")
+
     # Get all active assignments from tracker
     print("Fetching assignments from tracker...")
-    assignments = tracker.get_all_assignments(include_deleted=False)
-    print(f"  {len(assignments)} active assignments\n")
+    try:
+        assignments = tracker.get_all_assignments(include_deleted=False)
+        print(f"  {len(assignments)} active assignments\n")
+    except HttpError as e:
+        if e.resp.status == 429:
+            print("\n" + "=" * 70)
+            print("ERROR: RATE LIMIT HIT WHILE FETCHING ASSIGNMENTS")
+            print("=" * 70)
+            print("Per error handling policy: STOPPING.")
+            print("Wait 60 seconds and try again.")
+            sys.exit(1)
+        raise
 
     if not assignments:
         print("No assignments to sync!")
         return
 
     # Get existing completions to check for duplicates
-    existing_completions = tracker.get_all_completions()
-    existing_response_ids = {c.get('Response ID') for c in existing_completions}
-    print(f"  {len(existing_response_ids)} existing completions in tracker\n")
+    print("Fetching existing completions from tracker...")
+    try:
+        existing_completions = tracker.get_all_completions()
+        existing_response_ids = {c.get('Response ID') for c in existing_completions}
+        print(f"  {len(existing_response_ids)} existing completions in tracker\n")
+    except HttpError as e:
+        if e.resp.status == 429:
+            print("\n" + "=" * 70)
+            print("ERROR: RATE LIMIT HIT WHILE FETCHING COMPLETIONS")
+            print("=" * 70)
+            print("Per error handling policy: STOPPING.")
+            print("Wait 60 seconds and try again.")
+            sys.exit(1)
+        raise
 
-    # Process each assignment
+    # Combine tracker and cache for deduplication
+    all_processed_ids = existing_response_ids | cached_response_ids
+
+    # Process each assignment - collect completions for batch write
     print("=" * 70)
-    print("FETCHING FORM RESPONSES")
+    print("FETCHING FORM RESPONSES (with retry logic)")
     print("=" * 70)
 
-    new_completions = 0
+    new_completions = []
     anomalies = []
+    new_response_ids = set()
 
     for assignment in assignments:
         title = assignment.get('Assignment Title', '')
@@ -176,24 +276,29 @@ def main():
         print(f"  Form ID: {form_id[:20]}...")
 
         try:
-            # Get form responses
-            responses_result = forms.forms().responses().list(formId=form_id).execute()
+            # Get form responses WITH RETRY LOGIC
+            def fetch_responses():
+                return forms.forms().responses().list(formId=form_id).execute()
+
+            responses_result = api_call_with_retry(fetch_responses)
             responses = responses_result.get('responses', [])
 
             if not responses:
                 print(f"  No responses")
                 continue
 
-            print(f"  {len(responses)} response(s)")
+            print(f"  {len(responses)} total response(s)")
 
+            # Process responses
+            new_for_this_form = 0
             for resp in responses:
                 response_id = resp.get('responseId', '')
                 respondent_email = resp.get('respondentEmail', '')
                 total_score = resp.get('totalScore')
                 submitted_at = resp.get('lastSubmittedTime', resp.get('createTime', ''))
 
-                # Skip if already tracked
-                if response_id in existing_response_ids:
+                # Skip if already processed (tracker or cache)
+                if response_id in all_processed_ids:
                     continue
 
                 # Look up student
@@ -223,31 +328,84 @@ def main():
 
                 print(f"    NEW: {student_name} ({respondent_email or 'no email'}) - {total_score}/{total_points}")
 
-                # Record completion
-                tracker.record_quiz_completion(
-                    response_id=response_id,
-                    assignment_title=title,
-                    form_id=form_id,
-                    student_email=respondent_email or '(no email)',
-                    student_name=student_name,
-                    course=course,
-                    score=total_score,
-                    total_points=total_points,
-                    submitted_at=submitted_at,
-                    notes="Synced by sync_quiz_completions.py"
-                )
-                new_completions += 1
+                # Add to batch
+                new_completions.append({
+                    'response_id': response_id,
+                    'assignment_title': title,
+                    'form_id': form_id,
+                    'student_email': respondent_email or '(no email)',
+                    'student_name': student_name,
+                    'course': course,
+                    'score': total_score,
+                    'total_points': total_points,
+                    'submitted_at': submitted_at,
+                    'notes': 'Synced by sync_quiz_completions.py v2'
+                })
+                new_response_ids.add(response_id)
+                new_for_this_form += 1
+
+            if new_for_this_form > 0:
+                print(f"  Found {new_for_this_form} new completion(s)")
 
         except HttpError as e:
-            print(f"  Error: {e}")
+            if e.resp.status == 429:
+                # Rate limit - already handled by retry logic, this is the final failure
+                print("\n" + "=" * 70)
+                print("ERROR: UNABLE TO CONTINUE DUE TO RATE LIMITS")
+                print("=" * 70)
+                print(f"Processed {len(new_completions)} completions before hitting limit.")
+                print("Per error handling policy: STOPPING without partial saves.")
+                print("\nRun this script again later to resume.")
+                sys.exit(1)
+            else:
+                print(f"  Error fetching responses: {e}")
+                print("  Per error handling policy: STOPPING on error.")
+                sys.exit(1)
+
+    # BATCH WRITE to tracker
+    print("\n" + "=" * 70)
+    print("WRITING TO TRACKER (batch mode)")
+    print("=" * 70)
+
+    if new_completions:
+        print(f"  Recording {len(new_completions)} new completion(s) in batch...")
+
+        if not args.dry_run:
+            try:
+                stats = tracker.record_quiz_completions_batch(new_completions)
+                print(f"  Batch write complete: {stats}")
+
+                # Update local cache
+                updated_cache = cached_response_ids | new_response_ids
+                save_response_cache(updated_cache)
+                print(f"  Cache updated with {len(new_response_ids)} new response IDs")
+
+            except HttpError as e:
+                if e.resp.status == 429:
+                    print("\n" + "=" * 70)
+                    print("ERROR: RATE LIMIT HIT WHILE WRITING TO TRACKER")
+                    print("=" * 70)
+                    print("Per error handling policy: STOPPING.")
+                    print("Responses were fetched but NOT written to tracker.")
+                    print("Run again to retry the write.")
+                    sys.exit(1)
+                else:
+                    print(f"\nERROR writing to tracker: {e}")
+                    print("Per error handling policy: STOPPING.")
+                    sys.exit(1)
+        else:
+            print("  [DRY RUN - Skipping batch write]")
+    else:
+        print("  No new completions to record")
 
     # Summary
     print("\n" + "=" * 70)
     print("SUMMARY")
     print("=" * 70)
     print(f"  Assignments processed: {len(assignments)}")
-    print(f"  New completions recorded: {new_completions}")
+    print(f"  New completions recorded: {len(new_completions)}")
     print(f"  Anomalies detected: {len(anomalies)}")
+    print(f"  Cache entries: {len(cached_response_ids | new_response_ids)}")
 
     if anomalies:
         print("\n" + "=" * 70)

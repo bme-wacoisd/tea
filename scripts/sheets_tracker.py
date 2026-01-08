@@ -18,9 +18,10 @@ Usage:
 """
 
 import sys
+import time
 from pathlib import Path
 from datetime import datetime, timezone
-from typing import Optional, Dict, List, Any
+from typing import Optional, Dict, List, Any, Callable
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -76,6 +77,50 @@ COMPLETIONS_HEADERS = [
     "Classroom Submission ID",
     "Notes",
 ]
+
+
+# ============================================================================
+# RATE LIMIT HANDLING
+# ============================================================================
+
+def api_call_with_retry(api_call: Callable, max_retries: int = 5, **kwargs):
+    """
+    Execute an API call with exponential backoff retry on rate limit errors.
+
+    Google Sheets API limits:
+    - 60 read requests per minute per user
+    - 60 write requests per minute per user
+
+    Args:
+        api_call: The API method to call (e.g., service.spreadsheets().values().append)
+        max_retries: Maximum number of retry attempts
+        **kwargs: Arguments to pass to the API call
+
+    Returns:
+        API response
+
+    Raises:
+        HttpError: If error persists after all retries
+    """
+    for attempt in range(max_retries):
+        try:
+            return api_call(**kwargs).execute()
+        except HttpError as e:
+            if e.resp.status == 429:  # Rate limit exceeded
+                if attempt < max_retries - 1:
+                    # Exponential backoff: 2^attempt seconds (1s, 2s, 4s, 8s, 16s)
+                    wait_time = 2 ** attempt
+                    print(f"  Rate limit hit, waiting {wait_time}s before retry ({attempt + 1}/{max_retries})...")
+                    time.sleep(wait_time)
+                else:
+                    print(f"  Rate limit exceeded after {max_retries} retries")
+                    raise
+            else:
+                # Not a rate limit error, re-raise immediately
+                raise
+
+    # Should never reach here, but just in case
+    raise Exception("Unexpected retry logic failure")
 
 
 # ============================================================================
@@ -558,6 +603,144 @@ class GYOTracker:
         except HttpError as e:
             print(f"  ERROR recording completion: {e}")
             return False
+
+    def record_quiz_completions_batch(
+        self,
+        completions: List[Dict[str, Any]]
+    ) -> Dict[str, int]:
+        """
+        Record multiple quiz completions in a single batch operation.
+
+        This is much more efficient than calling record_quiz_completion() repeatedly,
+        as it reduces API calls from N to 1-2 calls regardless of batch size.
+
+        Args:
+            completions: List of completion dicts with keys:
+                - response_id (str)
+                - assignment_title (str)
+                - form_id (str)
+                - student_email (str)
+                - student_name (str)
+                - course (str)
+                - score (int or None)
+                - total_points (int)
+                - submitted_at (str)
+                - notes (str, optional)
+
+        Returns:
+            Dict with counts: {'recorded': N, 'updated': M, 'errors': K}
+        """
+        if self.dry_run:
+            print(f"  [DRY RUN] Would record {len(completions)} completions in batch")
+            return {'recorded': len(completions), 'updated': 0, 'errors': 0}
+
+        if not completions:
+            return {'recorded': 0, 'updated': 0, 'errors': 0}
+
+        if not self._cache_valid:
+            self._refresh_cache()
+
+        new_rows = []
+        updates = []
+        stats = {'recorded': 0, 'updated': 0, 'errors': 0}
+
+        # Prepare all rows
+        for completion in completions:
+            response_id = completion['response_id']
+            assignment_title = completion['assignment_title']
+            form_id = completion['form_id']
+            student_email = completion['student_email']
+            student_name = completion['student_name']
+            course = completion.get('course', '')
+            score = completion.get('score')
+            total_points = completion['total_points']
+            submitted_at = completion['submitted_at']
+            notes = completion.get('notes', '')
+
+            percentage = round((score / total_points) * 100, 1) if score is not None and total_points > 0 else ""
+
+            row_data = [
+                response_id,
+                assignment_title,
+                form_id,
+                student_email,
+                student_name,
+                course,
+                score if score is not None else "",
+                total_points,
+                percentage,
+                submitted_at,
+                "NO",  # Synced to Classroom
+                "",    # Classroom Sync Time
+                "",    # Classroom Submission ID
+                notes
+            ]
+
+            if response_id in self._completions_cache:
+                # Queue update (preserve sync status)
+                row_num = self._completions_cache[response_id]
+                updates.append((row_num, row_data, student_name))
+            else:
+                # Queue new row
+                new_rows.append((row_data, student_name))
+
+        # Execute batch append for new rows
+        if new_rows:
+            try:
+                api_call_with_retry(
+                    self.sheets_service.spreadsheets().values().append,
+                    spreadsheetId=self.spreadsheet_id,
+                    range=f"'{COMPLETIONS_SHEET}'!A:A",
+                    valueInputOption='RAW',
+                    insertDataOption='INSERT_ROWS',
+                    body={'values': [row[0] for row in new_rows]}
+                )
+                for _, student_name in new_rows:
+                    print(f"  Recorded completion in tracker: {student_name}")
+                    stats['recorded'] += 1
+                self._invalidate_cache()
+            except HttpError as e:
+                print(f"  ERROR batch recording completions: {e}")
+                stats['errors'] += len(new_rows)
+
+        # Execute batch update for existing rows (preserving sync status)
+        if updates:
+            try:
+                batch_data = []
+                for row_num, row_data, _ in updates:
+                    # Get existing sync status
+                    try:
+                        existing = api_call_with_retry(
+                            self.sheets_service.spreadsheets().values().get,
+                            spreadsheetId=self.spreadsheet_id,
+                            range=f"'{COMPLETIONS_SHEET}'!K{row_num}:N{row_num}"
+                        )
+                        existing_sync = existing.get('values', [[]])[0]
+                        if existing_sync:
+                            while len(existing_sync) < 4:
+                                existing_sync.append('')
+                            row_data[10:14] = existing_sync
+                    except HttpError:
+                        pass  # Keep default "NO" if can't read
+
+                    batch_data.append({
+                        'range': f"'{COMPLETIONS_SHEET}'!A{row_num}",
+                        'values': [row_data]
+                    })
+
+                api_call_with_retry(
+                    self.sheets_service.spreadsheets().values().batchUpdate,
+                    spreadsheetId=self.spreadsheet_id,
+                    body={'valueInputOption': 'RAW', 'data': batch_data}
+                )
+                for _, _, student_name in updates:
+                    print(f"  Updated completion in tracker: {student_name}")
+                    stats['updated'] += 1
+            except HttpError as e:
+                print(f"  ERROR batch updating completions: {e}")
+                stats['errors'] += len(updates)
+
+        return stats
 
     def mark_synced_to_classroom(
         self,

@@ -30,6 +30,31 @@ This repository contains lesson materials for a **Grow Your Own** educator prepa
 
 **This means**: A student enrolled in "Instructional Practices" periods can and should complete quizzes that might seem like "Communications" content. All students get all quizzes - the course type distinction is for scheduling, not content access.
 
+### Error Handling Policy (CRITICAL)
+
+**When encountering errors, rate limits, or unexpected conditions:**
+
+1. **STOP IMMEDIATELY** - Do not proceed with partial work or attempt workarounds
+2. **REPORT TO USER** - Clearly describe what failed and why
+3. **NO SILENT FAILURES** - Never ignore errors, even if "most of the work" succeeded
+4. **PRESERVE DATA INTEGRITY** - Better to do nothing than to do something incorrectly
+
+**Examples of reportable conditions:**
+- API rate limit errors (429)
+- Missing or unknown student data
+- Authentication failures
+- Unexpected API responses
+- Data validation failures
+- File read/write errors
+
+**What NOT to do:**
+- Continue processing after hitting rate limits
+- Skip records with errors and only report success count
+- Assume "it's probably fine" and move forward
+- Implement quick fixes without user approval
+
+**Principle**: Our tooling must be robust and responsible. When in doubt, stop and ask.
+
 ### Course Resources
 
 Downloaded course materials are in the `output/` folder, scraped from:
@@ -104,11 +129,32 @@ Speaker notes: Additional context for presenter
 
 **Purpose**: 3-5 paragraphs for instructor to read aloud while students follow along
 
+**CRITICAL - Reading vs Slides Differentiation**:
+The reading and slides serve different purposes and must complement, not echo, each other:
+
+**Reading provides:**
+- Narrative depth and storytelling
+- Extended examples and scenarios
+- Contextual nuance and "why it matters"
+- Prose that builds intuition through flow
+- Expansion beyond the framework's skeleton
+
+**Slides provide:**
+- Visual structure and organization
+- Key phrases and conceptual anchors
+- Tables, comparisons, and visual layouts
+- Compressed summaries for quick reference
+
+**The test**: Could a student learn from the reading alone? Could they learn from the slides alone? If both answer "mostly yes," they're too redundant. The reading should tell the story; the slides should show the map.
+
+**Common mistake**: Writing the reading as "bullet points disguised as prose" that simply narrates what the slides already show. Instead, the reading should expand with stories, edge cases, and real-world texture while the slides organize the core framework.
+
 **Guidelines**:
-- Clear, engaging prose
+- Clear, engaging prose (not bullets in paragraph form)
 - Accessible vocabulary
-- Introduces key concepts
+- Introduces key concepts with narrative context
 - Sets context for group work
+- Opens with a hook (story, scenario, question) not an abstract definition
 
 ### 3. `worksheet.md` - Group Discussion Prompts
 
@@ -554,6 +600,31 @@ python scripts/delete_and_recreate_lesson.py lessons/XX-lesson-name --dry-run  #
 python scripts/delete_and_recreate_lesson.py lessons/XX-lesson-name            # Execute
 ```
 
+**`scripts/update_lesson_reading.py`** - Update reading.md in deployed assignments (SAFE)
+- Updates ONLY the reading portion of assignment description
+- Preserves GROUP DISCUSSION worksheet section
+- Uses API patch (no deletion, no student notifications)
+- Preserves all other fields (materials, due dates, etc.)
+- Dry run by default to preview changes
+
+```bash
+python scripts/update_lesson_reading.py lessons/XX-lesson-name           # Preview (dry run)
+python scripts/update_lesson_reading.py lessons/XX-lesson-name --apply   # Apply changes
+python scripts/update_lesson_reading.py lessons/XX-lesson-name --apply -y # Apply without confirmation
+```
+
+**Use cases**:
+- Improve reading narrative quality without disrupting deployed assignment
+- Fix typos or add context to reading
+- Enhance storytelling while keeping slides, quiz, and worksheet intact
+- One-at-a-time lesson improvements without full redeployment
+
+**Safety guarantees**:
+- API updates never send student notifications (only web UI creates/deletes notify)
+- Worksheet section is extracted and preserved
+- No changes to quiz form or slides
+- No changes to materials, due dates, or assignment structure
+
 **`scripts/check_quiz_completions.py`** - Find completed quizzes and report scores
 - Checks Google Forms responses for all quiz forms
 - Cross-references with Classroom submission states
@@ -690,7 +761,20 @@ A Google Sheets spreadsheet tracks all assignments and quiz completions:
 
 ### Sync Scripts
 
-**`scripts/sync_quiz_completions.py`** - Fetch new quiz completions
+**`scripts/sync_quiz_completions.py`** - Fetch new quiz completions (v2 - improved)
+- Fetches form responses from Google Forms API
+- Uses exponential backoff retry for rate limit handling
+- Implements local cache (`.cache/processed_responses.json`) to avoid re-processing
+- Batches writes to Sheets tracker for efficiency
+- Stops on errors per error handling policy (no silent failures)
+
+**Improvements (v2)**:
+- Local cache tracks processed response IDs to minimize API calls
+- Batch write reduces 30+ individual Sheets calls to 1-2 batch operations
+- Retry logic with exponential backoff: 1s, 2s, 4s, 8s, 16s (up to 5 retries)
+- Clear error messages on rate limits with actionable suggestions
+- Safe resume: can be run multiple times without duplicate processing
+
 ```bash
 python scripts/sync_quiz_completions.py --dry-run  # Preview
 python scripts/sync_quiz_completions.py            # Sync completions
@@ -701,6 +785,45 @@ python scripts/sync_quiz_completions.py            # Sync completions
 python scripts/backfill_tracker.py --dry-run  # Preview
 python scripts/backfill_tracker.py            # Execute backfill
 ```
+
+### Rate Limiting Improvements
+
+**Google Sheets API Limits**:
+- 60 read requests per minute per user
+- 60 write requests per minute per user
+- No API available to query current quota usage
+
+**Built-in handling** (in `sheets_tracker.py`):
+1. **`api_call_with_retry()`** - Exponential backoff wrapper
+   - Automatically retries on 429 errors
+   - Wait times: 1s, 2s, 4s, 8s, 16s (up to 5 retries)
+   - Wraps any Sheets API call
+
+2. **`record_quiz_completions_batch()`** - Batch write method
+   - Reduces 30+ individual API calls to 1-2 batch calls
+   - Preserves sync status when updating existing completions
+   - Usage:
+     ```python
+     completions = [
+         {
+             'response_id': 'abc123',
+             'assignment_title': 'Quiz Name',
+             'form_id': 'form123',
+             'student_email': 'student@school.org',
+             'student_name': 'Student Name',
+             'course': 'Period 1',
+             'score': 8,
+             'total_points': 8,
+             'submitted_at': '2026-01-07T12:00:00Z',
+             'notes': ''
+         },
+         # ... more completions
+     ]
+     stats = tracker.record_quiz_completions_batch(completions)
+     # Returns: {'recorded': 25, 'updated': 5, 'errors': 0}
+     ```
+
+**Integration**: `sync_quiz_completions.py` now uses batch methods and retry logic (implemented v2)
 
 ### Token Files (all gitignored)
 
